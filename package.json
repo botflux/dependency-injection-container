@@ -1,7 +1,7 @@
 {
   "name": "dependency-injection-container",
   "version": "1.0.0",
-  "description": "Dependency injection container written is typescript",
+  "description": "Dependency injection container written in typescript",
   "main": "index.ts",
   "scripts": {
     "test": "jest",
