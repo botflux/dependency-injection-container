@@ -39,4 +39,11 @@ describe('#ServiceContainer', () => {
 
         expect(invalidCall).toThrowError(Error)
     })
+
+    it('returns the same instance when calling add', () => {
+        const container = new ServiceContainer()
+        const sameContainer = container.add('hello', () => ({}))
+
+        expect(sameContainer).toBe(container)
+    })
 })
