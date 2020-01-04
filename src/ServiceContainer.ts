@@ -42,4 +42,12 @@ export class ServiceContainer implements IServiceContainer {
 
         return this._container[key] as T
     }
+
+    /**
+     * Return the container.
+     * This getter is defined only for testing purposes (that's why it's not included in the base interface).
+     */
+    get container(): ServiceContainerDictionary {
+        return this._container
+    }
 }
