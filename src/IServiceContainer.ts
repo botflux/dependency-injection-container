@@ -10,6 +10,8 @@ export interface IServiceContainer {
      *
      * @param key A unique string
      * @param factory A function that will create the service
+     *
+     * @throws ServiceAlreadyRegisteredError Thrown when the key you want to use is already taken.
      */
     add(key: string, factory: IServiceFactoryFunction): this
 
@@ -18,6 +20,8 @@ export interface IServiceContainer {
      * The found service will be casted to the specified generic type.
      *
      * @param key Service's unique string
+     *
+     * @throws ServiceNotFoundError Thrown when no service in matching the passed key.
      */
     get<T>(key: string): T
 }
