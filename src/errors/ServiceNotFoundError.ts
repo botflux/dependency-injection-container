@@ -1,4 +1,3 @@
-namespace ServiceContainer.Errors {
     /**
      * The service container has no service matching a given key.
      */
@@ -9,4 +8,3 @@ namespace ServiceContainer.Errors {
             this.name = 'ServiceNotFoundError'
         }
     }
-}
