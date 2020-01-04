@@ -1,5 +1,13 @@
 import {IServiceContainer} from '../IServiceContainer'
 
+/**
+ * Inject a service into the target property.
+ *
+ * @param container Service container that hold the wanted service
+ * @param serviceName Service name
+ *
+ * @constructor
+ */
 export function InjectService(container: IServiceContainer, serviceName: string) {
     return function (target: any, propertyKey: string | symbol) {
         // This variable is used for testing.
