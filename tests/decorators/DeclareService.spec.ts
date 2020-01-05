@@ -1,6 +1,8 @@
 import {ServiceContainer} from '../../src/ServiceContainer'
 import {DeclareService} from '../../src/decorators/DeclareService'
 import {IServiceContainer} from '../../src/IServiceContainer'
+import {InjectServiceConstructor} from '../../src/decorators/InjectServiceConstructor'
+import 'reflect-metadata'
 
 class DummyService {
     public readonly serviceContainer: IServiceContainer
@@ -36,6 +38,23 @@ describe('#DeclareService', () => {
                 serviceContainer: c,
                 message: 'hello world'
             })
+        })
+    })
+
+    it('injects dependencies', () => {
+        const c = new ServiceContainer()
+            .add('service', c => new DummyService(c))
+
+        @DeclareService(c, 'logger')
+        class Logger {
+            public dummyService: DummyService
+            constructor(@InjectServiceConstructor(c, 'service') dummy: DummyService) {
+                this.dummyService = dummy
+            }
+        }
+
+        expect(c.get<Logger>('logger')).toEqual({
+            dummyService: c.get<DummyService>('service')
         })
     })
 })
