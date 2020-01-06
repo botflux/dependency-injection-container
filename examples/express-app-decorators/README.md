@@ -2,6 +2,13 @@
 
 An express app using the service container.
 
+## Installation
+
+```shell script
+npm install
+npm start
+```
+
 ## Goal
 
 We have two services:
