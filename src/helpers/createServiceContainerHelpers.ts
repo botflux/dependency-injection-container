@@ -14,6 +14,6 @@ export function createServiceContainerHelpers(container: IServiceContainer): ISe
         container,
         Service: DeclareService.bind(undefined, container),
         InjectProp: InjectServiceProperty.bind(undefined, container),
-        InjectCons: InjectServiceConstructor.bind(undefined, container)
+        InjectCons: InjectServiceConstructor
     }
 }

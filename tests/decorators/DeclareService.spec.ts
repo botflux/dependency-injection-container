@@ -48,7 +48,7 @@ describe('#DeclareService', () => {
         @DeclareService(c, 'logger')
         class Logger {
             public dummyService: DummyService
-            constructor(@InjectServiceConstructor(c, 'service') dummy: DummyService) {
+            constructor(@InjectServiceConstructor('service') dummy: DummyService) {
                 this.dummyService = dummy
             }
         }

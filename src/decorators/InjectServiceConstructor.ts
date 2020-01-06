@@ -7,11 +7,10 @@ import {INJECTION_KEY} from './Constants'
 /**
  * Mark a parameter as dependency.
  *
- * @param container
  * @param serviceName
  * @constructor
  */
-export function InjectServiceConstructor(container: IServiceContainer, serviceName: string) {
+export function InjectServiceConstructor(serviceName: string) {
     return function (target: Object, propertyKey: string | symbol, parameterIndex: number) {
         const injectionTokens = Reflect.getOwnMetadata(INJECTION_KEY, target) || {}
         injectionTokens[parameterIndex] = serviceName
