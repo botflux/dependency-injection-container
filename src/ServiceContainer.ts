@@ -4,6 +4,10 @@ import {ServiceContainerDictionary} from './ServiceContainerDictionary'
 import {ServiceAlreadyRegisteredError} from './errors/ServiceAlreadyRegisteredError'
 import {ServiceNotFoundError} from './errors/ServiceNotFoundError'
 
+/**
+ * A concrete IServiceContainer.
+ * You can easily implement your own.
+ */
 export class ServiceContainer implements IServiceContainer {
 
     /**
