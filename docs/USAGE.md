@@ -19,31 +19,33 @@ const connection: DbConnection = container.get<DbConnection>('db')
 
 You can also use decorators to declare a class as a service and to populate a property.
 ```typescript
-import {InjectServiceProperty, DeclareService, ServiceContainer} from './' import {InjectServiceConstructor} from './InjectServiceConstructor' 
+
+import {ServiceContainer, createServiceContainerHelpers} from '../'
 
 const container = new ServiceContainer()
+const { Service, InjectCons, InjectProp } = createServiceContainerHelpers(container)
 
-@DeclareService(container, 'logger')
+@Service('logger')
 class Logger {}
 
-@DeclareService(container, 'userDao')
+@Service('db')
+class Db {}
+
+@Service('userDao')
 class UserDao {
-    @InjectServiceProperty(container, 'logger')
+    // You can inject dependencies using InjectProp.
+    // InjectProp can only be used for class properties.
+    // This works even if the class isn't a service itself.
+    @InjectProp(container, 'logger')
     private logger?: Logger
-}
 
-// or services can be resolved in constructor,
-// with the second method you must declare the class as a service
-// because parameter will be resolved in factory made by the container.
+    private db: Db    
 
-@DeclareService(container, 'productDao')
-class ProductDao {
-    private readonly userDao: UserDao
-
-    constructor(
-        @InjectServiceConstructor(container, 'userDao') userDao: UserDao
-    ) {
-        this.userDao = userDao
+    // You can inject dependencies using InjectCons.
+    // InjectCons can only be used for parameters.
+    // This works only if the class is declared as a service.
+    constructor(@InjectCons('db') db: Db) {
+        this.db = db
     }
 }
 ```
