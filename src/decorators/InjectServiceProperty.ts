@@ -8,10 +8,10 @@ import {IServiceContainer} from '../IServiceContainer'
  *
  * @constructor
  */
-export function InjectService(container: IServiceContainer, serviceName: string) {
+export function InjectServiceProperty(container: IServiceContainer, serviceName: string) {
     return function (target: any, propertyKey: string | symbol) {
         // This variable is used for testing.
-        // When we test classes that use InjectService, the underlying container will probably be empty.
+        // When we test classes that use InjectServiceProperty, the underlying container will probably be empty.
         // To avoid filling a container that will be shared through the app, we can fill this variable.
         // When this variable is filled then its content will be returned and not the container's version.
         let service: any | undefined
