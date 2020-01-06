@@ -19,7 +19,7 @@ const connection: DbConnection = container.get<DbConnection>('db')
 
 You can also use decorators to declare a class as a service and to populate a property.
 ```typescript
-import {InjectService, DeclareService, ServiceContainer} from './' 
+import {InjectServiceProperty, DeclareService, ServiceContainer} from './' 
 
 const container = new ServiceContainer()
 
@@ -28,7 +28,7 @@ class Logger {}
 
 @DeclareService(container, 'userDao')
 class UserDao {
-    @InjectService(container, 'logger')
+    @InjectServiceProperty(container, 'logger')
     private logger?: Logger
 }
 ```

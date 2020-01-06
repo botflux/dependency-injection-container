@@ -1,19 +1,19 @@
 import {ServiceContainer} from '../../src/ServiceContainer'
-import {InjectService} from '../../src/decorators/InjectService'
+import {InjectServiceProperty} from '../../src/decorators/InjectServiceProperty'
 
 
 
-describe('#InjectService', () => {
+describe('#InjectServiceProperty', () => {
     it('injects the service', () => {
         const c = new ServiceContainer()
             .add('service1', () => 'hello world')
 
         class Service2 {
-            @InjectService(c, 'service1')
+            @InjectServiceProperty(c, 'service1')
             public service1: string = ''
         }
 
-        // InjectService(c, 'service1')(Service2, 'service1')
+        // InjectServiceProperty(c, 'service1')(Service2, 'service1')
 
         expect(new Service2().service1).toBe('hello world')
     })
@@ -23,7 +23,7 @@ describe('#InjectService', () => {
             .add('service1', () => 'hello world')
 
         class Service2 {
-            @InjectService(c, 'service1')
+            @InjectServiceProperty(c, 'service1')
             public service1: string = ''
         }
 
