@@ -1,12 +1,11 @@
-import {ServiceContainer} from '../src/ServiceContainer'
-import clearAllMocks = jest.clearAllMocks
+import {ServiceContainer} from '../src'
 
 describe('#ServiceContainer', () => {
     it('adds a new service', () => {
         const container: ServiceContainer = new ServiceContainer()
-            .add('my service', () => ({ hello: 'world' }))
+            .addFactory('my service', () => ({ hello: 'world' }))
 
-        expect(container.container).toEqual({
+        expect(container.services).toEqual({
             'my service': {
                 hello: 'world'
             }
@@ -15,9 +14,9 @@ describe('#ServiceContainer', () => {
 
     it('throws a service already exists when service key already taken', () => {
         const container: ServiceContainer = new ServiceContainer()
-            .add('service.logger.someLogger', () => ({ log: () => ({}) }))
+            .addFactory('service.logger.someLogger', () => ({ log: () => ({}) }))
 
-        const invalidCall = () => container.add('service.logger.someLogger', () => ({}))
+        const invalidCall = () => container.addFactory('service.logger.someLogger', () => ({}))
 
         // It seems that typescript doesn't create custom error
         expect(invalidCall).toThrowError(Error)
@@ -25,7 +24,7 @@ describe('#ServiceContainer', () => {
 
     it('returns a service', () => {
         const container = new ServiceContainer()
-            .add('service', () => ({ hello: 'world' }))
+            .addFactory('service', () => ({ hello: 'world' }))
 
         expect(container.get('service')).toEqual({
             hello: 'world'
@@ -34,27 +33,27 @@ describe('#ServiceContainer', () => {
 
     it('throws a service not found error if the key is not defined', () => {
         const container = new ServiceContainer()
-            .add('service', () => ({ hello: 'world' }))
+            .addFactory('service', () => ({ hello: 'world' }))
 
-        const invalidCall = () => container.add('service', () => ({}))
+        const invalidCall = () => container.addFactory('service', () => ({}))
 
         expect(invalidCall).toThrowError(Error)
     })
 
     it('returns the same instance when calling add', () => {
         const container = new ServiceContainer()
-        const sameContainer = container.add('hello', () => ({}))
+        const sameContainer = container.addFactory('hello', () => ({}))
 
         expect(sameContainer).toBe(container)
     })
 
     it('throws a service already registered if the key is already defined (addConstructor)', () => {
         const container = new ServiceContainer()
-            .add('hello', () => 'world')
+            .addFactory('hello', () => 'world')
 
         class Service {}
 
-        const invalidCall = () => container.addConstructor('hello', Service)
+        const invalidCall = () => container.add('hello', Service)
         expect(invalidCall).toThrowError(Error)
     })
 
@@ -66,7 +65,7 @@ describe('#ServiceContainer', () => {
         }
 
         const s = container
-            .addConstructor<Service>('s', Service)
+            .add('s', Service)
             .get<Service>('s')
 
         expect(s).toEqual({
