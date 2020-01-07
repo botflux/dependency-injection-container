@@ -35,6 +35,16 @@ export class ServiceContainer implements IServiceContainer {
         return this
     }
 
+    addConstructor<T>(key: string, constructor: { new(...args: any[]): T }): this {
+        if (key in this._container) {
+            throw new ServiceAlreadyRegisteredError(key)
+        }
+
+        this._container[key] = new constructor(this)
+
+        return this
+    }
+
     /**
      * Return the service matching the passed key.
      * The found service will be casted to the specified generic type.

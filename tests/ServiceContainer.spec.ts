@@ -1,4 +1,5 @@
 import {ServiceContainer} from '../src/ServiceContainer'
+import clearAllMocks = jest.clearAllMocks
 
 describe('#ServiceContainer', () => {
     it('adds a new service', () => {
@@ -45,5 +46,31 @@ describe('#ServiceContainer', () => {
         const sameContainer = container.add('hello', () => ({}))
 
         expect(sameContainer).toBe(container)
+    })
+
+    it('throws a service already registered if the key is already defined (addConstructor)', () => {
+        const container = new ServiceContainer()
+            .add('hello', () => 'world')
+
+        class Service {}
+
+        const invalidCall = () => container.addConstructor('hello', Service)
+        expect(invalidCall).toThrowError(Error)
+    })
+
+    it('adds a service (addConstructor)', () => {
+        const container = new ServiceContainer()
+
+        class Service {
+            public hello: string = 'world'
+        }
+
+        const s = container
+            .addConstructor<Service>('s', Service)
+            .get<Service>('s')
+
+        expect(s).toEqual({
+            hello: 'world'
+        })
     })
 })
