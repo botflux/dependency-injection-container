@@ -1,18 +1,26 @@
 import 'reflect-metadata'
 import {ReflectServiceContainer} from '../src/ReflectServiceContainer'
+import {Inject} from '../src/decorators/Inject'
 
 describe('#ReflectServiceContainer', () => {
     it('adds a constructor', () => {
         class Service {
             public hello: string = 'world'
+            public readonly message: string
+
+            constructor(@Inject('message') message: string) {
+                this.message = message
+            }
         }
 
         const service = new ReflectServiceContainer()
+            .addFactory('message', () => 'hello')
             .add('service', Service)
             .get<Service>('service')
 
         expect(service).toEqual({
-            hello: 'world'
+            hello: 'world',
+            message: 'hello'
         })
     })
 

@@ -1,6 +1,7 @@
 import 'reflect-metadata'
 import {ServiceContainer} from '../../src'
 import {Inject} from '../../src/decorators/Inject'
+import {INJECT_TOKEN_METADATA} from '../../src/Constants'
 
 describe('#InjectServiceConstructor', () => {
     it('adds metadata to the constructor parameter', () => {
@@ -10,7 +11,7 @@ describe('#InjectServiceConstructor', () => {
 
         class MyService {
             constructor(@Inject('message') message: string) {
-                const tokens = Reflect.getOwnMetadata('helloKey', MyService) || {}
+                const tokens = Reflect.getOwnMetadata(INJECT_TOKEN_METADATA, MyService) || {}
                 expect(tokens[0]).toBe('message')
             }
         }
