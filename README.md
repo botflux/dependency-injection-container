@@ -7,9 +7,9 @@ import {ServiceContainer, IServiceContainer} from './'
 
 // Add services
 const container: IServiceContainer = new ServiceContainer()
-    .add('config', () => new ConfigurationLoader().load())
-    .add('logger', (serviceContainer: IServiceContainer) => new Logger(serviceContainer))
-    .add('db', (serviceContainer: IServiceContainer) => new DbConnection(serviceContainer))
+    .addFactory('config', () => new ConfigurationLoader().load())
+    .add('logger', Logger)
+    .addFactory('db', DbConnection)
 
 // Retrieve a service
 // The get method will only cast the service as the generic type.
