@@ -1,16 +1,15 @@
 import {Product} from '../models/Product'
-import {helpers} from '../../container'
 import {ILogger} from './Logger'
+import {Inject} from '../../../../src'
 
 export interface IProductProxy {
     findAll(): Product[]
 }
 
-@helpers.Service('productProxy')
 export class ProductProxy implements IProductProxy {
     private readonly _logger: ILogger
 
-    constructor(@helpers.InjectCons('logger') logger: ILogger) {
+    constructor(@Inject('logger') logger: ILogger) {
         this._logger = logger
     }
 
