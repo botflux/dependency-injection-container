@@ -3,7 +3,8 @@
 A dependency injection container
 
 ```typescript
-import {ServiceContainer, IServiceContainer} from './' import {ServiceContainerFactory} from './ServiceContainerFactory'
+import {IServiceContainer} from './' 
+import {ServiceContainerFactory} from './ServiceContainerFactory'
 
 class Logger {
     constructor(container: IServiceContainer) {}
