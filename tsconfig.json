@@ -6,7 +6,7 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "outDir": "dist",
-    "target": "es5",
+    "target": "es2015",
     "strict": true
   },
   "include": [

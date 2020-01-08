@@ -29,7 +29,7 @@ const connection: DbConnection = container.get<DbConnection>('db')
 
 ## Decorators
 
-You can learn more about decorators in [Usage page](./docs/USAGE.md).
+You can learn more about decorators in [Usage page](USAGE.md).
 
 ## Tests
 
