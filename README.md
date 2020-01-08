@@ -5,11 +5,19 @@ A dependency injection container
 ```typescript
 import {ServiceContainer, IServiceContainer} from './'
 
+class Logger {
+    constructor(container: IServiceContainer) {}
+}
+
+class DbConnection {
+    constructor(container: IServiceContainer) {}
+}
+
 // Add services
 const container: IServiceContainer = new ServiceContainer()
     .addFactory('config', () => new ConfigurationLoader().load())
     .add('logger', Logger)
-    .addFactory('db', DbConnection)
+    .add('db', DbConnection)
 
 // Retrieve a service
 // The get method will only cast the service as the generic type.
