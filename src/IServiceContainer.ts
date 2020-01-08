@@ -1,7 +1,40 @@
 import {IServiceFactoryFunction} from './IServiceFactoryFunction'
 
 /**
- * Service container itself
+ * Service container itself.
+ * If you want to get a class instance implementing this interface you should use `IServiceContainerFactory`.
+ * You should avoid instantiate IServiceContainer implementation directly, instead use an `IServiceContainerFactory`.
+ *
+ * ```typescript
+ * const simpleContainer: IServiceContainer = new ServiceContainer()
+ * // /!\ Need npm install reflect-metadata
+ * const reflectContainer: IServiceContainer = new ReflectServiceContainer()
+ *
+ * // ===
+ *
+ * const simpleContainer: IServiceContainer = new ServiceContainerFactory().create()
+ * // /!\ Need npm install reflect-metadata
+ * const reflectContainer: IServiceContainer = new ServiceContainerFactory({ useReflection: true }).create()
+ * ```
+ *
+ * ```typescript
+ * class Logger {
+ *      private readonly _logPath
+ *
+ *     constructor(container: IServiceContainer) {
+ *         this._logPath = container.get<{ logPath: string }>('config').logPath
+ *     }
+ *
+ *     log(message: string) {}
+ * }
+ *
+ * const container: IServiceContainer = new ServiceContainerFactory().create()
+ * container
+ *      .addFactory('config', () => ({ logPath: '../var/app.log' }))
+ *      .add('logger', Logger)
+ *
+ * container.get<Logger>('logger').log('my message')
+ * ```
  */
 export interface IServiceContainer {
     /**
