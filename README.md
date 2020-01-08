@@ -3,7 +3,7 @@
 A dependency injection container
 
 ```typescript
-import {ServiceContainer, IServiceContainer} from './'
+import {ServiceContainer, IServiceContainer} from './' import {ServiceContainerFactory} from './ServiceContainerFactory'
 
 class Logger {
     constructor(container: IServiceContainer) {}
@@ -14,7 +14,8 @@ class DbConnection {
 }
 
 // Add services
-const container: IServiceContainer = new ServiceContainer()
+const container: IServiceContainer = new ServiceContainerFactory()
+    .create()
     .addFactory('config', () => new ConfigurationLoader().load())
     .add('logger', Logger)
     .add('db', DbConnection)
