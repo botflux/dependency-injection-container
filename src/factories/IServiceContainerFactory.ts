@@ -1,7 +1,7 @@
 import {IServiceContainer} from '../IServiceContainer'
 
 /**
- * Creates IServiceContainer
+ * A factory that creates IServiceContainer
  */
 export interface IServiceContainerFactory {
     /**

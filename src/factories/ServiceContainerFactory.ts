@@ -4,10 +4,23 @@ import {ServiceContainer} from '../ServiceContainer'
 import {IServiceContainerFactoryOptions} from './IServiceContainerFactoryOptions'
 import {ReflectServiceContainer} from '../ReflectServiceContainer'
 
-const defaultOptions: IServiceContainerFactoryOptions = {
+/**
+ * Default option of ServiceContainerFactory
+ */
+export const defaultOptions: IServiceContainerFactoryOptions = {
     useReflection: false
 }
 
+/**
+ * Creates IServiceContainer instances.
+ *
+ * ```typescript
+ * new ServiceContainerFactory()
+ * new ServiceContainerFactory({
+ *     useReflection: true
+ * })
+ * ```
+ */
 export class ServiceContainerFactory implements IServiceContainerFactory {
     private readonly _options: IServiceContainerFactoryOptions
 
@@ -17,6 +30,10 @@ export class ServiceContainerFactory implements IServiceContainerFactory {
 
     /**
      * Creates a new instance of IServiceContainer
+     *
+     * ```typescript
+     * const container: IServiceContainer = new ServiceContainerFactory().create()
+     * ```
      */
     create(): IServiceContainer {
         return this._options.useReflection
