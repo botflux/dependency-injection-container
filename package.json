@@ -1,6 +1,6 @@
 {
   "name": "dependency-injection-container",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Dependency injection container written in typescript",
   "main": "index.ts",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://gitlab.logitud.fr/v-mendele/dependency-injection-container"
+    "url": "https://github.com/botflux/dependency-injection-container"
   },
   "keywords": [
     "dependency injection container"
