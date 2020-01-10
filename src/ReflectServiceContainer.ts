@@ -1,7 +1,8 @@
 import {IServiceContainer} from './IServiceContainer'
 import {IServiceFactoryFunction} from './IServiceFactoryFunction'
 import {ServiceContainerDictionary} from './ServiceContainerDictionary'
-import {ServiceAlreadyRegisteredError, ServiceNotFoundError} from './errors'
+import {ServiceAlreadyRegisteredError} from './errors/ServiceAlreadyRegisteredError'
+import {ServiceNotFoundError} from './errors/ServiceNotFoundError'
 import {INJECT_TOKEN_METADATA} from './Constants'
 
 /**

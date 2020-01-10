@@ -1,7 +1,7 @@
 import 'reflect-metadata'
-import {ServiceContainerFactory} from '../../src/factories/ServiceContainerFactory'
-import {ReflectServiceContainer} from '../../src/ReflectServiceContainer'
-import {ServiceContainer} from '../../src'
+import {ServiceContainerFactory} from '../..'
+import {ReflectServiceContainer} from '../..'
+import {ServiceContainer} from '../..'
 
 describe('#ServiceContainerFactory', () => {
     it('creates an instance of ReflectServiceContainer', () => {
