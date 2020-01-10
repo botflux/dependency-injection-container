@@ -1,4 +1,4 @@
-[dependency-injection-container - v1.0.0](../README.md) › [Globals](../globals.md) › ["ServiceContainer"](../modules/_servicecontainer_.md) › [ServiceContainer](_servicecontainer_.servicecontainer.md)
+[dependency-injection-container - v0.0.1](../README.md) › [Globals](../globals.md) › ["ServiceContainer"](../modules/_servicecontainer_.md) › [ServiceContainer](_servicecontainer_.servicecontainer.md)
 
 # Class: ServiceContainer
 
@@ -53,7 +53,7 @@ const db = container.get<Db>('db')
 
 • **_services**: *[ServiceContainerDictionary](../modules/_servicecontainerdictionary_.md#servicecontainerdictionary)*
 
-Defined in src/ServiceContainer.ts:29
+*Defined in [src/ServiceContainer.ts:30](https://github.com/botflux/dependency-injection-container/blob/8392867/src/ServiceContainer.ts#L30)*
 
 ## Accessors
 
@@ -61,7 +61,7 @@ Defined in src/ServiceContainer.ts:29
 
 • **get services**(): *object*
 
-Defined in src/ServiceContainer.ts:82
+*Defined in [src/ServiceContainer.ts:83](https://github.com/botflux/dependency-injection-container/blob/8392867/src/ServiceContainer.ts#L83)*
 
 Return the service inner container.
 You should use this only for test purposes.
@@ -76,7 +76,7 @@ You should use this only for test purposes.
 
 ▸ **add**(`key`: string, `constructor`: object): *this*
 
-Defined in src/ServiceContainer.ts:39
+*Defined in [src/ServiceContainer.ts:40](https://github.com/botflux/dependency-injection-container/blob/8392867/src/ServiceContainer.ts#L40)*
 
 Add a new service using service's constructor.
 
@@ -102,7 +102,7 @@ ___
 
 *Implementation of [IServiceContainer](../interfaces/_iservicecontainer_.iservicecontainer.md)*
 
-Defined in src/ServiceContainer.ts:53
+*Defined in [src/ServiceContainer.ts:54](https://github.com/botflux/dependency-injection-container/blob/8392867/src/ServiceContainer.ts#L54)*
 
 Add a new service using a service factory function.
 
@@ -125,7 +125,7 @@ ___
 
 *Implementation of [IServiceContainer](../interfaces/_iservicecontainer_.iservicecontainer.md)*
 
-Defined in src/ServiceContainer.ts:70
+*Defined in [src/ServiceContainer.ts:71](https://github.com/botflux/dependency-injection-container/blob/8392867/src/ServiceContainer.ts#L71)*
 
 Return the service matching the passed key.
 

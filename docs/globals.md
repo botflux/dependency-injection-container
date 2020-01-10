@@ -1,6 +1,6 @@
-[dependency-injection-container - v1.0.0](README.md) › [Globals](globals.md)
+[dependency-injection-container - v0.0.1](README.md) › [Globals](globals.md)
 
-# dependency-injection-container - v1.0.0
+# dependency-injection-container - v0.0.1
 
 ## Index
 
@@ -15,9 +15,6 @@
 * ["decorators/Inject"](modules/_decorators_inject_.md)
 * ["errors/ServiceAlreadyRegisteredError"](modules/_errors_servicealreadyregisterederror_.md)
 * ["errors/ServiceNotFoundError"](modules/_errors_servicenotfounderror_.md)
-* ["errors/index"](modules/_errors_index_.md)
 * ["factories/IServiceContainerFactory"](modules/_factories_iservicecontainerfactory_.md)
 * ["factories/IServiceContainerFactoryOptions"](modules/_factories_iservicecontainerfactoryoptions_.md)
 * ["factories/ServiceContainerFactory"](modules/_factories_servicecontainerfactory_.md)
-* ["factories/index"](modules/_factories_index_.md)
-* ["index"](modules/_index_.md)

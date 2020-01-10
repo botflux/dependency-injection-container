@@ -1,4 +1,4 @@
-[dependency-injection-container - v1.0.0](../README.md) › [Globals](../globals.md) › ["IServiceContainer"](../modules/_iservicecontainer_.md) › [IServiceContainer](_iservicecontainer_.iservicecontainer.md)
+[dependency-injection-container - v0.0.1](../README.md) › [Globals](../globals.md) › ["IServiceContainer"](../modules/_iservicecontainer_.md) › [IServiceContainer](_iservicecontainer_.iservicecontainer.md)
 
 # Interface: IServiceContainer
 
@@ -60,7 +60,7 @@ container.get<Logger>('logger').log('my message')
 
 ▸ **add**(`key`: string, `constructor`: object): *this*
 
-Defined in src/IServiceContainer.ts:49
+*Defined in [src/IServiceContainer.ts:49](https://github.com/botflux/dependency-injection-container/blob/8392867/src/IServiceContainer.ts#L49)*
 
 Add a new service to the container.
 This method is fluent.
@@ -89,7 +89,7 @@ ___
 
 ▸ **addFactory**(`key`: string, `factory`: [IServiceFactoryFunction](_iservicefactoryfunction_.iservicefactoryfunction.md)): *this*
 
-Defined in src/IServiceContainer.ts:58
+*Defined in [src/IServiceContainer.ts:58](https://github.com/botflux/dependency-injection-container/blob/8392867/src/IServiceContainer.ts#L58)*
 
 Add a new service factory to the container.
 It works the same way as add() but with a function as parameter.
@@ -109,7 +109,7 @@ ___
 
 ▸ **get**<**T**>(`key`: string): *T*
 
-Defined in src/IServiceContainer.ts:68
+*Defined in [src/IServiceContainer.ts:68](https://github.com/botflux/dependency-injection-container/blob/8392867/src/IServiceContainer.ts#L68)*
 
 Return the service matching the passed key.
 The found service will be casted to the specified generic type.

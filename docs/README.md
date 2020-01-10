@@ -1,6 +1,6 @@
-[dependency-injection-container - v1.0.0](README.md) › [Globals](globals.md)
+[dependency-injection-container - v0.0.1](README.md) › [Globals](globals.md)
 
-# dependency-injection-container - v1.0.0
+# dependency-injection-container - v0.0.1
 
 # dependency-injection-container
 

@@ -1,4 +1,4 @@
-[dependency-injection-container - v1.0.0](../README.md) › [Globals](../globals.md) › ["ReflectServiceContainer"](../modules/_reflectservicecontainer_.md) › [ReflectServiceContainer](_reflectservicecontainer_.reflectservicecontainer.md)
+[dependency-injection-container - v0.0.1](../README.md) › [Globals](../globals.md) › ["ReflectServiceContainer"](../modules/_reflectservicecontainer_.md) › [ReflectServiceContainer](_reflectservicecontainer_.reflectservicecontainer.md)
 
 # Class: ReflectServiceContainer
 
@@ -47,7 +47,7 @@ const db = container.get<Db>('db')
 
 • **_services**: *[ServiceContainerDictionary](../modules/_servicecontainerdictionary_.md#servicecontainerdictionary)*
 
-Defined in src/ReflectServiceContainer.ts:31
+*Defined in [src/ReflectServiceContainer.ts:32](https://github.com/botflux/dependency-injection-container/blob/8392867/src/ReflectServiceContainer.ts#L32)*
 
 Holds services instances
 
@@ -57,7 +57,7 @@ Holds services instances
 
 ▸ **add**(`key`: string, `constructor`: object): *this*
 
-Defined in src/ReflectServiceContainer.ts:41
+*Defined in [src/ReflectServiceContainer.ts:42](https://github.com/botflux/dependency-injection-container/blob/8392867/src/ReflectServiceContainer.ts#L42)*
 
 Add a new service using service's constructor
 
@@ -83,7 +83,7 @@ ___
 
 *Implementation of [IServiceContainer](../interfaces/_iservicecontainer_.iservicecontainer.md)*
 
-Defined in src/ReflectServiceContainer.ts:61
+*Defined in [src/ReflectServiceContainer.ts:62](https://github.com/botflux/dependency-injection-container/blob/8392867/src/ReflectServiceContainer.ts#L62)*
 
 Add a new service using a service factory function
 
@@ -106,7 +106,7 @@ ___
 
 *Implementation of [IServiceContainer](../interfaces/_iservicecontainer_.iservicecontainer.md)*
 
-Defined in src/ReflectServiceContainer.ts:78
+*Defined in [src/ReflectServiceContainer.ts:79](https://github.com/botflux/dependency-injection-container/blob/8392867/src/ReflectServiceContainer.ts#L79)*
 
 Return the service matching the passed key.
 

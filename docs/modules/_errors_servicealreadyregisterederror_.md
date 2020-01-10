@@ -1,4 +1,4 @@
-[dependency-injection-container - v1.0.0](../README.md) › [Globals](../globals.md) › ["errors/ServiceAlreadyRegisteredError"](_errors_servicealreadyregisterederror_.md)
+[dependency-injection-container - v0.0.1](../README.md) › [Globals](../globals.md) › ["errors/ServiceAlreadyRegisteredError"](_errors_servicealreadyregisterederror_.md)
 
 # External module: "errors/ServiceAlreadyRegisteredError"
 
