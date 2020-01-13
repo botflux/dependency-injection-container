@@ -29,8 +29,11 @@ const connection: DbConnection = container.get<DbConnection>('db')
 # Using decorators
 
 Use decorator to simplify constructors.
-```typescript
+If you want to use `@Inject`, you must `npm i reflect-metadata`
+and add `import 'reflect-metadata'` before every others imports.
 
+```typescript
+import 'reflect-metadata'
 import {ServiceContainerFactory} from './ServiceContainerFactory' 
 import {Inject} from './Inject'
 
