@@ -1,7 +1,9 @@
 // You should import one time reflect metadata before everything
 import 'reflect-metadata'
-import {IServiceContainerFactory, ServiceContainerFactory} from '../../src/factories'
-import {Inject, IServiceContainer} from '../../src'
+import {ServiceContainerFactory} from '../../src/factories/ServiceContainerFactory'
+import {IServiceContainer} from '../../src/IServiceContainer'
+import {Inject} from '../../src/decorators/Inject'
+import {IServiceContainerFactory} from '../../src/factories/IServiceContainerFactory'
 
 /**
  * We create a new factory. Produced IServiceContainer instances will be able to use reflection.
