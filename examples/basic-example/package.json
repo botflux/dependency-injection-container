@@ -12,5 +12,8 @@
   "devDependencies": {
     "nodemon": "^2.0.2",
     "typescript": "^3.7.4"
+  },
+  "dependencies": {
+    "@botflux/dependency-injection-container": "file:../.."
   }
 }

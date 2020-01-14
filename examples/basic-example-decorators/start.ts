@@ -1,9 +1,6 @@
 // You should import one time reflect metadata before everything
 import 'reflect-metadata'
-import {ServiceContainerFactory} from '../../src/factories/ServiceContainerFactory'
-import {IServiceContainer} from '../../src/IServiceContainer'
-import {Inject} from '../../src/decorators/Inject'
-import {IServiceContainerFactory} from '../../src/factories/IServiceContainerFactory'
+import {IServiceContainerFactory, ServiceContainerFactory, Inject, IServiceContainer} from '@botflux/dependency-injection-container'
 
 /**
  * We create a new factory. Produced IServiceContainer instances will be able to use reflection.

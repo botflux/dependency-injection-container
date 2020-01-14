@@ -1,11 +1,8 @@
+import {IServiceContainerFactory, ServiceContainerFactory, IServiceContainer} from '@botflux/dependency-injection-container'
+
 /**
  * We create ServiceContainerFactory that will create class implementing IServiceContainer.
  */
-import {IServiceContainerFactory} from '../../src/factories/IServiceContainerFactory'
-import {ServiceContainerFactory} from '../../src/factories/ServiceContainerFactory'
-import {IServiceContainer} from '../../src/IServiceContainer'
-
-
 const serviceContainerFactory: IServiceContainerFactory = new ServiceContainerFactory()
 
 /**
