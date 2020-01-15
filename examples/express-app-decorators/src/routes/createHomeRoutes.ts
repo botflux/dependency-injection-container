@@ -1,4 +1,4 @@
-import {IServiceContainer} from '@botflux/dependency-injection-container'
+import {IServiceContainer} from 'dependency-injection-container'
 import {Request, Response, Router} from 'express'
 import {ILogger, IProductProxy} from '../services'
 

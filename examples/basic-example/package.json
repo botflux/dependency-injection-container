@@ -14,6 +14,6 @@
     "typescript": "^3.7.4"
   },
   "dependencies": {
-    "@botflux/dependency-injection-container": "file:../.."
+    "dependency-injection-container": "file:../.."
   }
 }

@@ -9,8 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@botflux/dependency-injection-container": "file:../..",
     "@types/express": "^4.17.2",
+    "dependency-injection-container": "file:../..",
     "express": "^4.17.1",
     "reflect-metadata": "^0.1.13"
   },
