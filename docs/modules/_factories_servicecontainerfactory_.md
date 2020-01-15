@@ -1,4 +1,4 @@
-[dependency-injection-container - v0.0.1](../README.md) › [Globals](../globals.md) › ["factories/ServiceContainerFactory"](_factories_servicecontainerfactory_.md)
+[@botflux/dependency-injection-container - v0.0.1](../README.md) › [Globals](../globals.md) › ["factories/ServiceContainerFactory"](_factories_servicecontainerfactory_.md)
 
 # External module: "factories/ServiceContainerFactory"
 
@@ -18,7 +18,7 @@
 
 ### ▪ **defaultOptions**: *object*
 
-*Defined in [src/factories/ServiceContainerFactory.ts:10](https://github.com/botflux/dependency-injection-container/blob/8392867/src/factories/ServiceContainerFactory.ts#L10)*
+Defined in src/factories/ServiceContainerFactory.ts:10
 
 Default option of ServiceContainerFactory
 
@@ -26,4 +26,4 @@ Default option of ServiceContainerFactory
 
 • **useReflection**: *false* = false
 
-*Defined in [src/factories/ServiceContainerFactory.ts:11](https://github.com/botflux/dependency-injection-container/blob/8392867/src/factories/ServiceContainerFactory.ts#L11)*
+Defined in src/factories/ServiceContainerFactory.ts:11

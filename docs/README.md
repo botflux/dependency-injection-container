@@ -1,6 +1,6 @@
-[dependency-injection-container - v0.0.1](README.md) › [Globals](globals.md)
+[@botflux/dependency-injection-container - v0.0.1](README.md) › [Globals](globals.md)
 
-# dependency-injection-container - v0.0.1
+# @botflux/dependency-injection-container - v0.0.1
 
 # dependency-injection-container
 
