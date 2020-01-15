@@ -1,4 +1,4 @@
-[@botflux/dependency-injection-container - v0.0.1](../README.md) › [Globals](../globals.md) › ["ReflectServiceContainer"](../modules/_reflectservicecontainer_.md) › [ReflectServiceContainer](_reflectservicecontainer_.reflectservicecontainer.md)
+[dependency-injection-container - v0.0.1](../README.md) › [Globals](../globals.md) › ["ReflectServiceContainer"](../modules/_reflectservicecontainer_.md) › [ReflectServiceContainer](_reflectservicecontainer_.reflectservicecontainer.md)
 
 # Class: ReflectServiceContainer
 

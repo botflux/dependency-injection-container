@@ -1,4 +1,4 @@
-[@botflux/dependency-injection-container - v0.0.1](../README.md) › [Globals](../globals.md) › ["errors/ServiceAlreadyRegisteredError"](../modules/_errors_servicealreadyregisterederror_.md) › [ServiceAlreadyRegisteredError](_errors_servicealreadyregisterederror_.servicealreadyregisterederror.md)
+[dependency-injection-container - v0.0.1](../README.md) › [Globals](../globals.md) › ["errors/ServiceAlreadyRegisteredError"](../modules/_errors_servicealreadyregisterederror_.md) › [ServiceAlreadyRegisteredError](_errors_servicealreadyregisterederror_.servicealreadyregisterederror.md)
 
 # Class: ServiceAlreadyRegisteredError
 

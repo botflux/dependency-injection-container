@@ -1,4 +1,4 @@
-[@botflux/dependency-injection-container - v0.0.1](../README.md) › [Globals](../globals.md) › ["IServiceContainer"](../modules/_iservicecontainer_.md) › [IServiceContainer](_iservicecontainer_.iservicecontainer.md)
+[dependency-injection-container - v0.0.1](../README.md) › [Globals](../globals.md) › ["IServiceContainer"](../modules/_iservicecontainer_.md) › [IServiceContainer](_iservicecontainer_.iservicecontainer.md)
 
 # Interface: IServiceContainer
 

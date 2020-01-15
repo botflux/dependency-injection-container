@@ -1,4 +1,4 @@
-[@botflux/dependency-injection-container - v0.0.1](../README.md) › [Globals](../globals.md) › ["Constants"](_constants_.md)
+[dependency-injection-container - v0.0.1](../README.md) › [Globals](../globals.md) › ["Constants"](_constants_.md)
 
 # External module: "Constants"
 

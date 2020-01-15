@@ -1,4 +1,4 @@
-[@botflux/dependency-injection-container - v0.0.1](../README.md) › [Globals](../globals.md) › ["factories/ServiceContainerFactory"](../modules/_factories_servicecontainerfactory_.md) › [ServiceContainerFactory](_factories_servicecontainerfactory_.servicecontainerfactory.md)
+[dependency-injection-container - v0.0.1](../README.md) › [Globals](../globals.md) › ["factories/ServiceContainerFactory"](../modules/_factories_servicecontainerfactory_.md) › [ServiceContainerFactory](_factories_servicecontainerfactory_.servicecontainerfactory.md)
 
 # Class: ServiceContainerFactory
 

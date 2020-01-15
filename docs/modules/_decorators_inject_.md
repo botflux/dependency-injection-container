@@ -1,4 +1,4 @@
-[@botflux/dependency-injection-container - v0.0.1](../README.md) › [Globals](../globals.md) › ["decorators/Inject"](_decorators_inject_.md)
+[dependency-injection-container - v0.0.1](../README.md) › [Globals](../globals.md) › ["decorators/Inject"](_decorators_inject_.md)
 
 # External module: "decorators/Inject"
 

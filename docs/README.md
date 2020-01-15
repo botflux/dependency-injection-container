@@ -1,14 +1,13 @@
-[@botflux/dependency-injection-container - v0.0.1](README.md) › [Globals](globals.md)
+[dependency-injection-container - v0.0.1](README.md) › [Globals](globals.md)
 
-# @botflux/dependency-injection-container - v0.0.1
+# dependency-injection-container - v0.0.1
 
 # dependency-injection-container
 
 A dependency injection container
 
 ```typescript
-import {IServiceContainer} from './' 
-import {ServiceContainerFactory} from './ServiceContainerFactory'
+import {IServiceContainer, ServiceContainerFactory} from 'dependency-injection-container'
 
 class Logger {
     constructor(container: IServiceContainer) {}

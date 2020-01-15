@@ -1,4 +1,4 @@
-[@botflux/dependency-injection-container - v0.0.1](../README.md) › [Globals](../globals.md) › ["ServiceContainerDictionary"](_servicecontainerdictionary_.md)
+[dependency-injection-container - v0.0.1](../README.md) › [Globals](../globals.md) › ["ServiceContainerDictionary"](_servicecontainerdictionary_.md)
 
 # External module: "ServiceContainerDictionary"
 

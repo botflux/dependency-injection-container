@@ -1,4 +1,4 @@
-[@botflux/dependency-injection-container - v0.0.1](../README.md) › [Globals](../globals.md) › ["errors/ServiceNotFoundError"](../modules/_errors_servicenotfounderror_.md) › [ServiceNotFoundError](_errors_servicenotfounderror_.servicenotfounderror.md)
+[dependency-injection-container - v0.0.1](../README.md) › [Globals](../globals.md) › ["errors/ServiceNotFoundError"](../modules/_errors_servicenotfounderror_.md) › [ServiceNotFoundError](_errors_servicenotfounderror_.servicenotfounderror.md)
 
 # Class: ServiceNotFoundError
 

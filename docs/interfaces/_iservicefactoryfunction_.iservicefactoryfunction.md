@@ -1,4 +1,4 @@
-[@botflux/dependency-injection-container - v0.0.1](../README.md) › [Globals](../globals.md) › ["IServiceFactoryFunction"](../modules/_iservicefactoryfunction_.md) › [IServiceFactoryFunction](_iservicefactoryfunction_.iservicefactoryfunction.md)
+[dependency-injection-container - v0.0.1](../README.md) › [Globals](../globals.md) › ["IServiceFactoryFunction"](../modules/_iservicefactoryfunction_.md) › [IServiceFactoryFunction](_iservicefactoryfunction_.iservicefactoryfunction.md)
 
 # Interface: IServiceFactoryFunction
 
