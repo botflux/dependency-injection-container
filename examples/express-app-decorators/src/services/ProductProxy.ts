@@ -1,6 +1,6 @@
 import {Product} from '../models/Product'
 import {ILogger} from './Logger'
-import {Inject} from 'dependency-injection-container'
+import {Inject} from '../../src'
 
 export interface IProductProxy {
     findAll(): Product[]

@@ -2,11 +2,12 @@
   "name": "dependency-injection-container",
   "version": "1.0.0",
   "description": "Dependency injection container written in typescript",
-  "main": "index.ts",
+  "main": "src/index.ts",
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "docs:generate": "typedoc --plugin typedoc-plugin-markdown"
+    "docs:generate": "typedoc --plugin typedoc-plugin-markdown",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",

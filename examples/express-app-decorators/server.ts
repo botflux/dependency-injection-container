@@ -3,7 +3,7 @@ import express, {Application, Request, Response} from 'express'
 import './src/services'
 import {createHomeRoutes} from './src/routes/createHomeRoutes'
 import {Logger, ProductProxy} from './src/services'
-import {ServiceContainerFactory} from 'dependency-injection-container'
+import {ServiceContainerFactory} from 'src'
 
 const PORT: string | number = process.env.PORT || 3000
 const app: Application = express()
