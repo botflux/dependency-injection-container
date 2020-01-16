@@ -8,3 +8,4 @@ class ServiceAlreadyRegisteredError extends Error {
     }
 }
 exports.ServiceAlreadyRegisteredError = ServiceAlreadyRegisteredError;
+//# sourceMappingURL=ServiceAlreadyRegisteredError.js.map

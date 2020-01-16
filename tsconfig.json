@@ -7,7 +7,10 @@
     "emitDecoratorMetadata": true,
     "outDir": "dist",
     "target": "es2015",
-    "strict": true
+    "strict": true,
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true
   },
   "include": [
     "src/**/*"

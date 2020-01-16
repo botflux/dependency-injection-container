@@ -1,7 +1,6 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const ServiceAlreadyRegisteredError_1 = require("./errors/ServiceAlreadyRegisteredError");
-const ServiceNotFoundError_1 = require("./errors/ServiceNotFoundError");
+import { IServiceContainer } from './IServiceContainer';
+import { IServiceFactoryFunction } from './IServiceFactoryFunction';
+import { ServiceContainerDictionary } from './ServiceContainerDictionary';
 /**
  * An implementation of ServiceContainer.
  * If you want to use @Inject decorator, you should use ReflectServiceContainer class.
@@ -27,10 +26,8 @@ const ServiceNotFoundError_1 = require("./errors/ServiceNotFoundError");
  * container.delete('db', Db)
  * ```
  */
-class ServiceContainer {
-    constructor() {
-        this._services = {};
-    }
+export declare class ServiceContainer implements IServiceContainer {
+    private _services;
     /**
      * Add a new service using service's constructor.
      *
@@ -39,10 +36,9 @@ class ServiceContainer {
      *
      * @throws ServiceAlreadyRegisteredError
      */
-    add(key, constructor) {
-        this.addFactory(key, c => new constructor(c));
-        return this;
-    }
+    add(key: string, constructor: {
+        new (...args: any[]): any;
+    }): this;
     /**
      * Add a new service using a service factory function.
      *
@@ -51,13 +47,7 @@ class ServiceContainer {
      *
      * @throws ServiceAlreadyRegisteredError
      */
-    addFactory(key, factory) {
-        if (key in this._services) {
-            throw new ServiceAlreadyRegisteredError_1.ServiceAlreadyRegisteredError(key);
-        }
-        this._services[key] = factory(this);
-        return this;
-    }
+    addFactory(key: string, factory: IServiceFactoryFunction): this;
     /**
      * Return the service matching the passed key.
      *
@@ -65,19 +55,12 @@ class ServiceContainer {
      *
      * @throws ServiceNotFoundError
      */
-    get(key) {
-        if (!(key in this._services)) {
-            throw new ServiceNotFoundError_1.ServiceNotFoundError(key);
-        }
-        return this._services[key];
-    }
+    get<T>(key: string): T;
     /**
      * Return the service inner container.
      * You should use this only for test purposes.
      */
-    get services() {
-        return this._services;
-    }
+    get services(): ServiceContainerDictionary;
     /**
      * Delete the service matching the given key.
      *
@@ -85,13 +68,6 @@ class ServiceContainer {
      *
      * @throws ServiceNotFoundError Thrown when no service is matching the passed key.
      */
-    delete(key) {
-        if (!(key in this._services)) {
-            throw new ServiceNotFoundError_1.ServiceNotFoundError(key);
-        }
-        delete this._services[key];
-        return this;
-    }
+    delete(key: string): this;
 }
-exports.ServiceContainer = ServiceContainer;
-//# sourceMappingURL=ServiceContainer.js.map
+//# sourceMappingURL=ServiceContainer.d.ts.map

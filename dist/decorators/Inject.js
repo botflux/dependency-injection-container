@@ -30,3 +30,4 @@ function Inject(serviceName) {
     };
 }
 exports.Inject = Inject;
+//# sourceMappingURL=Inject.js.map

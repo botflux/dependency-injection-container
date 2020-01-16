@@ -1,0 +1,8 @@
+import { IServiceContainer } from './IServiceContainer';
+/**
+ * A function that create a service
+ */
+export interface IServiceFactoryFunction {
+    (container: IServiceContainer): any;
+}
+//# sourceMappingURL=IServiceFactoryFunction.d.ts.map
