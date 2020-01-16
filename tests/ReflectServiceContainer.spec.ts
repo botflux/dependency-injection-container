@@ -55,4 +55,19 @@ describe('#ReflectServiceContainer', () => {
         const invalidCall = () => c.get<Function>('service')
         expect(invalidCall).toThrowError(Error)
     })
+
+    it('throws when deleting is not defined service', () => {
+        const c = new ReflectServiceContainer()
+        const invalidCall = () => c.delete('service')
+
+        expect(invalidCall).toThrowError(Error)
+    })
+
+    it('deletes services', () => {
+        const c = new ReflectServiceContainer()
+            .addFactory('hello', () => 'world')
+            .delete('hello')
+
+        expect(c.services).toEqual({})
+    })
 })

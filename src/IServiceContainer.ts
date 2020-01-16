@@ -66,4 +66,13 @@ export interface IServiceContainer {
      * @throws ServiceNotFoundError Thrown when no service in matching the passed key.
      */
     get<T>(key: string): T
+
+    /**
+     * Delete the service matching the given key.
+     *
+     * @param key
+     *
+     * @throws ServiceNotFoundError Thrown when no service is matching the passed key.
+     */
+    delete(key: string): this
 }

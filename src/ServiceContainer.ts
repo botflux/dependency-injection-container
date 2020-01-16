@@ -83,4 +83,14 @@ export class ServiceContainer implements IServiceContainer {
     get services () {
         return this._services
     }
+
+    delete(key: string): this {
+        if (!(key in this._services)) {
+            throw new ServiceNotFoundError(key)
+        }
+
+        delete this._services[key]
+
+        return this
+    }
 }

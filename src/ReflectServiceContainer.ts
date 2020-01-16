@@ -84,4 +84,17 @@ export class ReflectServiceContainer implements IServiceContainer {
         return this._services[key] as T
     }
 
+    delete(key: string): this {
+        if (!(key in this._services)) {
+            throw new ServiceNotFoundError(key)
+        }
+
+        delete this._services[key]
+
+        return this
+    }
+
+    get services() {
+        return this._services
+    }
 }

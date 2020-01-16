@@ -72,4 +72,19 @@ describe('#ServiceContainer', () => {
             hello: 'world'
         })
     })
+
+    it('throws when deleting is not defined service', () => {
+        const c = new ServiceContainer()
+        const invalidCall = () => c.delete('service')
+
+        expect(invalidCall).toThrowError(Error)
+    })
+
+    it('deletes services', () => {
+        const c = new ServiceContainer()
+            .addFactory('hello', () => 'world')
+            .delete('hello')
+
+        expect(c.services).toEqual({})
+    })
 })
