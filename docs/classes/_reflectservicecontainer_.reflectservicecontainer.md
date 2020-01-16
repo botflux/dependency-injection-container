@@ -35,10 +35,15 @@ const db = container.get<Db>('db')
 
 * [_services](_reflectservicecontainer_.reflectservicecontainer.md#private-_services)
 
+### Accessors
+
+* [services](_reflectservicecontainer_.reflectservicecontainer.md#services)
+
 ### Methods
 
 * [add](_reflectservicecontainer_.reflectservicecontainer.md#add)
 * [addFactory](_reflectservicecontainer_.reflectservicecontainer.md#addfactory)
+* [delete](_reflectservicecontainer_.reflectservicecontainer.md#delete)
 * [get](_reflectservicecontainer_.reflectservicecontainer.md#get)
 
 ## Properties
@@ -50,6 +55,20 @@ const db = container.get<Db>('db')
 Defined in src/ReflectServiceContainer.ts:32
 
 Holds services instances
+
+## Accessors
+
+###  services
+
+• **get services**(): *object*
+
+Defined in src/ReflectServiceContainer.ts:107
+
+This getter must only be used for tests purposes.
+
+**Returns:** *object*
+
+* \[ **key**: *string*\]: any
 
 ## Methods
 
@@ -95,6 +114,28 @@ Name | Type | Description |
 ------ | ------ | ------ |
 `key` | string | - |
 `factory` | [IServiceFactoryFunction](../interfaces/_iservicefactoryfunction_.iservicefactoryfunction.md) |   |
+
+**Returns:** *this*
+
+___
+
+###  delete
+
+▸ **delete**(`key`: string): *this*
+
+*Implementation of [IServiceContainer](../interfaces/_iservicecontainer_.iservicecontainer.md)*
+
+Defined in src/ReflectServiceContainer.ts:94
+
+Delete the service matching the given key.
+
+**`throws`** ServiceNotFoundError Thrown when no service is matching the passed key.
+
+**Parameters:**
+
+Name | Type | Description |
+------ | ------ | ------ |
+`key` | string |   |
 
 **Returns:** *this*
 

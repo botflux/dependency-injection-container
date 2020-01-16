@@ -21,6 +21,9 @@ const container = new ReflectServiceContainer()
 
 const logger = container.get<Logger>('logger')
 const db = container.get<Db>('db')
+
+// You can also delete services.
+container.delete('db', Db)
 ```
 
 ## Hierarchy
@@ -45,6 +48,7 @@ const db = container.get<Db>('db')
 
 * [add](_servicecontainer_.servicecontainer.md#add)
 * [addFactory](_servicecontainer_.servicecontainer.md#addfactory)
+* [delete](_servicecontainer_.servicecontainer.md#delete)
 * [get](_servicecontainer_.servicecontainer.md#get)
 
 ## Properties
@@ -53,7 +57,7 @@ const db = container.get<Db>('db')
 
 • **_services**: *[ServiceContainerDictionary](../modules/_servicecontainerdictionary_.md#servicecontainerdictionary)*
 
-Defined in src/ServiceContainer.ts:30
+Defined in src/ServiceContainer.ts:33
 
 ## Accessors
 
@@ -61,7 +65,7 @@ Defined in src/ServiceContainer.ts:30
 
 • **get services**(): *object*
 
-Defined in src/ServiceContainer.ts:83
+Defined in src/ServiceContainer.ts:86
 
 Return the service inner container.
 You should use this only for test purposes.
@@ -76,7 +80,7 @@ You should use this only for test purposes.
 
 ▸ **add**(`key`: string, `constructor`: object): *this*
 
-Defined in src/ServiceContainer.ts:40
+Defined in src/ServiceContainer.ts:43
 
 Add a new service using service's constructor.
 
@@ -102,7 +106,7 @@ ___
 
 *Implementation of [IServiceContainer](../interfaces/_iservicecontainer_.iservicecontainer.md)*
 
-Defined in src/ServiceContainer.ts:54
+Defined in src/ServiceContainer.ts:57
 
 Add a new service using a service factory function.
 
@@ -119,13 +123,35 @@ Name | Type | Description |
 
 ___
 
+###  delete
+
+▸ **delete**(`key`: string): *this*
+
+*Implementation of [IServiceContainer](../interfaces/_iservicecontainer_.iservicecontainer.md)*
+
+Defined in src/ServiceContainer.ts:97
+
+Delete the service matching the given key.
+
+**`throws`** ServiceNotFoundError Thrown when no service is matching the passed key.
+
+**Parameters:**
+
+Name | Type | Description |
+------ | ------ | ------ |
+`key` | string |   |
+
+**Returns:** *this*
+
+___
+
 ###  get
 
 ▸ **get**<**T**>(`key`: string): *T*
 
 *Implementation of [IServiceContainer](../interfaces/_iservicecontainer_.iservicecontainer.md)*
 
-Defined in src/ServiceContainer.ts:71
+Defined in src/ServiceContainer.ts:74
 
 Return the service matching the passed key.
 

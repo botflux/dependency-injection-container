@@ -28,6 +28,9 @@ const container: IServiceContainer = new ServiceContainerFactory()
 // The get method will only cast the service as the generic type.
 const logger: ILogger = container.get<ILogger>('logger')
 const connection: DbConnection = container.get<DbConnection>('db')
+
+// Additionally you can delete a service
+container.delete('db') 
 ```
 
 ## Decorators

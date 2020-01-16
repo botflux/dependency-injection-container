@@ -37,6 +37,14 @@ container
 container.get<Logger>('logger').log('my message')
 ```
 
+```typescript
+// You can also delete services
+const container: IServiceContainer = new ServiceContainerFactory()
+     .create()
+     .addFactory('config', () => ({ secret: 'hello' }))
+     .delete('config')
+```
+
 ## Hierarchy
 
 * **IServiceContainer**
@@ -52,6 +60,7 @@ container.get<Logger>('logger').log('my message')
 
 * [add](_iservicecontainer_.iservicecontainer.md#add)
 * [addFactory](_iservicecontainer_.iservicecontainer.md#addfactory)
+* [delete](_iservicecontainer_.iservicecontainer.md#delete)
 * [get](_iservicecontainer_.iservicecontainer.md#get)
 
 ## Methods
@@ -60,7 +69,7 @@ container.get<Logger>('logger').log('my message')
 
 ▸ **add**(`key`: string, `constructor`: object): *this*
 
-Defined in src/IServiceContainer.ts:49
+Defined in src/IServiceContainer.ts:57
 
 Add a new service to the container.
 This method is fluent.
@@ -89,7 +98,7 @@ ___
 
 ▸ **addFactory**(`key`: string, `factory`: [IServiceFactoryFunction](_iservicefactoryfunction_.iservicefactoryfunction.md)): *this*
 
-Defined in src/IServiceContainer.ts:58
+Defined in src/IServiceContainer.ts:66
 
 Add a new service factory to the container.
 It works the same way as add() but with a function as parameter.
@@ -105,11 +114,31 @@ Name | Type | Description |
 
 ___
 
+###  delete
+
+▸ **delete**(`key`: string): *this*
+
+Defined in src/IServiceContainer.ts:85
+
+Delete the service matching the given key.
+
+**`throws`** ServiceNotFoundError Thrown when no service is matching the passed key.
+
+**Parameters:**
+
+Name | Type | Description |
+------ | ------ | ------ |
+`key` | string |   |
+
+**Returns:** *this*
+
+___
+
 ###  get
 
 ▸ **get**<**T**>(`key`: string): *T*
 
-Defined in src/IServiceContainer.ts:68
+Defined in src/IServiceContainer.ts:76
 
 Return the service matching the passed key.
 The found service will be casted to the specified generic type.
