@@ -1,6 +1,6 @@
 {
   "name": "dependency-injection-container",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Dependency injection container written in typescript",
   "main": "index.ts",
   "scripts": {
