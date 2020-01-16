@@ -2,7 +2,7 @@
   "name": "dependency-injection-container",
   "version": "1.0.0",
   "description": "Dependency injection container written in typescript",
-  "main": "src/index.ts",
+  "main": "dist/index.ts",
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
