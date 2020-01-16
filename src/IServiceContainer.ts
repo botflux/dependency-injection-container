@@ -35,6 +35,14 @@ import {IServiceFactoryFunction} from './IServiceFactoryFunction'
  *
  * container.get<Logger>('logger').log('my message')
  * ```
+ *
+ * ```typescript
+ * // You can also delete services
+ * const container: IServiceContainer = new ServiceContainerFactory()
+ *      .create()
+ *      .addFactory('config', () => ({ secret: 'hello' }))
+ *      .delete('config')
+ * ```
  */
 export interface IServiceContainer {
     /**

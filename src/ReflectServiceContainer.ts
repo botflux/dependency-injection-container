@@ -84,6 +84,13 @@ export class ReflectServiceContainer implements IServiceContainer {
         return this._services[key] as T
     }
 
+    /**
+     * Delete the service matching the given key.
+     *
+     * @param key
+     *
+     * @throws ServiceNotFoundError Thrown when no service is matching the passed key.
+     */
     delete(key: string): this {
         if (!(key in this._services)) {
             throw new ServiceNotFoundError(key)
@@ -94,6 +101,9 @@ export class ReflectServiceContainer implements IServiceContainer {
         return this
     }
 
+    /**
+     * This getter must only be used for tests purposes.
+     */
     get services() {
         return this._services
     }

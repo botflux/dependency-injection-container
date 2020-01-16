@@ -24,6 +24,9 @@ import {ServiceNotFoundError} from './errors/ServiceNotFoundError'
  *
  * const logger = container.get<Logger>('logger')
  * const db = container.get<Db>('db')
+ *
+ * // You can also delete services.
+ * container.delete('db', Db)
  * ```
  */
 export class ServiceContainer implements IServiceContainer {
@@ -84,6 +87,13 @@ export class ServiceContainer implements IServiceContainer {
         return this._services
     }
 
+    /**
+     * Delete the service matching the given key.
+     *
+     * @param key
+     *
+     * @throws ServiceNotFoundError Thrown when no service is matching the passed key.
+     */
     delete(key: string): this {
         if (!(key in this._services)) {
             throw new ServiceNotFoundError(key)
