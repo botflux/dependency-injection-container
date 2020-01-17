@@ -1,5 +1,5 @@
 {
-  "name": "dependency-injection-container",
+  "name": "@botflx/dependency-injection-container",
   "version": "1.0.0",
   "description": "Dependency injection container written in typescript",
   "main": "dist/index.js",
@@ -11,7 +11,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://gitlab.logitud.fr/botflux/dependency-injection-container"
+    "url": "https://github.com/botflux/dependency-injection-container"
+  },
+  "homepage": "https://github.com/botflux/dependency-injection-container",
+  "bugs": {
+    "url": "https://github.com/botflux/dependency-injection-container/issues"
   },
   "keywords": [
     "dependency injection container"
