@@ -1,6 +1,6 @@
 import 'reflect-metadata'
-import {ReflectServiceContainer} from '..'
-import {Inject} from '..'
+import {ReflectServiceContainer} from '../src'
+import {Inject} from '../src'
 
 describe('#ReflectServiceContainer', () => {
     it('adds a constructor', () => {

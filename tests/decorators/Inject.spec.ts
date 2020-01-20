@@ -1,6 +1,6 @@
 import 'reflect-metadata'
-import {Inject} from '../..'
-import {INJECT_TOKEN_METADATA} from '../..'
+import {Inject} from '../../src'
+import {INJECT_TOKEN_METADATA} from '../../src'
 
 describe('#InjectServiceConstructor', () => {
     it('adds metadata to the constructor parameter', () => {

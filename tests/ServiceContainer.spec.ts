@@ -1,4 +1,4 @@
-import {ServiceContainer} from '..'
+import {ServiceContainer} from '../src'
 
 describe('#ServiceContainer', () => {
     it('adds a new service', () => {
