@@ -9,6 +9,7 @@ export * from './Constants'
 export * from './factories/ServiceContainerFactory'
 export * from './factories/IServiceContainerFactoryOptions'
 export * from './factories/IServiceContainerFactory'
+export * from './factories/createServiceContainer'
 
 export * from './decorators/Inject'
 
