@@ -1,6 +1,6 @@
-[dependency-injection-container - v0.0.1](README.md) › [Globals](globals.md)
+[@botflx/dependency-injection-container - v1.0.1](README.md) › [Globals](globals.md)
 
-# dependency-injection-container - v0.0.1
+# @botflx/dependency-injection-container - v1.0.1
 
 ## Index
 
@@ -18,3 +18,5 @@
 * ["factories/IServiceContainerFactory"](modules/_factories_iservicecontainerfactory_.md)
 * ["factories/IServiceContainerFactoryOptions"](modules/_factories_iservicecontainerfactoryoptions_.md)
 * ["factories/ServiceContainerFactory"](modules/_factories_servicecontainerfactory_.md)
+* ["factories/createServiceContainer"](modules/_factories_createservicecontainer_.md)
+* ["index"](modules/_index_.md)
