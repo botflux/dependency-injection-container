@@ -1,7 +1,7 @@
 # Basic usage
 
 ```typescript
-import {ServiceContainerFactory, IServiceContainer} from 'dependency-injection-container'
+import {ServiceContainerFactory, IServiceContainer} from '@botflx/dependency-injection-container'
 
 class Logger {}
 class DbConnection {
@@ -33,7 +33,7 @@ and add `import 'reflect-metadata'` before every others imports.
 
 ```typescript
 import 'reflect-metadata'
-import {ServiceContainerFactory, Inject} from 'dependency-injection-container'
+import {ServiceContainerFactory, Inject} from '@botflx/dependency-injection-container'
 
 class Logger {}
 class DbConnection {

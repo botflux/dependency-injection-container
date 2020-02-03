@@ -3,7 +3,7 @@
 A dependency injection container
 
 ```typescript
-import {IServiceContainer, ServiceContainerFactory} from 'dependency-injection-container'
+import {IServiceContainer, ServiceContainerFactory} from '@botflx/dependency-injection-container'
 
 class Logger {
     constructor(container: IServiceContainer) {}
