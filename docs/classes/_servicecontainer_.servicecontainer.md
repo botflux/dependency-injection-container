@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v1.0.1](../README.md) › [Globals](../globals.md) › ["ServiceContainer"](../modules/_servicecontainer_.md) › [ServiceContainer](_servicecontainer_.servicecontainer.md)
+[@botflx/dependency-injection-container - v1.2.0](../README.md) › [Globals](../globals.md) › ["ServiceContainer"](../modules/_servicecontainer_.md) › [ServiceContainer](_servicecontainer_.servicecontainer.md)
 
 # Class: ServiceContainer
 
@@ -57,7 +57,7 @@ container.delete('db', Db)
 
 • **_services**: *[ServiceContainerDictionary](../modules/_servicecontainerdictionary_.md#servicecontainerdictionary)*
 
-*Defined in [src/ServiceContainer.ts:33](https://github.com/botflux/dependency-injection-container/blob/b3018c5/src/ServiceContainer.ts#L33)*
+*Defined in [src/ServiceContainer.ts:33](https://github.com/botflux/dependency-injection-container/blob/a377b37/src/ServiceContainer.ts#L33)*
 
 ## Accessors
 
@@ -65,7 +65,7 @@ container.delete('db', Db)
 
 • **get services**(): *object*
 
-*Defined in [src/ServiceContainer.ts:86](https://github.com/botflux/dependency-injection-container/blob/b3018c5/src/ServiceContainer.ts#L86)*
+*Defined in [src/ServiceContainer.ts:86](https://github.com/botflux/dependency-injection-container/blob/a377b37/src/ServiceContainer.ts#L86)*
 
 Return the service inner container.
 You should use this only for test purposes.
@@ -80,7 +80,7 @@ You should use this only for test purposes.
 
 ▸ **add**(`key`: string, `constructor`: object): *this*
 
-*Defined in [src/ServiceContainer.ts:43](https://github.com/botflux/dependency-injection-container/blob/b3018c5/src/ServiceContainer.ts#L43)*
+*Defined in [src/ServiceContainer.ts:43](https://github.com/botflux/dependency-injection-container/blob/a377b37/src/ServiceContainer.ts#L43)*
 
 Add a new service using service's constructor.
 
@@ -106,7 +106,7 @@ ___
 
 *Implementation of [IServiceContainer](../interfaces/_iservicecontainer_.iservicecontainer.md)*
 
-*Defined in [src/ServiceContainer.ts:57](https://github.com/botflux/dependency-injection-container/blob/b3018c5/src/ServiceContainer.ts#L57)*
+*Defined in [src/ServiceContainer.ts:57](https://github.com/botflux/dependency-injection-container/blob/a377b37/src/ServiceContainer.ts#L57)*
 
 Add a new service using a service factory function.
 
@@ -129,7 +129,7 @@ ___
 
 *Implementation of [IServiceContainer](../interfaces/_iservicecontainer_.iservicecontainer.md)*
 
-*Defined in [src/ServiceContainer.ts:97](https://github.com/botflux/dependency-injection-container/blob/b3018c5/src/ServiceContainer.ts#L97)*
+*Defined in [src/ServiceContainer.ts:97](https://github.com/botflux/dependency-injection-container/blob/a377b37/src/ServiceContainer.ts#L97)*
 
 Delete the service matching the given key.
 
@@ -151,7 +151,7 @@ ___
 
 *Implementation of [IServiceContainer](../interfaces/_iservicecontainer_.iservicecontainer.md)*
 
-*Defined in [src/ServiceContainer.ts:74](https://github.com/botflux/dependency-injection-container/blob/b3018c5/src/ServiceContainer.ts#L74)*
+*Defined in [src/ServiceContainer.ts:74](https://github.com/botflux/dependency-injection-container/blob/a377b37/src/ServiceContainer.ts#L74)*
 
 Return the service matching the passed key.
 
