@@ -1,6 +1,6 @@
 // You should import one time reflect metadata before everything
 import 'reflect-metadata'
-import {IServiceContainerFactory, ServiceContainerFactory, Inject, IServiceContainer} from 'src'
+import {IServiceContainerFactory, ServiceContainerFactory, Inject, IServiceContainer} from '@botflx/dependency-injection-container'
 
 /**
  * We create a new factory. Produced IServiceContainer instances will be able to use reflection.
