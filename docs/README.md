@@ -1,10 +1,14 @@
-[@botflx/dependency-injection-container - v1.2.0](README.md) › [Globals](globals.md)
+[@botflx/dependency-injection-container - v1.2.1](README.md) › [Globals](globals.md)
 
-# @botflx/dependency-injection-container - v1.2.0
+# @botflx/dependency-injection-container - v1.2.1
 
 # dependency-injection-container
 
 A dependency injection container
+
+```shell script
+npm install --save-dev @botflx/dependency-injection-container
+```
 
 ```typescript
 import {IServiceContainer, ServiceContainerFactory} from '@botflx/dependency-injection-container'
@@ -40,7 +44,7 @@ You can learn more about decorators in [Usage page](USAGE.md).
 ## Tests
 
 ```shell script
-git clone https://gitlab.logitud.fr/v-mendele/dependency-injection-container.git
+git clone https://github.com/botflux/dependency-injection-container.git
 cd dependency-injection-container
 npm install
 npm test # or
