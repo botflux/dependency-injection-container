@@ -1,4 +1,4 @@
-import {IServiceContainerFactory, ServiceContainerFactory, IServiceContainer} from 'dependency-injection-container'
+import {IServiceContainerFactory, ServiceContainerFactory, IServiceContainer} from '@botflx/dependency-injection-container'
 
 /**
  * We create ServiceContainerFactory that will create class implementing IServiceContainer.
