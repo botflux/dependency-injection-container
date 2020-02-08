@@ -1,0 +1,15 @@
+{
+  "name": "basic-example-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "start.js",
+  "scripts": {
+    "start": "node start.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@botflx/dependency-injection-container": "^1.2.2"
+  }
+}
