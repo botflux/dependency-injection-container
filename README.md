@@ -83,9 +83,6 @@ npm test # or
 npm run test:watch
 ```
 
-## Dependencies
+## Issues
 
-- @types/jest 24.x
-- jest 24.x
-- ts-jest 24.x
-- typescript 3.7
+If you have issues with the package or request, go [here](https://github.com/botflux/dependency-injection-container/issues).
