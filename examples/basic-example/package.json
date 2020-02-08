@@ -7,8 +7,8 @@
     "start": "nodemon --watch './**/*.ts' --exec 'ts-node' ./start.ts"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Victor Mendele <victor.mendele68@gmail.com>",
+  "license": "MIT",
   "devDependencies": {
     "nodemon": "^2.0.2",
     "typescript": "^3.7.4"
