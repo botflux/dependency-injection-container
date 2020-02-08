@@ -18,7 +18,7 @@
     "url": "https://github.com/botflux/dependency-injection-container/issues"
   },
   "keywords": [
-    "dependency injection container"
+    "dependency injection container", "no dependency"
   ],
   "author": "Victor Mendele <victor.mendele68@gmail.com>",
   "license": "MIT",
