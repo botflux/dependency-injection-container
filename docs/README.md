@@ -1,6 +1,6 @@
-[@botflx/dependency-injection-container - v1.2.1](README.md) › [Globals](globals.md)
+[@botflx/dependency-injection-container - v1.2.2](README.md) › [Globals](globals.md)
 
-# @botflx/dependency-injection-container - v1.2.1
+# @botflx/dependency-injection-container - v1.2.2
 
 # dependency-injection-container
 
@@ -9,6 +9,39 @@ A dependency injection container
 ```shell script
 npm install --save-dev @botflx/dependency-injection-container
 ```
+
+## Javascript example
+
+```javascript
+const {createServiceContainer} = require('@botflx/dependency-injection-container')
+
+class Logger {
+    constructor(container) {}
+}
+
+class DbConnection {
+    constructor(container) {}
+}
+
+// Add services
+// Use add() for class-style service
+// Use addFactory() for function-style service
+// In both case the service container will be passed as first and only argument.
+const container = createServiceContainer()
+    .addFactory('config', () => new ConfigurationLoader().load())
+    .add('logger', Logger)
+    .add('db', DbConnection)
+
+// Retrieve a service
+// The get method will only cast the service as the generic type.
+const logger = container.get('logger')
+const db = container.get('db')
+
+// Additionally you can delete a service
+container.delete('db')
+```
+
+## Typescript example
 
 ```typescript
 import {IServiceContainer, ServiceContainerFactory} from '@botflx/dependency-injection-container'
@@ -22,6 +55,9 @@ class DbConnection {
 }
 
 // Add services
+// Use add() for class-style service
+// Use addFactory() for function-style service
+// In both case the service container will be passed as first and only argument.
 const container: IServiceContainer = new ServiceContainerFactory()
     .create()
     .addFactory('config', () => new ConfigurationLoader().load())

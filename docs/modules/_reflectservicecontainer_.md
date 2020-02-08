@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v1.2.1](../README.md) › [Globals](../globals.md) › ["ReflectServiceContainer"](_reflectservicecontainer_.md)
+[@botflx/dependency-injection-container - v1.2.2](../README.md) › [Globals](../globals.md) › ["ReflectServiceContainer"](_reflectservicecontainer_.md)
 
 # External module: "ReflectServiceContainer"
 
