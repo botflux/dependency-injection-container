@@ -1,6 +1,6 @@
 {
   "name": "@botflx/dependency-injection-container",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Dependency injection container written in typescript",
   "main": "dist/index.js",
   "scripts": {
