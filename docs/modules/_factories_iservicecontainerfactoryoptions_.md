@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v1.2.2](../README.md) › [Globals](../globals.md) › ["factories/IServiceContainerFactoryOptions"](_factories_iservicecontainerfactoryoptions_.md)
+[@botflx/dependency-injection-container - v1.2.3](../README.md) › [Globals](../globals.md) › ["factories/IServiceContainerFactoryOptions"](_factories_iservicecontainerfactoryoptions_.md)
 
 # External module: "factories/IServiceContainerFactoryOptions"
 
