@@ -2,7 +2,6 @@
 tests
 src
 examples
-docs
 tsconfig.json
 jest.config.js
 node_modules
