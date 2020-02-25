@@ -2,3 +2,7 @@ language: node_js
 branches:
   only:
     - ci
+node_js:
+  - 9
+script:
+  - npm test
