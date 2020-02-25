@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v1.2.5](../README.md) › [Globals](../globals.md) › ["factories/IServiceContainerFactory"](../modules/_factories_iservicecontainerfactory_.md) › [IServiceContainerFactory](_factories_iservicecontainerfactory_.iservicecontainerfactory.md)
+[@botflx/dependency-injection-container - v1.2.6](../README.md) › [Globals](../globals.md) › ["factories/IServiceContainerFactory"](../modules/_factories_iservicecontainerfactory_.md) › [IServiceContainerFactory](_factories_iservicecontainerfactory_.iservicecontainerfactory.md)
 
 # Interface: IServiceContainerFactory
 
@@ -24,7 +24,7 @@ A factory that creates IServiceContainer
 
 ▸ **create**(): *[IServiceContainer](_iservicecontainer_.iservicecontainer.md)*
 
-*Defined in [src/factories/IServiceContainerFactory.ts:10](https://github.com/botflux/dependency-injection-container/blob/f04dadf/src/factories/IServiceContainerFactory.ts#L10)*
+*Defined in [src/factories/IServiceContainerFactory.ts:10](https://github.com/botflux/dependency-injection-container/blob/abdfa59/src/factories/IServiceContainerFactory.ts#L10)*
 
 Creates IServiceContainer instances.
 

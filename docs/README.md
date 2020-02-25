@@ -1,6 +1,8 @@
-[@botflx/dependency-injection-container - v1.2.5](README.md) › [Globals](globals.md)
+[@botflx/dependency-injection-container - v1.2.6](README.md) › [Globals](globals.md)
 
-# @botflx/dependency-injection-container - v1.2.5
+# @botflx/dependency-injection-container - v1.2.6
+
+[![Build Status](https://travis-ci.org/botflux/dependency-injection-container.svg?branch=master)](https://travis-ci.org/botflux/dependency-injection-container)
 
 # dependency-injection-container
 

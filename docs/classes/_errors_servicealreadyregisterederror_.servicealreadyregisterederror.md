@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v1.2.5](../README.md) › [Globals](../globals.md) › ["errors/ServiceAlreadyRegisteredError"](../modules/_errors_servicealreadyregisterederror_.md) › [ServiceAlreadyRegisteredError](_errors_servicealreadyregisterederror_.servicealreadyregisterederror.md)
+[@botflx/dependency-injection-container - v1.2.6](../README.md) › [Globals](../globals.md) › ["errors/ServiceAlreadyRegisteredError"](../modules/_errors_servicealreadyregisterederror_.md) › [ServiceAlreadyRegisteredError](_errors_servicealreadyregisterederror_.servicealreadyregisterederror.md)
 
 # Class: ServiceAlreadyRegisteredError
 
@@ -27,7 +27,7 @@
 
 \+ **new ServiceAlreadyRegisteredError**(`key`: string, ...`args`: any[]): *[ServiceAlreadyRegisteredError](_errors_servicealreadyregisterederror_.servicealreadyregisterederror.md)*
 
-*Defined in [src/errors/ServiceAlreadyRegisteredError.ts:1](https://github.com/botflux/dependency-injection-container/blob/f04dadf/src/errors/ServiceAlreadyRegisteredError.ts#L1)*
+*Defined in [src/errors/ServiceAlreadyRegisteredError.ts:1](https://github.com/botflux/dependency-injection-container/blob/abdfa59/src/errors/ServiceAlreadyRegisteredError.ts#L1)*
 
 **Parameters:**
 
