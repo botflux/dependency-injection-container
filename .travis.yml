@@ -3,6 +3,6 @@ branches:
   only:
     - ci
 node_js:
-  - 9
+  - 8
 script:
   - npm test
