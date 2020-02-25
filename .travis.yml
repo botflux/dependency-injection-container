@@ -1,7 +1,7 @@
 language: node_js
 branches:
   only:
-    - ci
+    - master
 node_js:
   - 8
 script:
