@@ -10,7 +10,7 @@
 A dependency injection container
 
 ```shell script
-npm install --save-dev @botflx/dependency-injection-container
+npm install --save @botflx/dependency-injection-container
 ```
 
 ## Javascript example
