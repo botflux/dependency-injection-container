@@ -14,6 +14,6 @@
 
 • **INJECT_TOKEN_METADATA**: *"serviceContainerToken"* = "serviceContainerToken"
 
-*Defined in [src/Constants.ts:4](https://github.com/botflux/dependency-injection-container/blob/289f995/src/Constants.ts#L4)*
+*Defined in [src/Constants.ts:4](https://github.com/botflux/dependency-injection-container/blob/2d78c73/src/Constants.ts#L4)*
 
 Used for defining service container metadata

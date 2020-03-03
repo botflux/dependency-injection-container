@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/botflux/dependency-injection-container.svg?branch=master)](https://travis-ci.org/botflux/dependency-injection-container)
 [![npm version](https://img.shields.io/npm/v/@botflx%2Fdependency-injection-container.svg?style=flat-square)](https://npmjs.org/package/@botflx/dependency-injection-container)
+[![Coverage Status](https://coveralls.io/repos/github/botflux/dependency-injection-container/badge.svg?branch=master)](https://coveralls.io/github/botflux/dependency-injection-container?branch=master)
 
 # dependency-injection-container
 
