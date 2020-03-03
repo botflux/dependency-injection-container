@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v1.2.6](../README.md) › [Globals](../globals.md) › ["Constants"](_constants_.md)
+[@botflx/dependency-injection-container - v1.2.7](../README.md) › [Globals](../globals.md) › ["Constants"](_constants_.md)
 
 # External module: "Constants"
 
@@ -14,6 +14,6 @@
 
 • **INJECT_TOKEN_METADATA**: *"serviceContainerToken"* = "serviceContainerToken"
 
-*Defined in [src/Constants.ts:4](https://github.com/botflux/dependency-injection-container/blob/2d78c73/src/Constants.ts#L4)*
+*Defined in [src/Constants.ts:4](https://github.com/botflux/dependency-injection-container/blob/8bad8de/src/Constants.ts#L4)*
 
 Used for defining service container metadata

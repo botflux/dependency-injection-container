@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v1.2.6](../README.md) › [Globals](../globals.md) › ["errors/ServiceNotFoundError"](../modules/_errors_servicenotfounderror_.md) › [ServiceNotFoundError](_errors_servicenotfounderror_.servicenotfounderror.md)
+[@botflx/dependency-injection-container - v1.2.7](../README.md) › [Globals](../globals.md) › ["errors/ServiceNotFoundError"](../modules/_errors_servicenotfounderror_.md) › [ServiceNotFoundError](_errors_servicenotfounderror_.servicenotfounderror.md)
 
 # Class: ServiceNotFoundError
 
@@ -29,7 +29,7 @@ The service container has no service matching a given key.
 
 \+ **new ServiceNotFoundError**(`key`: string, ...`args`: any[]): *[ServiceNotFoundError](_errors_servicenotfounderror_.servicenotfounderror.md)*
 
-*Defined in [src/errors/ServiceNotFoundError.ts:4](https://github.com/botflux/dependency-injection-container/blob/2d78c73/src/errors/ServiceNotFoundError.ts#L4)*
+*Defined in [src/errors/ServiceNotFoundError.ts:4](https://github.com/botflux/dependency-injection-container/blob/8bad8de/src/errors/ServiceNotFoundError.ts#L4)*
 
 **Parameters:**
 
