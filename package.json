@@ -9,7 +9,7 @@
     "docs:generate": "typedoc --plugin typedoc-plugin-markdown",
     "prepublish": "npm run build && npm run docs:generate",
     "build": "tsc",
-    "coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls"
+    "test:coverage": "jest --coverage --coverageReporters=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
