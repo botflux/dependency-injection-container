@@ -31,6 +31,13 @@ describe('#ServiceContainer', () => {
         })
     })
 
+    it('throws when get an undefined service', () => {
+        const container = new ServiceContainer()
+
+        const invalidCall = () => container.get('service')
+        expect(invalidCall).toThrowError(Error)
+    })
+
     it('throws a service not found error if the key is not defined', () => {
         const container = new ServiceContainer()
             .addFactory('service', () => ({ hello: 'world' }))
