@@ -1,5 +1,5 @@
 import 'reflect-metadata'
-import {ReflectServiceContainer} from '../src'
+import {INJECT_TOKEN_METADATA, ReflectServiceContainer} from '../src'
 import {Inject} from '../src'
 
 describe('#ReflectServiceContainer', () => {
@@ -21,6 +21,29 @@ describe('#ReflectServiceContainer', () => {
         expect(service).toEqual({
             hello: 'world',
             message: 'hello'
+        })
+    })
+
+    it('passes no argument when no metadata found', () => {
+        class Service {
+            public hello: string = 'hello'
+            public message: string
+
+            constructor() {
+                this.message = 'world'
+            }
+        }
+
+        const service = new ReflectServiceContainer()
+            .add('service', Service)
+            .get<Service>('service')
+
+        // We ensure that metadata are undefined
+        expect(Reflect.getOwnMetadata(INJECT_TOKEN_METADATA, Service)).toBe(undefined)
+
+        expect(service).toEqual({
+            hello: 'hello',
+            message: 'world'
         })
     })
 
