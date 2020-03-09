@@ -44,11 +44,17 @@ class DbConnection {
     }
 }
 
+class Controller {
+    constructor(@Inject('db') private db: DbConnection) {}
+}
+
 const container = new ServiceContainerFactory({ useReflection: true })
     .create()
     .addFactory('config', () => new ConfigurationLoader().load())
     .add('logger', Logger)
     .add('db', DbConnection)
+
+const controller = container.resolve(Controller)
 
 const db: DbConnection = container.get<DbConnection>('db')
 ```
