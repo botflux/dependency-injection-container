@@ -14,7 +14,7 @@
 
 Ƭ **ServiceContainerDictionary**: *object*
 
-*Defined in [src/ServiceContainerDictionary.ts:4](https://github.com/botflux/dependency-injection-container/blob/68c7325/src/ServiceContainerDictionary.ts#L4)*
+*Defined in [src/ServiceContainerDictionary.ts:4](https://github.com/botflux/dependency-injection-container/blob/2de830d/src/ServiceContainerDictionary.ts#L4)*
 
 An example of service container "container".
 

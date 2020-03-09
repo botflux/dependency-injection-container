@@ -45,6 +45,21 @@ const container: IServiceContainer = new ServiceContainerFactory()
      .delete('config')
 ```
 
+```typescript
+const container: IServiceContainer = createServiceContainer()
+     .addFactory('connectionString', () => 'mysql://localhost:3306/myDb?user=root&password=root')
+
+class Repository {
+     private readonly _connectionString: string
+
+    constructor(container: IServiceContainer) {
+        this._connectionString = container.get<string>('connectionString')
+    }
+}
+
+const repository: Repository = container.resolve<Repository>(Repository)
+```
+
 ## Hierarchy
 
 * **IServiceContainer**
@@ -62,6 +77,8 @@ const container: IServiceContainer = new ServiceContainerFactory()
 * [addFactory](_iservicecontainer_.iservicecontainer.md#addfactory)
 * [delete](_iservicecontainer_.iservicecontainer.md#delete)
 * [get](_iservicecontainer_.iservicecontainer.md#get)
+* [resolve](_iservicecontainer_.iservicecontainer.md#resolve)
+* [resolveFactory](_iservicecontainer_.iservicecontainer.md#resolvefactory)
 
 ## Methods
 
@@ -69,7 +86,7 @@ const container: IServiceContainer = new ServiceContainerFactory()
 
 ▸ **add**(`key`: string, `constructor`: object): *this*
 
-*Defined in [src/IServiceContainer.ts:57](https://github.com/botflux/dependency-injection-container/blob/68c7325/src/IServiceContainer.ts#L57)*
+*Defined in [src/IServiceContainer.ts:72](https://github.com/botflux/dependency-injection-container/blob/2de830d/src/IServiceContainer.ts#L72)*
 
 Add a new service to the container.
 This method is fluent.
@@ -98,7 +115,7 @@ ___
 
 ▸ **addFactory**(`key`: string, `factory`: [IServiceFactoryFunction](_iservicefactoryfunction_.iservicefactoryfunction.md)): *this*
 
-*Defined in [src/IServiceContainer.ts:66](https://github.com/botflux/dependency-injection-container/blob/68c7325/src/IServiceContainer.ts#L66)*
+*Defined in [src/IServiceContainer.ts:81](https://github.com/botflux/dependency-injection-container/blob/2de830d/src/IServiceContainer.ts#L81)*
 
 Add a new service factory to the container.
 It works the same way as add() but with a function as parameter.
@@ -118,7 +135,7 @@ ___
 
 ▸ **delete**(`key`: string): *this*
 
-*Defined in [src/IServiceContainer.ts:85](https://github.com/botflux/dependency-injection-container/blob/68c7325/src/IServiceContainer.ts#L85)*
+*Defined in [src/IServiceContainer.ts:100](https://github.com/botflux/dependency-injection-container/blob/2de830d/src/IServiceContainer.ts#L100)*
 
 Delete the service matching the given key.
 
@@ -138,7 +155,7 @@ ___
 
 ▸ **get**<**T**>(`key`: string): *T*
 
-*Defined in [src/IServiceContainer.ts:76](https://github.com/botflux/dependency-injection-container/blob/68c7325/src/IServiceContainer.ts#L76)*
+*Defined in [src/IServiceContainer.ts:91](https://github.com/botflux/dependency-injection-container/blob/2de830d/src/IServiceContainer.ts#L91)*
 
 Return the service matching the passed key.
 The found service will be casted to the specified generic type.
@@ -156,3 +173,51 @@ Name | Type | Description |
 `key` | string | Service's unique string  |
 
 **Returns:** *T*
+
+___
+
+###  resolve
+
+▸ **resolve**<**TService**>(`constructor`: object): *TService*
+
+*Defined in [src/IServiceContainer.ts:108](https://github.com/botflux/dependency-injection-container/blob/2de830d/src/IServiceContainer.ts#L108)*
+
+Resolve a constructor.
+It will have the same effect as `add` ut without registering the instance in the container.
+
+**Type parameters:**
+
+▪ **TService**
+
+**Parameters:**
+
+▪ **constructor**: *object*
+
+Name | Type |
+------ | ------ |
+`constructor` |  |
+
+**Returns:** *TService*
+
+___
+
+###  resolveFactory
+
+▸ **resolveFactory**<**TService**>(`factory`: [IServiceFactoryFunction](_iservicefactoryfunction_.iservicefactoryfunction.md)): *TService*
+
+*Defined in [src/IServiceContainer.ts:116](https://github.com/botflux/dependency-injection-container/blob/2de830d/src/IServiceContainer.ts#L116)*
+
+Resolve a factory function.
+It will have the same effect as `addFactory` ut without registering the instance in the container.
+
+**Type parameters:**
+
+▪ **TService**
+
+**Parameters:**
+
+Name | Type | Description |
+------ | ------ | ------ |
+`factory` | [IServiceFactoryFunction](_iservicefactoryfunction_.iservicefactoryfunction.md) |   |
+
+**Returns:** *TService*

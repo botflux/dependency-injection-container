@@ -24,6 +24,17 @@ import {INJECT_TOKEN_METADATA} from './Constants'
  * const logger = container.get<Logger>('logger')
  * const db = container.get<Db>('db')
  * ```
+ *
+ * ```typescript
+ * const container: IServiceContainer = createServiceContainer()
+ *      .addFactory('connectionString', () => 'mysql://localhost:3306/myDb?user=root&password=root')
+ *
+ * class Repository {
+ *     constructor(@Inject('connectionString') private connectionString: string) {}
+ * }
+ *
+ * const repository: Repository = container.resolve<Repository>(Repository)
+ * ```
  */
 export class ReflectServiceContainer implements IServiceContainer {
     /**

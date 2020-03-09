@@ -43,6 +43,21 @@ import {IServiceFactoryFunction} from './IServiceFactoryFunction'
  *      .addFactory('config', () => ({ secret: 'hello' }))
  *      .delete('config')
  * ```
+ *
+ * ```typescript
+ * const container: IServiceContainer = createServiceContainer()
+ *      .addFactory('connectionString', () => 'mysql://localhost:3306/myDb?user=root&password=root')
+ *
+ * class Repository {
+ *      private readonly _connectionString: string
+ *
+ *     constructor(container: IServiceContainer) {
+ *         this._connectionString = container.get<string>('connectionString')
+ *     }
+ * }
+ *
+ * const repository: Repository = container.resolve<Repository>(Repository)
+ * ```
  */
 export interface IServiceContainer {
     /**
