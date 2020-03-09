@@ -8,6 +8,7 @@
     "test:watch": "jest --watch",
     "docs:generate": "typedoc --plugin typedoc-plugin-markdown",
     "prepublish": "npm run build && npm run docs:generate",
+    "preversion": "npm test",
     "build": "tsc",
     "test:coverage": "jest --coverage --coverageReporters=text-lcov | coveralls"
   },
