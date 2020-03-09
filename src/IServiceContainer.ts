@@ -83,4 +83,20 @@ export interface IServiceContainer {
      * @throws ServiceNotFoundError Thrown when no service is matching the passed key.
      */
     delete(key: string): this
+
+    /**
+     * Resolve a constructor.
+     * It will have the same effect as `add` ut without registering the instance in the container.
+     *
+     * @param constructor
+     */
+    resolve<TService>(constructor: { new(...args: any[]): TService }): TService
+
+    /**
+     * Resolve a factory function.
+     * It will have the same effect as `addFactory` ut without registering the instance in the container.
+     *
+     * @param factory
+     */
+    resolveFactory<TService>(factory: IServiceFactoryFunction): TService
 }

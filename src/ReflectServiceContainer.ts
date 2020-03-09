@@ -107,4 +107,30 @@ export class ReflectServiceContainer implements IServiceContainer {
     get services() {
         return this._services
     }
+
+    /**
+     * Resolve a constructor.
+     * It will have the same effect as `add` ut without registering the instance in the container.
+     *
+     * @param constructor
+     */
+    resolve<TService>(constructor: { new(...args: any[]): TService }): TService {
+        // @ts-ignore
+        const injectionTokens: { [key: string]: string } = Reflect.getOwnMetadata(INJECT_TOKEN_METADATA, constructor) || {}
+        const injectionTokensKeys = Object.keys(injectionTokens)
+
+        return new constructor(...injectionTokensKeys.map(key => {
+            return this.get(injectionTokens[key])
+        }))
+    }
+
+    /**
+     * Resolve a factory function.
+     * It will have the same effect as `addFactory` ut without registering the instance in the container.
+     *
+     * @param factory
+     */
+    resolveFactory<TService>(factory: IServiceFactoryFunction): TService {
+        return factory(this)
+    }
 }

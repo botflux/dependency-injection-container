@@ -103,4 +103,24 @@ export class ServiceContainer implements IServiceContainer {
 
         return this
     }
+
+    /**
+     * Resolve a constructor.
+     * It will have the same effect as `add` ut without registering the instance in the container.
+     *
+     * @param constructor
+     */
+    resolve<TService>(constructor: { new(...args: any[]): TService }): TService {
+        return new constructor(this)
+    }
+
+    /**
+     * Resolve a factory function.
+     * It will have the same effect as `addFactory` ut without registering the instance in the container.
+     *
+     * @param factory
+     */
+    resolveFactory<TService>(factory: IServiceFactoryFunction): TService {
+        return factory(this)
+    }
 }

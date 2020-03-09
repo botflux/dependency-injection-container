@@ -1,4 +1,4 @@
-import {ServiceContainer} from '../src'
+import {IServiceContainer, ServiceContainer} from '../src'
 
 describe('#ServiceContainer', () => {
     it('adds a new service', () => {
@@ -93,5 +93,49 @@ describe('#ServiceContainer', () => {
             .delete('hello')
 
         expect(c.services).toEqual({})
+    })
+
+    it('resolves the given service', () => {
+        const container = new ServiceContainer()
+
+        class Service {
+            constructor(public container: IServiceContainer) {}
+        }
+
+        const service: Service = container.resolve(Service)
+
+        expect(service.container).toBe(container)
+    })
+
+    it('does not add the resolved service to the container', () => {
+        const container = new ServiceContainer()
+
+        class Service {
+            constructor(public container: IServiceContainer) {}
+        }
+
+        container.resolve(Service)
+
+        expect(Object.keys(container.services).length).toBe(0)
+    })
+
+    it('resolves the given factory', () => {
+        const factory = (container: IServiceContainer) => `Hello ${container.get<string>('world')}`
+
+        const container = new ServiceContainer()
+            .addFactory('world', () => 'world')
+
+        expect(container.resolveFactory<string>(factory)).toBe('Hello world')
+    })
+
+    it('does not add the resolved factory to the container', () => {
+        const factory = (container: IServiceContainer) => `Hello ${container.get<string>('world')}`
+
+        const container = new ServiceContainer()
+            .addFactory('world', () => 'world')
+
+        container.resolveFactory(factory)
+
+        expect(Object.keys(container.services).length).toBe(1)
     })
 })

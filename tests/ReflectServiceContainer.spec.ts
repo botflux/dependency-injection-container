@@ -1,5 +1,5 @@
 import 'reflect-metadata'
-import {INJECT_TOKEN_METADATA, ReflectServiceContainer} from '../src'
+import {INJECT_TOKEN_METADATA, IServiceContainer, ReflectServiceContainer, ServiceContainer} from '../src'
 import {Inject} from '../src'
 
 describe('#ReflectServiceContainer', () => {
@@ -92,5 +92,51 @@ describe('#ReflectServiceContainer', () => {
             .delete('hello')
 
         expect(c.services).toEqual({})
+    })
+
+    it('resolves the given service', () => {
+        const container = new ReflectServiceContainer()
+
+        class Service {
+            constructor(@Inject('connectionString') public connectionString: string) {}
+        }
+
+        const service: Service = container
+            .addFactory('connectionString', () => 'hello')
+            .resolve(Service)
+
+        expect(service.connectionString).toBe('hello')
+    })
+
+    it('does not add the resolved service to the container', () => {
+        const container = new ReflectServiceContainer()
+
+        class Service {
+            constructor() {}
+        }
+
+        container.resolve(Service)
+
+        expect(Object.keys(container.services).length).toBe(0)
+    })
+
+    it('resolves the given factory', () => {
+        const factory = (container: IServiceContainer) => `Hello ${container.get<string>('world')}`
+
+        const container = new ReflectServiceContainer()
+            .addFactory('world', () => 'world')
+
+        expect(container.resolveFactory<string>(factory)).toBe('Hello world')
+    })
+
+    it('does not add the resolved factory to the container', () => {
+        const factory = (container: IServiceContainer) => `Hello ${container.get<string>('world')}`
+
+        const container = new ReflectServiceContainer()
+            .addFactory('world', () => 'world')
+
+        container.resolveFactory(factory)
+
+        expect(Object.keys(container.services).length).toBe(1)
     })
 })
