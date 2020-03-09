@@ -65,7 +65,7 @@ const repository: Repository = container.resolve<Repository>(Repository)
 
 • **_services**: *[ServiceContainerDictionary](../modules/_servicecontainerdictionary_.md#servicecontainerdictionary)*
 
-*Defined in [src/ReflectServiceContainer.ts:43](https://github.com/botflux/dependency-injection-container/blob/2de830d/src/ReflectServiceContainer.ts#L43)*
+*Defined in [src/ReflectServiceContainer.ts:43](https://github.com/botflux/dependency-injection-container/blob/66e2228/src/ReflectServiceContainer.ts#L43)*
 
 Holds services instances
 
@@ -75,7 +75,7 @@ Holds services instances
 
 • **get services**(): *object*
 
-*Defined in [src/ReflectServiceContainer.ts:118](https://github.com/botflux/dependency-injection-container/blob/2de830d/src/ReflectServiceContainer.ts#L118)*
+*Defined in [src/ReflectServiceContainer.ts:118](https://github.com/botflux/dependency-injection-container/blob/66e2228/src/ReflectServiceContainer.ts#L118)*
 
 This getter must only be used for tests purposes.
 
@@ -89,7 +89,7 @@ This getter must only be used for tests purposes.
 
 ▸ **add**(`key`: string, `constructor`: object): *this*
 
-*Defined in [src/ReflectServiceContainer.ts:53](https://github.com/botflux/dependency-injection-container/blob/2de830d/src/ReflectServiceContainer.ts#L53)*
+*Defined in [src/ReflectServiceContainer.ts:53](https://github.com/botflux/dependency-injection-container/blob/66e2228/src/ReflectServiceContainer.ts#L53)*
 
 Add a new service using service's constructor
 
@@ -115,7 +115,7 @@ ___
 
 *Implementation of [IServiceContainer](../interfaces/_iservicecontainer_.iservicecontainer.md)*
 
-*Defined in [src/ReflectServiceContainer.ts:73](https://github.com/botflux/dependency-injection-container/blob/2de830d/src/ReflectServiceContainer.ts#L73)*
+*Defined in [src/ReflectServiceContainer.ts:73](https://github.com/botflux/dependency-injection-container/blob/66e2228/src/ReflectServiceContainer.ts#L73)*
 
 Add a new service using a service factory function
 
@@ -138,7 +138,7 @@ ___
 
 *Implementation of [IServiceContainer](../interfaces/_iservicecontainer_.iservicecontainer.md)*
 
-*Defined in [src/ReflectServiceContainer.ts:105](https://github.com/botflux/dependency-injection-container/blob/2de830d/src/ReflectServiceContainer.ts#L105)*
+*Defined in [src/ReflectServiceContainer.ts:105](https://github.com/botflux/dependency-injection-container/blob/66e2228/src/ReflectServiceContainer.ts#L105)*
 
 Delete the service matching the given key.
 
@@ -160,7 +160,7 @@ ___
 
 *Implementation of [IServiceContainer](../interfaces/_iservicecontainer_.iservicecontainer.md)*
 
-*Defined in [src/ReflectServiceContainer.ts:90](https://github.com/botflux/dependency-injection-container/blob/2de830d/src/ReflectServiceContainer.ts#L90)*
+*Defined in [src/ReflectServiceContainer.ts:90](https://github.com/botflux/dependency-injection-container/blob/66e2228/src/ReflectServiceContainer.ts#L90)*
 
 Return the service matching the passed key.
 
@@ -184,7 +184,7 @@ ___
 
 ▸ **resolve**<**TService**>(`constructor`: object): *TService*
 
-*Defined in [src/ReflectServiceContainer.ts:128](https://github.com/botflux/dependency-injection-container/blob/2de830d/src/ReflectServiceContainer.ts#L128)*
+*Defined in [src/ReflectServiceContainer.ts:128](https://github.com/botflux/dependency-injection-container/blob/66e2228/src/ReflectServiceContainer.ts#L128)*
 
 Resolve a constructor.
 It will have the same effect as `add` ut without registering the instance in the container.
@@ -211,7 +211,7 @@ ___
 
 *Implementation of [IServiceContainer](../interfaces/_iservicecontainer_.iservicecontainer.md)*
 
-*Defined in [src/ReflectServiceContainer.ts:144](https://github.com/botflux/dependency-injection-container/blob/2de830d/src/ReflectServiceContainer.ts#L144)*
+*Defined in [src/ReflectServiceContainer.ts:144](https://github.com/botflux/dependency-injection-container/blob/66e2228/src/ReflectServiceContainer.ts#L144)*
 
 Resolve a factory function.
 It will have the same effect as `addFactory` ut without registering the instance in the container.

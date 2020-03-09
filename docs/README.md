@@ -30,6 +30,14 @@ class DbConnection {
     constructor(container) {}
 }
 
+class Controller {
+    constructor(container) {}
+}
+
+function makeRoute(container) {
+    return function(req, res, next) {}
+}
+
 // Add services
 // Use add() for class-style service
 // Use addFactory() for function-style service
@@ -39,6 +47,10 @@ const container = createServiceContainer()
     .addFactory('config', () => new ConfigurationLoader().load())
     .add('logger', Logger)
     .add('db', DbConnection)
+
+// Alternatively, if you want a service to be resolved without being stored
+const controller = container.resolve(Controller)
+const route = container.resolveFactory(makeRoute)
 
 // Retrieve a service
 // The get method will only cast the service as the generic type.
@@ -89,6 +101,14 @@ class DbConnection {
     constructor(container: IServiceContainer) {}
 }
 
+class Controller {
+    constructor(container: IServiceContainer) {}
+}
+
+function makeRoute (container: IServiceContainer) {
+    return function(req: Request, res: Response, next, next: NextFunction) {}
+}
+
 // Add services
 // Use add() for class-style service
 // Use addFactory() for function-style service
@@ -98,6 +118,10 @@ const container: IServiceContainer = createServiceContainer()
     .addFactory('config', () => new ConfigurationLoader().load())
     .add('logger', Logger)
     .add('db', DbConnection)
+
+// Alternatively, if you want a service to be resolved without being stored
+const controller: Controller = container.resolve(Controller)
+const route: Function = container.resolveFactory(makeRoute)
 
 // Retrieve a service
 // The get method will only cast the service as the generic type.

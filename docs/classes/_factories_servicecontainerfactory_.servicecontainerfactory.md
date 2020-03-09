@@ -39,7 +39,7 @@ new ServiceContainerFactory({
 
 \+ **new ServiceContainerFactory**(`options`: [IServiceContainerFactoryOptions](../interfaces/_factories_iservicecontainerfactoryoptions_.iservicecontainerfactoryoptions.md)): *[ServiceContainerFactory](_factories_servicecontainerfactory_.servicecontainerfactory.md)*
 
-*Defined in [src/factories/ServiceContainerFactory.ts:25](https://github.com/botflux/dependency-injection-container/blob/2de830d/src/factories/ServiceContainerFactory.ts#L25)*
+*Defined in [src/factories/ServiceContainerFactory.ts:25](https://github.com/botflux/dependency-injection-container/blob/66e2228/src/factories/ServiceContainerFactory.ts#L25)*
 
 **Parameters:**
 
@@ -55,7 +55,7 @@ Name | Type | Default |
 
 • **_options**: *[IServiceContainerFactoryOptions](../interfaces/_factories_iservicecontainerfactoryoptions_.iservicecontainerfactoryoptions.md)*
 
-*Defined in [src/factories/ServiceContainerFactory.ts:25](https://github.com/botflux/dependency-injection-container/blob/2de830d/src/factories/ServiceContainerFactory.ts#L25)*
+*Defined in [src/factories/ServiceContainerFactory.ts:25](https://github.com/botflux/dependency-injection-container/blob/66e2228/src/factories/ServiceContainerFactory.ts#L25)*
 
 ## Methods
 
@@ -65,7 +65,7 @@ Name | Type | Default |
 
 *Implementation of [IServiceContainerFactory](../interfaces/_factories_iservicecontainerfactory_.iservicecontainerfactory.md)*
 
-*Defined in [src/factories/ServiceContainerFactory.ts:38](https://github.com/botflux/dependency-injection-container/blob/2de830d/src/factories/ServiceContainerFactory.ts#L38)*
+*Defined in [src/factories/ServiceContainerFactory.ts:38](https://github.com/botflux/dependency-injection-container/blob/66e2228/src/factories/ServiceContainerFactory.ts#L38)*
 
 Creates a new instance of IServiceContainer
 
