@@ -10,6 +10,6 @@
   "author": "Victor Mendele <victor.mendele68@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@botflx/dependency-injection-container": "^1.2.2"
+    "@botflx/dependency-injection-container": "^1.4.0"
   }
 }
