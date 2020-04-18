@@ -21,7 +21,7 @@ Represents options of IServiceContainerFactory.
 
 • **allowServiceOverride**? : *undefined | false | true*
 
-*Defined in [src/factories/IServiceContainerFactoryOptions.ts:16](https://github.com/botflux/dependency-injection-container/blob/6433b0d/src/factories/IServiceContainerFactoryOptions.ts#L16)*
+*Defined in [src/factories/IServiceContainerFactoryOptions.ts:16](https://github.com/botflux/dependency-injection-container/blob/05ce70f/src/factories/IServiceContainerFactoryOptions.ts#L16)*
 
 If true an IServiceContainer will allow you to call
 `container.add()` multiple times with the same service name.
@@ -32,7 +32,7 @@ ___
 
 • **useReflection**: *boolean*
 
-*Defined in [src/factories/IServiceContainerFactoryOptions.ts:10](https://github.com/botflux/dependency-injection-container/blob/6433b0d/src/factories/IServiceContainerFactoryOptions.ts#L10)*
+*Defined in [src/factories/IServiceContainerFactoryOptions.ts:10](https://github.com/botflux/dependency-injection-container/blob/05ce70f/src/factories/IServiceContainerFactoryOptions.ts#L10)*
 
 If true the ServiceContainerFactory will returns a service container
 handling metadata and decorators; otherwise it will returns a plain

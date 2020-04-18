@@ -18,7 +18,7 @@
 
 ### ▪ **defaultOptions**: *object*
 
-*Defined in [src/factories/ServiceContainerFactory.ts:12](https://github.com/botflux/dependency-injection-container/blob/6433b0d/src/factories/ServiceContainerFactory.ts#L12)*
+*Defined in [src/factories/ServiceContainerFactory.ts:12](https://github.com/botflux/dependency-injection-container/blob/05ce70f/src/factories/ServiceContainerFactory.ts#L12)*
 
 Default option of ServiceContainerFactory
 
@@ -26,10 +26,10 @@ Default option of ServiceContainerFactory
 
 • **allowServiceOverride**: *false* = false
 
-*Defined in [src/factories/ServiceContainerFactory.ts:14](https://github.com/botflux/dependency-injection-container/blob/6433b0d/src/factories/ServiceContainerFactory.ts#L14)*
+*Defined in [src/factories/ServiceContainerFactory.ts:14](https://github.com/botflux/dependency-injection-container/blob/05ce70f/src/factories/ServiceContainerFactory.ts#L14)*
 
 ###  useReflection
 
 • **useReflection**: *false* = false
 
-*Defined in [src/factories/ServiceContainerFactory.ts:13](https://github.com/botflux/dependency-injection-container/blob/6433b0d/src/factories/ServiceContainerFactory.ts#L13)*
+*Defined in [src/factories/ServiceContainerFactory.ts:13](https://github.com/botflux/dependency-injection-container/blob/05ce70f/src/factories/ServiceContainerFactory.ts#L13)*

@@ -27,7 +27,7 @@
 
 \+ **new ServiceAlreadyRegisteredError**(`key`: string, ...`args`: any[]): *[ServiceAlreadyRegisteredError](_errors_servicealreadyregisterederror_.servicealreadyregisterederror.md)*
 
-*Defined in [src/errors/ServiceAlreadyRegisteredError.ts:1](https://github.com/botflux/dependency-injection-container/blob/6433b0d/src/errors/ServiceAlreadyRegisteredError.ts#L1)*
+*Defined in [src/errors/ServiceAlreadyRegisteredError.ts:1](https://github.com/botflux/dependency-injection-container/blob/05ce70f/src/errors/ServiceAlreadyRegisteredError.ts#L1)*
 
 **Parameters:**
 
