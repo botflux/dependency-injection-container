@@ -14,7 +14,7 @@
 
 ▸ **createServiceContainer**(`config`: [IServiceContainerFactoryOptions](../interfaces/_factories_iservicecontainerfactoryoptions_.iservicecontainerfactoryoptions.md)): *[IServiceContainer](../interfaces/_iservicecontainer_.iservicecontainer.md)*
 
-*Defined in [src/factories/createServiceContainer.ts:20](https://github.com/botflux/dependency-injection-container/blob/cc34105/src/factories/createServiceContainer.ts#L20)*
+*Defined in [src/factories/createServiceContainer.ts:20](https://github.com/botflux/dependency-injection-container/blob/4ec09c5/src/factories/createServiceContainer.ts#L20)*
 
 Creates IServiceContainer instances. This function is an alias to service container factory's create method.
 

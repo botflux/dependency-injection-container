@@ -24,7 +24,7 @@
 
 *Implementation of [IOptionMapper](../interfaces/_mappers_ioptionmapper_.ioptionmapper.md)*
 
-*Defined in [src/mappers/OptionMapper.ts:6](https://github.com/botflux/dependency-injection-container/blob/cc34105/src/mappers/OptionMapper.ts#L6)*
+*Defined in [src/mappers/OptionMapper.ts:6](https://github.com/botflux/dependency-injection-container/blob/4ec09c5/src/mappers/OptionMapper.ts#L6)*
 
 **Parameters:**
 

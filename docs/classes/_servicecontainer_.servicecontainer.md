@@ -79,7 +79,7 @@ const repository: Repository = container.resolve<Repository>(Repository)
 
 \+ **new ServiceContainer**(`containerOptions`: [IServiceContainerOptions](../interfaces/_iservicecontaineroptions_.iservicecontaineroptions.md)): *[ServiceContainer](_servicecontainer_.servicecontainer.md)*
 
-*Defined in [src/ServiceContainer.ts:54](https://github.com/botflux/dependency-injection-container/blob/cc34105/src/ServiceContainer.ts#L54)*
+*Defined in [src/ServiceContainer.ts:54](https://github.com/botflux/dependency-injection-container/blob/4ec09c5/src/ServiceContainer.ts#L54)*
 
 **Parameters:**
 
@@ -95,7 +95,7 @@ Name | Type | Default |
 
 • **_options**: *[IServiceContainerOptions](../interfaces/_iservicecontaineroptions_.iservicecontaineroptions.md)*
 
-*Defined in [src/ServiceContainer.ts:54](https://github.com/botflux/dependency-injection-container/blob/cc34105/src/ServiceContainer.ts#L54)*
+*Defined in [src/ServiceContainer.ts:54](https://github.com/botflux/dependency-injection-container/blob/4ec09c5/src/ServiceContainer.ts#L54)*
 
 ___
 
@@ -103,7 +103,7 @@ ___
 
 • **_services**: *[ServiceContainerDictionary](../modules/_servicecontainerdictionary_.md#servicecontainerdictionary)*
 
-*Defined in [src/ServiceContainer.ts:53](https://github.com/botflux/dependency-injection-container/blob/cc34105/src/ServiceContainer.ts#L53)*
+*Defined in [src/ServiceContainer.ts:53](https://github.com/botflux/dependency-injection-container/blob/4ec09c5/src/ServiceContainer.ts#L53)*
 
 ## Accessors
 
@@ -111,7 +111,7 @@ ___
 
 • **get services**(): *object*
 
-*Defined in [src/ServiceContainer.ts:111](https://github.com/botflux/dependency-injection-container/blob/cc34105/src/ServiceContainer.ts#L111)*
+*Defined in [src/ServiceContainer.ts:111](https://github.com/botflux/dependency-injection-container/blob/4ec09c5/src/ServiceContainer.ts#L111)*
 
 Return the service inner container.
 You should use this only for test purposes.
@@ -126,7 +126,7 @@ You should use this only for test purposes.
 
 ▸ **add**(`key`: string, `constructor`: object): *this*
 
-*Defined in [src/ServiceContainer.ts:68](https://github.com/botflux/dependency-injection-container/blob/cc34105/src/ServiceContainer.ts#L68)*
+*Defined in [src/ServiceContainer.ts:68](https://github.com/botflux/dependency-injection-container/blob/4ec09c5/src/ServiceContainer.ts#L68)*
 
 Add a new service using service's constructor.
 
@@ -152,7 +152,7 @@ ___
 
 *Implementation of [IServiceContainer](../interfaces/_iservicecontainer_.iservicecontainer.md)*
 
-*Defined in [src/ServiceContainer.ts:82](https://github.com/botflux/dependency-injection-container/blob/cc34105/src/ServiceContainer.ts#L82)*
+*Defined in [src/ServiceContainer.ts:82](https://github.com/botflux/dependency-injection-container/blob/4ec09c5/src/ServiceContainer.ts#L82)*
 
 Add a new service using a service factory function.
 
@@ -175,7 +175,7 @@ ___
 
 *Implementation of [IServiceContainer](../interfaces/_iservicecontainer_.iservicecontainer.md)*
 
-*Defined in [src/ServiceContainer.ts:122](https://github.com/botflux/dependency-injection-container/blob/cc34105/src/ServiceContainer.ts#L122)*
+*Defined in [src/ServiceContainer.ts:122](https://github.com/botflux/dependency-injection-container/blob/4ec09c5/src/ServiceContainer.ts#L122)*
 
 Delete the service matching the given key.
 
@@ -197,7 +197,7 @@ ___
 
 *Implementation of [IServiceContainer](../interfaces/_iservicecontainer_.iservicecontainer.md)*
 
-*Defined in [src/ServiceContainer.ts:99](https://github.com/botflux/dependency-injection-container/blob/cc34105/src/ServiceContainer.ts#L99)*
+*Defined in [src/ServiceContainer.ts:99](https://github.com/botflux/dependency-injection-container/blob/4ec09c5/src/ServiceContainer.ts#L99)*
 
 Return the service matching the passed key.
 
@@ -221,7 +221,7 @@ ___
 
 ▸ **resolve**<**TService**>(`constructor`: object): *TService*
 
-*Defined in [src/ServiceContainer.ts:138](https://github.com/botflux/dependency-injection-container/blob/cc34105/src/ServiceContainer.ts#L138)*
+*Defined in [src/ServiceContainer.ts:138](https://github.com/botflux/dependency-injection-container/blob/4ec09c5/src/ServiceContainer.ts#L138)*
 
 Resolve a constructor.
 It will have the same effect as `add` ut without registering the instance in the container.
@@ -248,7 +248,7 @@ ___
 
 *Implementation of [IServiceContainer](../interfaces/_iservicecontainer_.iservicecontainer.md)*
 
-*Defined in [src/ServiceContainer.ts:148](https://github.com/botflux/dependency-injection-container/blob/cc34105/src/ServiceContainer.ts#L148)*
+*Defined in [src/ServiceContainer.ts:148](https://github.com/botflux/dependency-injection-container/blob/4ec09c5/src/ServiceContainer.ts#L148)*
 
 Resolve a factory function.
 It will have the same effect as `addFactory` ut without registering the instance in the container.
