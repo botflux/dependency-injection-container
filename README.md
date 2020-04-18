@@ -13,48 +13,77 @@ A dependency injection container
 npm install --save @botflx/dependency-injection-container
 ```
 
-## Javascript example
+# Usage
 
-```javascript
-const {createServiceContainer} = require('@botflx/dependency-injection-container')
+Looking for javascript examples ? You can find some [here](/JAVASCRIPT.md) or in [basic example js](/examples/basic-example-js).
 
-class Logger {
-    constructor(container) {}
+Here's an example on how to create and populate a service container.
+You can create a service container by using `createServiceContainer`.
+If the service is a class you can pass it with `container.add()` and if you
+have a function-style service you can add it with `container.addFactory()`.
+You can get a service instance by calling `container.get()`.
+
+Every service / factory receive the container as first parameter.  
+
+```typescript
+import {createServiceContainer} from '@botflx/dependency-injection-container'
+
+class OptionProvider {
+    constructor(container: IServiceContainer) {}
 }
 
-class DbConnection {
-    constructor(container) {}
-}
-
-class Controller {
-    constructor(container) {}
-}
-
-function makeRoute(container) {
-    return function(req, res, next) {}
-}
-
-// Add services
-// Use add() for class-style service
-// Use addFactory() for function-style service
-// In both case the service container will be passed as first and only argument.
+// Create a new service container
 const container = createServiceContainer()
-    // Alternatively you can use `new ServiceContainerFactory().create()` 
-    .addFactory('config', () => new ConfigurationLoader().load())
-    .add('logger', Logger)
-    .add('db', DbConnection)
 
-// Alternatively, if you want a service to be resolved without being stored
-const controller = container.resolve(Controller)
-const route = container.resolveFactory(makeRoute)
+// Add a service constructor
+container.add('provider.options', OptionProvider)
 
-// Retrieve a service
-// The get method will only cast the service as the generic type.
-const logger = container.get('logger')
-const db = container.get('db')
+// Add a service factory function
+container.addFactory('logger', (container: IServiceContainer) => (message: string) => console.log(message))
 
-// Additionally you can delete a service
-container.delete('db')
+// Get a service
+const optionProvider = container.get<OptionProvider>('provider.options')
+```
+
+## Examples
+
+You can find examples for typescript and javascript [here](/examples).
+
+## Some more function
+
+An `IServiceContainer` gives some more methods. You can instantiate a constructor or factory function be using 
+`container.resolve()` and `container.resolveFactory()`.
+You can also delete a service by calling `container.delete()` 
+
+```typescript
+import {createServiceContainer} from '@botflx/dependency-injection-container'
+
+const container = createServiceContainer()
+
+// Instantiate the following constructor without adding it to the container.
+const optionProvider = container.resolve<OptionResolver>(OptionProvider)
+const logger = container.resolveFactory<Function>((container: IServiceContainer) => (message) => console.log(message))
+
+container.add('provider.options', OptionProvider)
+container.delete('provider.options')
+
+// Throw a ServiceNotFoundError
+container.get('provider.options')
+
+```
+
+## Fluent API
+
+`IServiceContainer` implementation gives fluent adders which means that adders will return the container instance.
+
+```typescript
+import {createServiceContainer} from '@botflx/dependency-injection-container'
+
+const container = createServiceContainer()
+    .add('service1', ...)
+    .add('service2', ...)
+    .addFatory('service3' ...)
+    .add('service4', ...)
 ```
 
 ### Factory options
@@ -62,13 +91,10 @@ container.delete('db')
 When using `createServiceContainer()` or `new ServiceContainerFactory().create()`,
 you can pass an option object.
 
-```javascript
+```typescript
+import {createServiceContainer} from '@botflx/dependency-injection-container'
 
-const {createServiceContainer, ServiceContainerFactory} = require('@botflx/dependency-injection-container')
-
-createServiceContainer({ useReflection: false })
-// or
-new ServiceContainerFactory({ useReflection: false }).create()
+createServiceContainer({ useReflection: false, allowServiceOverride: false })
 ```
 
 #### Default options
@@ -78,83 +104,18 @@ new ServiceContainerFactory({ useReflection: false }).create()
         If true the ServiceContainerFactory will returns a service container
         handling metadata and decorators; otherwise it will returns a plain
         service container.
+        Go to USAGE.md to learn more.
         It requires `npm i reflect-metadata`.
     */
-    useReflection: boolean
-}
-```
+    useReflection: boolean = false
 
-## Typescript example
-
-```typescript
-import {IServiceContainer, ServiceContainerFactory} from '@botflx/dependency-injection-container' import {createServiceContainer} from './createServiceContainer'
-
-class Logger {
-    constructor(container: IServiceContainer) {}
-}
-
-class DbConnection {
-    constructor(container: IServiceContainer) {}
-}
-
-class Controller {
-    constructor(container: IServiceContainer) {}
-}
-
-function makeRoute (container: IServiceContainer) {
-    return function(req: Request, res: Response, next, next: NextFunction) {}
-}
-
-// Add services
-// Use add() for class-style service
-// Use addFactory() for function-style service
-// In both case the service container will be passed as first and only argument.
-const container: IServiceContainer = createServiceContainer()
-    // Alternatively you can use `new ServiceContainerFactory().create()`
-    .addFactory('config', () => new ConfigurationLoader().load())
-    .add('logger', Logger)
-    .add('db', DbConnection)
-
-// Alternatively, if you want a service to be resolved without being stored
-const controller: Controller = container.resolve(Controller)
-const route: Function = container.resolveFactory(makeRoute)
-
-// Retrieve a service
-// The get method will only cast the service as the generic type.
-const logger: ILogger = container.get<ILogger>('logger')
-const connection: DbConnection = container.get<DbConnection>('db')
-
-// Additionally you can delete a service
-container.delete('db') 
-```
-
-
-### Factory options
-
-When using `createServiceContainer()` or `new ServiceContainerFactory().create()`,
-you can pass an option object.
-
-```typescript
-import {createServiceContainer, ServiceContainerFactory} from '@botflx/dependency-injection-container'
-
-createServiceContainer({ useReflection: false })
-// or
-new ServiceContainerFactory({ useReflection: false }).create()
-```
-
-#### Default options
-```typescript
-{
     /*
-        If true the ServiceContainerFactory will returns a service container
-        handling metadata and decorators; otherwise it will returns a plain
-        service container.
-        It requires `npm i reflect-metadata`.
+        If true an IServiceContainer will allow you to call `container.add()` 
+        or `container.addFactory()` multiple times with the same service name. 
     */
-    useReflection: boolean
+    allowServiceOverride: boolean = false
 }
 ```
-
 
 ## Decorators
 

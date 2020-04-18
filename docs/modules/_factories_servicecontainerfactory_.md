@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v1.2.8](../README.md) › [Globals](../globals.md) › ["factories/ServiceContainerFactory"](_factories_servicecontainerfactory_.md)
+[@botflx/dependency-injection-container - v1.3.0](../README.md) › [Globals](../globals.md) › ["factories/ServiceContainerFactory"](_factories_servicecontainerfactory_.md)
 
 # External module: "factories/ServiceContainerFactory"
 
@@ -18,12 +18,18 @@
 
 ### ▪ **defaultOptions**: *object*
 
-*Defined in [src/factories/ServiceContainerFactory.ts:10](https://github.com/botflux/dependency-injection-container/blob/66e2228/src/factories/ServiceContainerFactory.ts#L10)*
+*Defined in [src/factories/ServiceContainerFactory.ts:12](https://github.com/botflux/dependency-injection-container/blob/6433b0d/src/factories/ServiceContainerFactory.ts#L12)*
 
 Default option of ServiceContainerFactory
+
+###  allowServiceOverride
+
+• **allowServiceOverride**: *false* = false
+
+*Defined in [src/factories/ServiceContainerFactory.ts:14](https://github.com/botflux/dependency-injection-container/blob/6433b0d/src/factories/ServiceContainerFactory.ts#L14)*
 
 ###  useReflection
 
 • **useReflection**: *false* = false
 
-*Defined in [src/factories/ServiceContainerFactory.ts:11](https://github.com/botflux/dependency-injection-container/blob/66e2228/src/factories/ServiceContainerFactory.ts#L11)*
+*Defined in [src/factories/ServiceContainerFactory.ts:13](https://github.com/botflux/dependency-injection-container/blob/6433b0d/src/factories/ServiceContainerFactory.ts#L13)*

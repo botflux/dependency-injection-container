@@ -1,6 +1,6 @@
-[@botflx/dependency-injection-container - v1.2.8](README.md) › [Globals](globals.md)
+[@botflx/dependency-injection-container - v1.3.0](README.md) › [Globals](globals.md)
 
-# @botflx/dependency-injection-container - v1.2.8
+# @botflx/dependency-injection-container - v1.3.0
 
 ## Index
 
@@ -8,6 +8,7 @@
 
 * ["Constants"](modules/_constants_.md)
 * ["IServiceContainer"](modules/_iservicecontainer_.md)
+* ["IServiceContainerOptions"](modules/_iservicecontaineroptions_.md)
 * ["IServiceFactoryFunction"](modules/_iservicefactoryfunction_.md)
 * ["ReflectServiceContainer"](modules/_reflectservicecontainer_.md)
 * ["ServiceContainer"](modules/_servicecontainer_.md)
@@ -20,3 +21,5 @@
 * ["factories/ServiceContainerFactory"](modules/_factories_servicecontainerfactory_.md)
 * ["factories/createServiceContainer"](modules/_factories_createservicecontainer_.md)
 * ["index"](modules/_index_.md)
+* ["mappers/IOptionMapper"](modules/_mappers_ioptionmapper_.md)
+* ["mappers/OptionMapper"](modules/_mappers_optionmapper_.md)

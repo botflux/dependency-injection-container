@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v1.2.8](../README.md) › [Globals](../globals.md) › ["factories/createServiceContainer"](_factories_createservicecontainer_.md)
+[@botflx/dependency-injection-container - v1.3.0](../README.md) › [Globals](../globals.md) › ["factories/createServiceContainer"](_factories_createservicecontainer_.md)
 
 # External module: "factories/createServiceContainer"
 
@@ -14,7 +14,7 @@
 
 ▸ **createServiceContainer**(`config`: [IServiceContainerFactoryOptions](../interfaces/_factories_iservicecontainerfactoryoptions_.iservicecontainerfactoryoptions.md)): *[IServiceContainer](../interfaces/_iservicecontainer_.iservicecontainer.md)*
 
-*Defined in [src/factories/createServiceContainer.ts:20](https://github.com/botflux/dependency-injection-container/blob/66e2228/src/factories/createServiceContainer.ts#L20)*
+*Defined in [src/factories/createServiceContainer.ts:20](https://github.com/botflux/dependency-injection-container/blob/6433b0d/src/factories/createServiceContainer.ts#L20)*
 
 Creates IServiceContainer instances. This function is an alias to service container factory's create method.
 
