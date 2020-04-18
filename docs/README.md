@@ -1,6 +1,6 @@
-[@botflx/dependency-injection-container - v1.3.0](README.md) › [Globals](globals.md)
+[@botflx/dependency-injection-container - v1.4.0](README.md) › [Globals](globals.md)
 
-# @botflx/dependency-injection-container - v1.3.0
+# @botflx/dependency-injection-container - v1.4.0
 
 [![Build Status](https://travis-ci.org/botflux/dependency-injection-container.svg?branch=master)](https://travis-ci.org/botflux/dependency-injection-container)
 [![npm version](https://img.shields.io/npm/v/@botflx%2Fdependency-injection-container.svg)](https://npmjs.org/package/@botflx/dependency-injection-container)
@@ -53,7 +53,7 @@ const optionProvider = container.get<OptionProvider>('provider.options')
 
 You can find examples for typescript and javascript [here](/examples).
 
-## Some more function
+## Some more functions
 
 An `IServiceContainer` gives some more methods. You can instantiate a constructor or factory function be using 
 `container.resolve()` and `container.resolveFactory()`.

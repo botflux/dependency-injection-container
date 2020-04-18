@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v1.3.0](../README.md) › [Globals](../globals.md) › ["mappers/IOptionMapper"](../modules/_mappers_ioptionmapper_.md) › [IOptionMapper](_mappers_ioptionmapper_.ioptionmapper.md)
+[@botflx/dependency-injection-container - v1.4.0](../README.md) › [Globals](../globals.md) › ["mappers/IOptionMapper"](../modules/_mappers_ioptionmapper_.md) › [IOptionMapper](_mappers_ioptionmapper_.ioptionmapper.md)
 
 # Interface: IOptionMapper
 
@@ -22,7 +22,7 @@
 
 ▸ **toContainerOptions**(`options`: [IServiceContainerFactoryOptions](_factories_iservicecontainerfactoryoptions_.iservicecontainerfactoryoptions.md)): *[IServiceContainerOptions](_iservicecontaineroptions_.iservicecontaineroptions.md)*
 
-*Defined in [src/mappers/IOptionMapper.ts:5](https://github.com/botflux/dependency-injection-container/blob/05ce70f/src/mappers/IOptionMapper.ts#L5)*
+*Defined in [src/mappers/IOptionMapper.ts:5](https://github.com/botflux/dependency-injection-container/blob/cc34105/src/mappers/IOptionMapper.ts#L5)*
 
 **Parameters:**
 

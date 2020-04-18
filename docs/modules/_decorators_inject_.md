@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v1.3.0](../README.md) › [Globals](../globals.md) › ["decorators/Inject"](_decorators_inject_.md)
+[@botflx/dependency-injection-container - v1.4.0](../README.md) › [Globals](../globals.md) › ["decorators/Inject"](_decorators_inject_.md)
 
 # External module: "decorators/Inject"
 
@@ -14,7 +14,7 @@
 
 ▸ **Inject**(`serviceName`: string): *(Anonymous function)*
 
-*Defined in [src/decorators/Inject.ts:22](https://github.com/botflux/dependency-injection-container/blob/05ce70f/src/decorators/Inject.ts#L22)*
+*Defined in [src/decorators/Inject.ts:22](https://github.com/botflux/dependency-injection-container/blob/cc34105/src/decorators/Inject.ts#L22)*
 
 Adds metadata to the decorated parameter.
 A IServiceContainer handling reflection will be able to use those metadata.
