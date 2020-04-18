@@ -49,7 +49,7 @@ const optionProvider = container.get<OptionProvider>('provider.options')
 
 You can find examples for typescript and javascript [here](/examples).
 
-## Some more function
+## Some more functions
 
 An `IServiceContainer` gives some more methods. You can instantiate a constructor or factory function be using 
 `container.resolve()` and `container.resolveFactory()`.
