@@ -3,12 +3,15 @@ import {IServiceContainer} from '../IServiceContainer'
 import {ServiceContainer} from '../ServiceContainer'
 import {IServiceContainerFactoryOptions} from './IServiceContainerFactoryOptions'
 import {ReflectServiceContainer} from '../ReflectServiceContainer'
+import {IOptionMapper} from '../mappers/IOptionMapper'
+import {OptionMapper} from '../mappers/OptionMapper'
 
 /**
  * Default option of ServiceContainerFactory
  */
 export const defaultOptions: IServiceContainerFactoryOptions = {
-    useReflection: false
+    useReflection: false,
+    allowServiceOverride: false
 }
 
 /**
@@ -23,9 +26,11 @@ export const defaultOptions: IServiceContainerFactoryOptions = {
  */
 export class ServiceContainerFactory implements IServiceContainerFactory {
     private readonly _options: IServiceContainerFactoryOptions
+    private readonly _optionMapper: IOptionMapper
 
-    constructor(options: IServiceContainerFactoryOptions = defaultOptions) {
+    constructor(options: IServiceContainerFactoryOptions = defaultOptions, optionMapper: IOptionMapper = new OptionMapper()) {
         this._options = options
+        this._optionMapper = optionMapper
     }
 
     /**
@@ -36,9 +41,11 @@ export class ServiceContainerFactory implements IServiceContainerFactory {
      * ```
      */
     create(): IServiceContainer {
+        const containerOptions = this._optionMapper.toContainerOptions(this._options)
+
         return this._options.useReflection
-            ? new ReflectServiceContainer()
-            : new ServiceContainer()
+            ? new ReflectServiceContainer(containerOptions)
+            : new ServiceContainer(containerOptions)
     }
 
 }

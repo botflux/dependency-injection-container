@@ -3,6 +3,11 @@ import {IServiceFactoryFunction} from './IServiceFactoryFunction'
 import {ServiceContainerDictionary} from './ServiceContainerDictionary'
 import {ServiceAlreadyRegisteredError} from './errors/ServiceAlreadyRegisteredError'
 import {ServiceNotFoundError} from './errors/ServiceNotFoundError'
+import {IServiceContainerOptions} from './IServiceContainerOptions'
+
+export const defaultServiceContainerOptions: IServiceContainerOptions = {
+    allowServiceOverride: false
+}
 
 /**
  * An implementation of ServiceContainer.
@@ -46,6 +51,11 @@ import {ServiceNotFoundError} from './errors/ServiceNotFoundError'
  */
 export class ServiceContainer implements IServiceContainer {
     private _services: ServiceContainerDictionary = {}
+    private _options: IServiceContainerOptions
+
+    constructor(containerOptions: IServiceContainerOptions = defaultServiceContainerOptions) {
+        this._options = containerOptions;
+    }
 
     /**
      * Add a new service using service's constructor.
@@ -70,7 +80,7 @@ export class ServiceContainer implements IServiceContainer {
      * @throws ServiceAlreadyRegisteredError
      */
     addFactory(key: string, factory: IServiceFactoryFunction): this {
-        if (key in this._services) {
+        if (!this._options.allowServiceOverride && key in this._services) {
             throw new ServiceAlreadyRegisteredError(key)
         }
 

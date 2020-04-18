@@ -3,140 +3,164 @@ import {INJECT_TOKEN_METADATA, IServiceContainer, ReflectServiceContainer, Servi
 import {Inject} from '../src'
 
 describe('#ReflectServiceContainer', () => {
-    it('adds a constructor', () => {
-        class Service {
-            public hello: string = 'world'
-            public readonly message: string
 
-            constructor(@Inject('message') message: string) {
-                this.message = message
+    describe('#add', () => {
+        it('adds a constructor', () => {
+            class Service {
+                public hello: string = 'world'
+                public readonly message: string
+
+                constructor(@Inject('message') message: string) {
+                    this.message = message
+                }
             }
-        }
 
-        const service = new ReflectServiceContainer()
-            .addFactory('message', () => 'hello')
-            .add('service', Service)
-            .get<Service>('service')
+            const service = new ReflectServiceContainer()
+                .addFactory('message', () => 'hello')
+                .add('service', Service)
+                .get<Service>('service')
 
-        expect(service).toEqual({
-            hello: 'world',
-            message: 'hello'
+            expect(service).toEqual({
+                hello: 'world',
+                message: 'hello'
+            })
+        })
+
+        it('passes no argument when no metadata found', () => {
+            class Service {
+                public hello: string = 'hello'
+                public message: string
+
+                constructor() {
+                    this.message = 'world'
+                }
+            }
+
+            const service = new ReflectServiceContainer()
+                .add('service', Service)
+                .get<Service>('service')
+
+            // We ensure that metadata are undefined
+            expect(Reflect.getOwnMetadata(INJECT_TOKEN_METADATA, Service)).toBe(undefined)
+
+            expect(service).toEqual({
+                hello: 'hello',
+                message: 'world'
+            })
         })
     })
 
-    it('passes no argument when no metadata found', () => {
-        class Service {
-            public hello: string = 'hello'
-            public message: string
+    describe('#addFactory', () => {
+        it('adds a factory', () => {
+            const c = new ReflectServiceContainer()
+            const service = c
+                .addFactory('config', container => () => container)
+                .get<Function>('config')
 
-            constructor() {
-                this.message = 'world'
-            }
-        }
+            expect(service()).toBe(c)
+        })
 
-        const service = new ReflectServiceContainer()
-            .add('service', Service)
-            .get<Service>('service')
+        it('throws when service already defined', () => {
+            const c = new ReflectServiceContainer()
+                .addFactory('service', () => 'world')
 
-        // We ensure that metadata are undefined
-        expect(Reflect.getOwnMetadata(INJECT_TOKEN_METADATA, Service)).toBe(undefined)
+            const invalidCall = () => c.addFactory('service', () => 'hello')
 
-        expect(service).toEqual({
-            hello: 'hello',
-            message: 'world'
+            expect(invalidCall).toThrowError(Error)
+        })
+
+        it('does not throw when service already defined if allowServiceOverride is true', () => {
+            const c = new ReflectServiceContainer({ allowServiceOverride: true })
+                .addFactory('service', () => 'world')
+
+            const invalidCall = () => c.addFactory('service', () => 'hello')
+
+            expect(invalidCall).not.toThrowError(Error)
         })
     })
 
-    it('adds a factory', () => {
-        const c = new ReflectServiceContainer()
-        const service = c
-            .addFactory('config', container => () => container)
-            .get<Function>('config')
+    describe('#get', () => {
 
-        expect(service()).toBe(c)
+        it('returns a service', () => {
+            const c = new ReflectServiceContainer()
+                .addFactory('config', () => 'world')
+
+            expect(c.get<string>('config')).toBe('world')
+        })
+
+        it('throws when service is not defined', () => {
+            const c = new ReflectServiceContainer()
+
+            const invalidCall = () => c.get<Function>('service')
+            expect(invalidCall).toThrowError(Error)
+        })
     })
 
-    it('returns a service', () => {
-        const c = new ReflectServiceContainer()
-            .addFactory('config', () => 'world')
+    describe('#delete', () => {
+        it('throws when deleting is not defined service', () => {
+            const c = new ReflectServiceContainer()
+            const invalidCall = () => c.delete('service')
 
-        expect(c.get<string>('config')).toBe('world')
+            expect(invalidCall).toThrowError(Error)
+        })
+
+        it('deletes services', () => {
+            const c = new ReflectServiceContainer()
+                .addFactory('hello', () => 'world')
+                .delete('hello')
+
+            expect(c.services).toEqual({})
+        })
     })
 
-    it('throws when service already defined', () => {
-        const c = new ReflectServiceContainer()
-            .addFactory('service', () => 'world')
+    describe('#resolve', () => {
+        it('resolves the given service', () => {
+            const container = new ReflectServiceContainer()
 
-        const invalidCall = () => c.addFactory('service', () => 'hello')
+            class Service {
+                constructor(@Inject('connectionString') public connectionString: string) {}
+            }
 
-        expect(invalidCall).toThrowError(Error)
+            const service: Service = container
+                .addFactory('connectionString', () => 'hello')
+                .resolve(Service)
+
+            expect(service.connectionString).toBe('hello')
+        })
+
+        it('does not add the resolved service to the container', () => {
+            const container = new ReflectServiceContainer()
+
+            class Service {
+                constructor() {}
+            }
+
+            container.resolve(Service)
+
+            expect(Object.keys(container.services).length).toBe(0)
+        })
     })
 
-    it('throws when service is not defined', () => {
-        const c = new ReflectServiceContainer()
+    describe('#resolveFactory', () => {
 
-        const invalidCall = () => c.get<Function>('service')
-        expect(invalidCall).toThrowError(Error)
-    })
+        it('resolves the given factory', () => {
+            const factory = (container: IServiceContainer) => `Hello ${container.get<string>('world')}`
 
-    it('throws when deleting is not defined service', () => {
-        const c = new ReflectServiceContainer()
-        const invalidCall = () => c.delete('service')
+            const container = new ReflectServiceContainer()
+                .addFactory('world', () => 'world')
 
-        expect(invalidCall).toThrowError(Error)
-    })
+            expect(container.resolveFactory<string>(factory)).toBe('Hello world')
+        })
 
-    it('deletes services', () => {
-        const c = new ReflectServiceContainer()
-            .addFactory('hello', () => 'world')
-            .delete('hello')
+        it('does not add the resolved factory to the container', () => {
+            const factory = (container: IServiceContainer) => `Hello ${container.get<string>('world')}`
 
-        expect(c.services).toEqual({})
-    })
+            const container = new ReflectServiceContainer()
+                .addFactory('world', () => 'world')
 
-    it('resolves the given service', () => {
-        const container = new ReflectServiceContainer()
+            container.resolveFactory(factory)
 
-        class Service {
-            constructor(@Inject('connectionString') public connectionString: string) {}
-        }
-
-        const service: Service = container
-            .addFactory('connectionString', () => 'hello')
-            .resolve(Service)
-
-        expect(service.connectionString).toBe('hello')
-    })
-
-    it('does not add the resolved service to the container', () => {
-        const container = new ReflectServiceContainer()
-
-        class Service {
-            constructor() {}
-        }
-
-        container.resolve(Service)
-
-        expect(Object.keys(container.services).length).toBe(0)
-    })
-
-    it('resolves the given factory', () => {
-        const factory = (container: IServiceContainer) => `Hello ${container.get<string>('world')}`
-
-        const container = new ReflectServiceContainer()
-            .addFactory('world', () => 'world')
-
-        expect(container.resolveFactory<string>(factory)).toBe('Hello world')
-    })
-
-    it('does not add the resolved factory to the container', () => {
-        const factory = (container: IServiceContainer) => `Hello ${container.get<string>('world')}`
-
-        const container = new ReflectServiceContainer()
-            .addFactory('world', () => 'world')
-
-        container.resolveFactory(factory)
-
-        expect(Object.keys(container.services).length).toBe(1)
+            expect(Object.keys(container.services).length).toBe(1)
+        })
     })
 })

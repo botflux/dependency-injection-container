@@ -4,6 +4,11 @@ import {ServiceContainerDictionary} from './ServiceContainerDictionary'
 import {ServiceAlreadyRegisteredError} from './errors/ServiceAlreadyRegisteredError'
 import {ServiceNotFoundError} from './errors/ServiceNotFoundError'
 import {INJECT_TOKEN_METADATA} from './Constants'
+import {IServiceContainerOptions} from './IServiceContainerOptions'
+
+export const defaultReflectServiceContainerOptions: IServiceContainerOptions = {
+    allowServiceOverride: false
+}
 
 /**
  * An implementation of ServiceContainer that uses Reflection.
@@ -42,6 +47,12 @@ export class ReflectServiceContainer implements IServiceContainer {
      */
     private _services: ServiceContainerDictionary = {}
 
+    private _options: IServiceContainerOptions
+
+    constructor(containerOptions: IServiceContainerOptions = defaultReflectServiceContainerOptions) {
+        this._options = containerOptions
+    }
+
     /**
      * Add a new service using service's constructor
      *
@@ -71,7 +82,7 @@ export class ReflectServiceContainer implements IServiceContainer {
      * @throws ServiceAlreadyRegisteredError
      */
     addFactory(key: string, factory: IServiceFactoryFunction): this {
-        if (key in this._services) {
+        if (!this._options.allowServiceOverride && key in this._services) {
             throw new ServiceAlreadyRegisteredError(key)
         }
 

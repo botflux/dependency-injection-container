@@ -8,4 +8,10 @@ export interface IServiceContainerFactoryOptions {
      * service container.
      */
     useReflection: boolean
+
+    /**
+     * If true an IServiceContainer will allow you to call
+     * `container.add()` multiple times with the same service name.
+     */
+    allowServiceOverride?: boolean
 }
