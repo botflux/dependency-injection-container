@@ -43,6 +43,7 @@ container.addFactory('logger', (container: IServiceContainer) => (message: strin
 
 // Get a service
 const optionProvider = container.get<OptionProvider>('provider.options')
+const logger = container.get<(message: string) => void>('logger')
 ```
 
 ## Examples
@@ -82,7 +83,7 @@ import {createServiceContainer} from '@botflx/dependency-injection-container'
 const container = createServiceContainer()
     .add('service1', ...)
     .add('service2', ...)
-    .addFatory('service3' ...)
+    .addFactory('service3' ...)
     .add('service4', ...)
 ```
 
