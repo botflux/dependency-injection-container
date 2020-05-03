@@ -6,7 +6,11 @@ import {ReflectServiceLoader} from '../../src/loaders/ReflectServiceLoader'
 
 describe('#ReflectServiceLoader', function () {
     it('loads service', function () {
-        const serviceContainer = new ReflectServiceContainer({
+        const reflectServiceContainer = new ReflectServiceContainer({
+            allowServiceOverride: false
+        })
+
+        const plainServiceContainer = new ServiceContainer({
             allowServiceOverride: false
         })
 
@@ -29,30 +33,56 @@ describe('#ReflectServiceLoader', function () {
             { name: 'factory3', service: factory3 },
         ])
 
-        serviceContainer.add = jest.fn(() => serviceContainer)
-        serviceContainer.addFactory = jest.fn(() => serviceContainer)
+        reflectServiceContainer.add = jest.fn(() => reflectServiceContainer)
+        reflectServiceContainer.addFactory = jest.fn(() => reflectServiceContainer)
 
-        loader.load(serviceContainer)
+        loader.load(reflectServiceContainer)
 
-        expect(serviceContainer.add).toBeCalledTimes(3)
-        expect(serviceContainer.addFactory).toBeCalledTimes(3)
-
-        // @ts-ignore
-        expect(serviceContainer.add.mock.calls[0]).toEqual([ 'service1', Service1 ])
+        expect(reflectServiceContainer.add).toBeCalledTimes(3)
+        expect(reflectServiceContainer.addFactory).toBeCalledTimes(3)
 
         // @ts-ignore
-        expect(serviceContainer.add.mock.calls[1]).toEqual([ 'service2', Service2 ])
+        expect(reflectServiceContainer.add.mock.calls[0]).toEqual([ 'service1', Service1 ])
 
         // @ts-ignore
-        expect(serviceContainer.add.mock.calls[2]).toEqual([ 'service3', Service3 ])
+        expect(reflectServiceContainer.add.mock.calls[1]).toEqual([ 'service2', Service2 ])
 
         // @ts-ignore
-        expect(serviceContainer.addFactory.mock.calls[0]).toEqual([ 'factory1', factory1 ])
+        expect(reflectServiceContainer.add.mock.calls[2]).toEqual([ 'service3', Service3 ])
 
         // @ts-ignore
-        expect(serviceContainer.addFactory.mock.calls[1]).toEqual([ 'factory2', factory2 ])
+        expect(reflectServiceContainer.addFactory.mock.calls[0]).toEqual([ 'factory1', factory1 ])
 
         // @ts-ignore
-        expect(serviceContainer.addFactory.mock.calls[2]).toEqual([ 'factory3', factory3 ])
+        expect(reflectServiceContainer.addFactory.mock.calls[1]).toEqual([ 'factory2', factory2 ])
+
+        // @ts-ignore
+        expect(reflectServiceContainer.addFactory.mock.calls[2]).toEqual([ 'factory3', factory3 ])
+
+        plainServiceContainer.add = jest.fn(() => plainServiceContainer)
+        plainServiceContainer.addFactory = jest.fn(() => plainServiceContainer)
+
+        loader.load(plainServiceContainer)
+
+        expect(plainServiceContainer.add).toBeCalledTimes(3)
+        expect(plainServiceContainer.addFactory).toBeCalledTimes(3)
+
+        // @ts-ignore
+        expect(plainServiceContainer.add.mock.calls[0]).toEqual([ 'service1', Service1 ])
+
+        // @ts-ignore
+        expect(plainServiceContainer.add.mock.calls[1]).toEqual([ 'service2', Service2 ])
+
+        // @ts-ignore
+        expect(plainServiceContainer.add.mock.calls[2]).toEqual([ 'service3', Service3 ])
+
+        // @ts-ignore
+        expect(plainServiceContainer.addFactory.mock.calls[0]).toEqual([ 'factory1', factory1 ])
+
+        // @ts-ignore
+        expect(plainServiceContainer.addFactory.mock.calls[1]).toEqual([ 'factory2', factory2 ])
+
+        // @ts-ignore
+        expect(plainServiceContainer.addFactory.mock.calls[2]).toEqual([ 'factory3', factory3 ])
     })
 })
