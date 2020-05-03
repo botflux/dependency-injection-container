@@ -4,7 +4,7 @@ import {Constructor} from '../Constructor'
 import {ImportService} from './ServiceLoader'
 import {IServiceFactoryFunction} from '../IServiceFactoryFunction'
 import {SERVICE_TOKEN_METADATA} from '../Constants'
-import {ServiceNameNotFound} from '../errors/ServiceNameNotFound'
+import {ServiceNameNotFoundError} from '../errors/ServiceNameNotFoundError'
 
 /**
  * Load a collection of service in a service container implementation.
@@ -70,7 +70,7 @@ export class ReflectServiceLoader implements IServiceLoader {
         const serviceName: string | undefined = Reflect.getOwnMetadata(SERVICE_TOKEN_METADATA, constructor)
 
         if (!serviceName) {
-            throw new ServiceNameNotFound()
+            throw new ServiceNameNotFoundError()
         }
 
         return serviceName
