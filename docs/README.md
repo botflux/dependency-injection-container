@@ -1,6 +1,6 @@
-[@botflx/dependency-injection-container - v1.4.0](README.md) › [Globals](globals.md)
+[@botflx/dependency-injection-container - v1.4.1](README.md) › [Globals](globals.md)
 
-# @botflx/dependency-injection-container - v1.4.0
+# @botflx/dependency-injection-container - v1.4.1
 
 [![Build Status](https://travis-ci.org/botflux/dependency-injection-container.svg?branch=master)](https://travis-ci.org/botflux/dependency-injection-container)
 [![npm version](https://img.shields.io/npm/v/@botflx%2Fdependency-injection-container.svg)](https://npmjs.org/package/@botflx/dependency-injection-container)
@@ -47,6 +47,7 @@ container.addFactory('logger', (container: IServiceContainer) => (message: strin
 
 // Get a service
 const optionProvider = container.get<OptionProvider>('provider.options')
+const logger = container.get<(message: string) => void>('logger')
 ```
 
 ## Examples
@@ -86,7 +87,7 @@ import {createServiceContainer} from '@botflx/dependency-injection-container'
 const container = createServiceContainer()
     .add('service1', ...)
     .add('service2', ...)
-    .addFatory('service3' ...)
+    .addFactory('service3' ...)
     .add('service4', ...)
 ```
 

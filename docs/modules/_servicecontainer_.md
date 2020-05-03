@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v1.4.0](../README.md) › [Globals](../globals.md) › ["ServiceContainer"](_servicecontainer_.md)
+[@botflx/dependency-injection-container - v1.4.1](../README.md) › [Globals](../globals.md) › ["ServiceContainer"](_servicecontainer_.md)
 
 # External module: "ServiceContainer"
 
@@ -18,10 +18,10 @@
 
 ### ▪ **defaultServiceContainerOptions**: *object*
 
-*Defined in [src/ServiceContainer.ts:8](https://github.com/botflux/dependency-injection-container/blob/4ec09c5/src/ServiceContainer.ts#L8)*
+*Defined in [src/ServiceContainer.ts:8](https://github.com/botflux/dependency-injection-container/blob/0a0a030/src/ServiceContainer.ts#L8)*
 
 ###  allowServiceOverride
 
 • **allowServiceOverride**: *false* = false
 
-*Defined in [src/ServiceContainer.ts:9](https://github.com/botflux/dependency-injection-container/blob/4ec09c5/src/ServiceContainer.ts#L9)*
+*Defined in [src/ServiceContainer.ts:9](https://github.com/botflux/dependency-injection-container/blob/0a0a030/src/ServiceContainer.ts#L9)*
