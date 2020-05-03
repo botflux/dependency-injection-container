@@ -1,9 +1,7 @@
 import {IServiceLoader} from './IServiceLoader'
 import {IServiceContainer} from '../IServiceContainer'
 import {IServiceFactoryFunction} from '../IServiceFactoryFunction'
-import {Constructor} from '../Constructor'
-
-export type ImportService<T> = { name: string, service: T }
+import {Constructor, ImportService} from '../types'
 
 export class ServiceLoader implements IServiceLoader {
     private readonly _serviceConstructors: ImportService<Constructor>[]

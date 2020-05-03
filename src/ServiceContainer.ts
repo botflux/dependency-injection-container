@@ -1,9 +1,9 @@
 import {IServiceContainer} from './IServiceContainer'
 import {IServiceFactoryFunction} from './IServiceFactoryFunction'
-import {ServiceContainerDictionary} from './ServiceContainerDictionary'
 import {ServiceAlreadyRegisteredError} from './errors/ServiceAlreadyRegisteredError'
 import {ServiceNotFoundError} from './errors/ServiceNotFoundError'
 import {IServiceContainerOptions} from './IServiceContainerOptions'
+import {ServiceContainerDictionary} from './types'
 
 export const defaultServiceContainerOptions: IServiceContainerOptions = {
     allowServiceOverride: false

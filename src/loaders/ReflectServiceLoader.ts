@@ -1,10 +1,9 @@
 import {IServiceLoader} from './IServiceLoader'
 import {IServiceContainer} from '../IServiceContainer'
-import {Constructor} from '../Constructor'
-import {ImportService} from './ServiceLoader'
 import {IServiceFactoryFunction} from '../IServiceFactoryFunction'
 import {SERVICE_TOKEN_METADATA} from '../Constants'
 import {ServiceNameNotFoundError} from '../errors/ServiceNameNotFoundError'
+import {Constructor, ImportService} from '../types'
 
 /**
  * Load a collection of service in a service container implementation.

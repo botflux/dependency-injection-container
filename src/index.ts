@@ -1,7 +1,6 @@
 export * from './IServiceContainer'
 export * from './ServiceContainer'
 export * from './ReflectServiceContainer'
-export * from './ServiceContainerDictionary'
 export * from './IServiceFactoryFunction'
 
 export * from './Constants'
@@ -15,3 +14,4 @@ export * from './decorators/Inject'
 
 export * from './errors/ServiceAlreadyRegisteredError'
 export * from './errors/ServiceNotFoundError'
+export {Constructor, ImportService} from './types'
