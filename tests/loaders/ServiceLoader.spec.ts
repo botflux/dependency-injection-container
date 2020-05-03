@@ -1,8 +1,8 @@
 import {ServiceContainer} from '../../src'
 import {ServiceLoader} from '../../src/loaders/ServiceLoader'
 
-describe('#ImportServiceMapper', function () {
-    it('imports service', () => {
+describe('#ServiceLoader', function () {
+    it('loads service', () => {
         const serviceContainer = new ServiceContainer({
             allowServiceOverride: false
         })
