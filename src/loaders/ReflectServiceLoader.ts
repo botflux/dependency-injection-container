@@ -6,18 +6,34 @@ import {IServiceFactoryFunction} from '../IServiceFactoryFunction'
 import {SERVICE_TOKEN_METADATA} from '../Constants'
 import {ServiceNameNotFound} from '../errors/ServiceNameNotFound'
 
+/**
+ * Load a collection of service in a service container implementation.
+ */
 export class ReflectServiceLoader implements IServiceLoader {
 
-    private readonly _serviceConstructor: Constructor[]
+    /**
+     * Service constructors to load.
+     */
+    private readonly _serviceConstructors: Constructor[]
+
+    /**
+     * Service factories to load.
+     */
     private readonly _serviceFactories: ImportService<IServiceFactoryFunction>[]
 
+    /**
+     * Creates a new instance of *ReflectServiceLoader* by passing a collection of constructor and a collection of factories.
+     *
+     * @param serviceConstructor Collection of service constructor
+     * @param serviceFactories Collection of service factories
+     */
     constructor(serviceConstructor: Constructor[], serviceFactories: ImportService<IServiceFactoryFunction>[]) {
-        this._serviceConstructor = serviceConstructor
+        this._serviceConstructors = serviceConstructor
         this._serviceFactories = serviceFactories
     }
 
     load(container: IServiceContainer): void {
-        this._serviceConstructor.forEach(constructor => {
+        this._serviceConstructors.forEach(constructor => {
             const serviceName = ReflectServiceLoader.getServiceName(constructor)
             container.add(serviceName, constructor)
         })
@@ -27,6 +43,11 @@ export class ReflectServiceLoader implements IServiceLoader {
         })
     }
 
+    /**
+     * Returns service name described by `@Service` decorator.
+     *
+     * @param constructor
+     */
     private static getServiceName (constructor: Constructor): string {
         // @ts-ignore
         const serviceName: string | undefined = Reflect.getOwnMetadata(SERVICE_TOKEN_METADATA, constructor)
