@@ -8,6 +8,23 @@ import {ServiceNameNotFound} from '../errors/ServiceNameNotFound'
 
 /**
  * Load a collection of service in a service container implementation.
+ *
+ * ```typescript
+ * import 'reflect-metadata'
+ * import {createServiceContainer, ReflectServiceLoader, Constructor, ImportService} from '@botflx/dependency-injection-container'
+ *
+ * // List of service constructors
+ * const serviceConstructors: Constructor[] = [...]
+ * const serviceFactories: ImportService<IServiceFactoryFunction>[] = [...]
+ *
+ * // Creates a service container
+ * // In fact you can use a ReflectServiceLoader with a non-reflection service container.
+ * const container = createServiceContainer()
+ * const reflectServiceLoader = new ReflectServiceLoader(serviceConstructors, serviceFactories)
+ *
+ * // Load services in service loader
+ * reflectServiceLoader.load(container)
+ * ```
  */
 export class ReflectServiceLoader implements IServiceLoader {
 
