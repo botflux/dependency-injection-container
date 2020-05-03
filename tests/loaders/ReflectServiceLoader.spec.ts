@@ -85,4 +85,23 @@ describe('#ReflectServiceLoader', function () {
         // @ts-ignore
         expect(plainServiceContainer.addFactory.mock.calls[2]).toEqual([ 'factory3', factory3 ])
     })
+
+    it('throws when no service was defined', () => {
+        const plainServiceContainer = new ServiceContainer()
+
+        @Service('myService')
+        class MyService {}
+
+        // No service decorator
+        class AnotherService {}
+
+        const reflectServiceLoader = new ReflectServiceLoader([ MyService, AnotherService ], [])
+
+        const invalidCall = () => reflectServiceLoader.load(plainServiceContainer)
+
+        expect(invalidCall).toThrowError(expect.objectContaining({
+            message: 'No service name found',
+            name: 'ServiceNameNotFoundError'
+        }))
+    })
 })
