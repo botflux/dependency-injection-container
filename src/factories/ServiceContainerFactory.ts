@@ -11,7 +11,8 @@ import {OptionMapper} from '../mappers/OptionMapper'
  */
 export const defaultOptions: IServiceContainerFactoryOptions = {
     useReflection: false,
-    allowServiceOverride: false
+    allowServiceOverride: false,
+    serviceLoader: undefined
 }
 
 /**
@@ -43,9 +44,15 @@ export class ServiceContainerFactory implements IServiceContainerFactory {
     create(): IServiceContainer {
         const containerOptions = this._optionMapper.toContainerOptions(this._options)
 
-        return this._options.useReflection
+        const container = this._options.useReflection
             ? new ReflectServiceContainer(containerOptions)
             : new ServiceContainer(containerOptions)
+
+        if (this._options.serviceLoader) {
+            this._options.serviceLoader.load(container)
+        }
+
+        return container
     }
 
 }

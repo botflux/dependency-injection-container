@@ -1,6 +1,8 @@
 /**
  * Represents options of IServiceContainerFactory.
  */
+import {IServiceLoader} from '../loaders/IServiceLoader'
+
 export interface IServiceContainerFactoryOptions {
     /**
      * If true the ServiceContainerFactory will returns a service container
@@ -14,4 +16,10 @@ export interface IServiceContainerFactoryOptions {
      * `container.add()` multiple times with the same service name.
      */
     allowServiceOverride?: boolean
+
+    /**
+     * Specify service you want to load by default.
+     * If you are using Reflection you can add new service with `@Service` and `createReflectServiceLoader`
+     */
+    serviceLoader?: IServiceLoader
 }
