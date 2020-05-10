@@ -1,4 +1,4 @@
-import {IServiceContainer, ServiceContainer} from '../src'
+import {IServiceContainer, ServiceAlreadyRegisteredError, ServiceContainer, ServiceNotFoundError} from '../src'
 
 describe('#ServiceContainer', () => {
 
@@ -29,16 +29,7 @@ describe('#ServiceContainer', () => {
             const invalidCall = () => container.addFactory('service.logger.someLogger', () => ({}))
 
             // It seems that typescript doesn't create custom error
-            expect(invalidCall).toThrowError(Error)
-        })
-
-        it('throws a service not found error if the key is not defined', () => {
-            const container = new ServiceContainer()
-                .addFactory('service', () => ({ hello: 'world' }))
-
-            const invalidCall = () => container.addFactory('service', () => ({}))
-
-            expect(invalidCall).toThrowError(Error)
+            expect(invalidCall).toThrowError(ServiceAlreadyRegisteredError)
         })
 
         it('does not throw a service not found error if allowServiceOverride is true', () => {
@@ -47,6 +38,7 @@ describe('#ServiceContainer', () => {
 
             const invalidCall = () => container.addFactory('service', () => ({}))
 
+            expect(invalidCall).not.toThrowError(ServiceAlreadyRegisteredError)
             expect(invalidCall).not.toThrowError(Error)
         })
     })
@@ -66,7 +58,7 @@ describe('#ServiceContainer', () => {
             const container = new ServiceContainer()
 
             const invalidCall = () => container.get('service')
-            expect(invalidCall).toThrowError(Error)
+            expect(invalidCall).toThrowError(ServiceNotFoundError)
         })
     })
 
@@ -78,7 +70,7 @@ describe('#ServiceContainer', () => {
             class Service {}
 
             const invalidCall = () => container.add('hello', Service)
-            expect(invalidCall).toThrowError(Error)
+            expect(invalidCall).toThrowError(ServiceAlreadyRegisteredError)
         })
 
         it('does not throw a service already registered if allowServiceOverride is true (addConstructor)', () => {
@@ -88,6 +80,7 @@ describe('#ServiceContainer', () => {
             class Service {}
 
             const invalidCall = () => container.add('hello', Service)
+            expect(invalidCall).not.toThrowError(ServiceAlreadyRegisteredError)
             expect(invalidCall).not.toThrowError(Error)
         })
 
@@ -113,7 +106,7 @@ describe('#ServiceContainer', () => {
             const c = new ServiceContainer()
             const invalidCall = () => c.delete('service')
 
-            expect(invalidCall).toThrowError(Error)
+            expect(invalidCall).toThrowError(ServiceNotFoundError)
         })
 
         it('deletes services', () => {
