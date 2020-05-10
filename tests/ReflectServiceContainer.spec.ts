@@ -1,5 +1,11 @@
 import 'reflect-metadata'
-import {INJECT_TOKEN_METADATA, IServiceContainer, ReflectServiceContainer, ServiceContainer} from '../src'
+import {
+    INJECT_TOKEN_METADATA,
+    IServiceContainer,
+    ReflectServiceContainer,
+    ServiceAlreadyRegisteredError,
+    ServiceContainer, ServiceNotFoundError
+} from '../src'
 import {Inject} from '../src'
 
 describe('#ReflectServiceContainer', () => {
@@ -66,7 +72,7 @@ describe('#ReflectServiceContainer', () => {
 
             const invalidCall = () => c.addFactory('service', () => 'hello')
 
-            expect(invalidCall).toThrowError(Error)
+            expect(invalidCall).toThrowError(ServiceAlreadyRegisteredError)
         })
 
         it('does not throw when service already defined if allowServiceOverride is true', () => {
@@ -75,6 +81,7 @@ describe('#ReflectServiceContainer', () => {
 
             const invalidCall = () => c.addFactory('service', () => 'hello')
 
+            expect(invalidCall).not.toThrowError(ServiceAlreadyRegisteredError)
             expect(invalidCall).not.toThrowError(Error)
         })
     })
@@ -92,7 +99,7 @@ describe('#ReflectServiceContainer', () => {
             const c = new ReflectServiceContainer()
 
             const invalidCall = () => c.get<Function>('service')
-            expect(invalidCall).toThrowError(Error)
+            expect(invalidCall).toThrowError(ServiceNotFoundError)
         })
     })
 
@@ -101,7 +108,7 @@ describe('#ReflectServiceContainer', () => {
             const c = new ReflectServiceContainer()
             const invalidCall = () => c.delete('service')
 
-            expect(invalidCall).toThrowError(Error)
+            expect(invalidCall).toThrowError(ServiceNotFoundError)
         })
 
         it('deletes services', () => {
