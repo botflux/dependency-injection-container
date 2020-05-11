@@ -69,7 +69,8 @@ export class ReflectServiceLoader implements IServiceLoader {
         const serviceName: string | undefined = Reflect.getOwnMetadata(SERVICE_TOKEN_METADATA, constructor)
 
         if (!serviceName) {
-            throw new ServiceNameNotFoundError()
+            const className = constructor.name
+            throw new ServiceNameNotFoundError(className)
         }
 
         return serviceName

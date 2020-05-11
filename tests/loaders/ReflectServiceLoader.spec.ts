@@ -3,6 +3,7 @@ import {ReflectServiceContainer, ServiceContainer} from '../../src'
 import {ServiceLoader} from '../../src/loaders/ServiceLoader'
 import {Service} from '../../src/decorators/Service'
 import {ReflectServiceLoader} from '../../src/loaders/ReflectServiceLoader'
+import {ServiceNameNotFoundError} from '../../src/errors/ServiceNameNotFoundError'
 
 describe('#ReflectServiceLoader', function () {
     it('loads service', function () {
@@ -87,7 +88,9 @@ describe('#ReflectServiceLoader', function () {
     })
 
     it('throws when no service was defined', () => {
-        const plainServiceContainer = new ServiceContainer()
+        const plainServiceContainer = new ServiceContainer({
+            allowServiceOverride: true
+        })
 
         @Service('myService')
         class MyService {}
@@ -99,9 +102,9 @@ describe('#ReflectServiceLoader', function () {
 
         const invalidCall = () => reflectServiceLoader.load(plainServiceContainer)
 
+        expect(invalidCall).toThrowError(ServiceNameNotFoundError)
         expect(invalidCall).toThrowError(expect.objectContaining({
-            message: 'No service name found',
-            name: 'ServiceNameNotFoundError'
+            message: 'No service name found for class named "AnotherService". Have you decorate AnotherService with @Service(serviceName) ?'
         }))
     })
 })
