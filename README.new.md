@@ -12,17 +12,21 @@ This package is designed with retro-compatibility in mind.
 
 ### Decorators
 
-Reflection and Decorators are supported. This package provide also an API without decorators.
+Reflection and Decorators are [supported](DECORATORS.md). This package provide also an API without decorators.
 
 ### Example
 
-As a DI container handles dependency I will first declare some services. 
+As a DI container handles instantiation I will first declare some services that will be instantiated. 
 
 ````typescript
 class Logger {}
 
 class DatabaseConnection {
-    constructor(container: IServiceContainer) {}
+    private logger: Logger
+
+    constructor(container: IServiceContainer) {
+        this.logger = container.get<Logger>('logger')
+    }
 }
 
 function getUsers (db: DatabaseConnection) {}
@@ -51,6 +55,12 @@ const getUsers = container.get<Function>('getUsers')
 const db = container.get<DatabaseConnection>('db')
 const logger = container.get<Logger>('logger')
 ````
+
+### Services life cycle
+
+Services are instantiated when you call `container.get(serviceName)`.
+The instance is deleted when you `container.delete(serviceName)`.
+Deletion is performed with the `delete` keyword.
 
 ### Recommendation
 
