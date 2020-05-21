@@ -132,10 +132,7 @@ export class ReflectServiceContainer implements IServiceContainer {
         }
 
         delete this._serviceFactories[key]
-
-        if (key in this._services) {
-            delete this._services[key]
-        }
+        delete this._services[key]
 
         return this
     }
@@ -145,6 +142,13 @@ export class ReflectServiceContainer implements IServiceContainer {
      */
     get services() {
         return this._services
+    }
+
+    /**
+     * This getter must only be used for tests purposes.
+     */
+    get factories() {
+        return this._serviceFactories
     }
 
     /**

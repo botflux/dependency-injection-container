@@ -128,6 +128,11 @@ describe('#ServiceContainer', () => {
 
             expect(c.factories).toEqual({})
             expect(c.services).toEqual({})
+
+            c.addFactory('hello', () => 'world')
+
+            c.delete('hello')
+            expect(c.factories).toEqual({})
         })
     })
 

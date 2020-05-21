@@ -114,9 +114,16 @@ describe('#ReflectServiceContainer', () => {
         it('deletes services', () => {
             const c = new ReflectServiceContainer()
                 .addFactory('hello', () => 'world')
-                .delete('hello')
+
+            c.get('hello')
+            c.delete('hello')
 
             expect(c.services).toEqual({})
+            expect(c.factories).toEqual({})
+
+            c.addFactory('hello', () => 'world')
+            c.delete('hello')
+            expect(c.factories).toEqual({})
         })
     })
 

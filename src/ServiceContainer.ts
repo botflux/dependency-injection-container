@@ -140,10 +140,7 @@ export class ServiceContainer implements IServiceContainer {
         }
 
         delete this._serviceFactories[key]
-
-        if (key in this._services) {
-            delete this._services[key]
-        }
+        delete this._services[key]
 
         return this
     }
