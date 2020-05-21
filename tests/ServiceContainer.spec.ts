@@ -56,12 +56,22 @@ describe('#ServiceContainer', () => {
     describe('#get', () => {
 
         it('returns a service', () => {
+            const f = jest.fn(() => ({ hello: 'world' }))
+
             const container = new ServiceContainer()
-                .addFactory('service', () => ({ hello: 'world' }))
+                .addFactory('service', f)
+
+            expect(f).not.toBeCalled()
 
             expect(container.get('service')).toEqual({
                 hello: 'world'
             })
+
+            container.get('service')
+
+            expect(f).toBeCalledTimes(1)
+            expect(f).toBeCalledWith(container)
+
         })
 
         it('throws when get an undefined service', () => {

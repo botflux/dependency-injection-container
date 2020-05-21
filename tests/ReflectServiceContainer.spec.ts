@@ -89,10 +89,20 @@ describe('#ReflectServiceContainer', () => {
     describe('#get', () => {
 
         it('returns a service', () => {
-            const c = new ReflectServiceContainer()
-                .addFactory('config', () => 'world')
+            const f = jest.fn(() => 'world')
 
+            const c = new ReflectServiceContainer()
+                .addFactory('config', f)
+
+            expect(c.factories).toEqual({ 'config': f })
+            expect(c.services).toEqual({})
+
+            expect(f).not.toBeCalled()
             expect(c.get<string>('config')).toBe('world')
+            c.get('config')
+
+            expect(f).toBeCalledTimes(1)
+            expect(f).toBeCalledWith(c)
         })
 
         it('throws when service is not defined', () => {
