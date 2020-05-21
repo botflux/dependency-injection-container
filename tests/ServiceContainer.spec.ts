@@ -5,8 +5,18 @@ describe('#ServiceContainer', () => {
     describe('#addFactory', () => {
 
         it('adds a new service', () => {
+            const factory = () => ({ hello: 'world' })
+
             const container: ServiceContainer = new ServiceContainer()
-                .addFactory('my service', () => ({ hello: 'world' }))
+                .addFactory('my service', factory)
+
+            expect(container.factories).toEqual({
+                'my service': factory
+            })
+
+            expect(container.services).toEqual({})
+
+            container.get<{ hello: string }> ('my service')
 
             expect(container.services).toEqual({
                 'my service': {
@@ -112,8 +122,11 @@ describe('#ServiceContainer', () => {
         it('deletes services', () => {
             const c = new ServiceContainer()
                 .addFactory('hello', () => 'world')
-                .delete('hello')
 
+            c.get('hello')
+            c.delete('hello')
+
+            expect(c.factories).toEqual({})
             expect(c.services).toEqual({})
         })
     })

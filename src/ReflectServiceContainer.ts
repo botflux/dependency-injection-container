@@ -49,6 +49,8 @@ export class ReflectServiceContainer implements IServiceContainer {
 
     private _options: IServiceContainerOptions
 
+    private _serviceFactories: { [key: string]: IServiceFactoryFunction } = {}
+
     constructor(containerOptions: IServiceContainerOptions = defaultReflectServiceContainerOptions) {
         this._options = containerOptions
     }
@@ -82,11 +84,18 @@ export class ReflectServiceContainer implements IServiceContainer {
      * @throws ServiceAlreadyRegisteredError
      */
     addFactory(key: string, factory: IServiceFactoryFunction): this {
-        if (!this._options.allowServiceOverride && key in this._services) {
+        if (!this._options.allowServiceOverride && key in this._serviceFactories) {
             throw new ServiceAlreadyRegisteredError(key)
         }
 
-        this._services[key] = factory(this)
+        this._serviceFactories[key] = factory
+        delete this._services[key]
+
+        // if (!this._options.allowServiceOverride && key in this._services) {
+        //     throw new ServiceAlreadyRegisteredError(key)
+        // }
+        //
+        // this._services[key] = factory(this)
 
         return this
     }
@@ -99,8 +108,12 @@ export class ReflectServiceContainer implements IServiceContainer {
      * @throws ServiceNotFoundError
      */
     get<T>(key: string): T {
-        if (!(key in this._services)) {
+        if (!(key in this._serviceFactories)) {
             throw new ServiceNotFoundError(key)
+        }
+
+        if (!(key in this._services)) {
+            this._services[key] = this._serviceFactories[key] (this)
         }
 
         return this._services[key] as T
@@ -114,11 +127,15 @@ export class ReflectServiceContainer implements IServiceContainer {
      * @throws ServiceNotFoundError Thrown when no service is matching the passed key.
      */
     delete(key: string): this {
-        if (!(key in this._services)) {
+        if (!(key in this._serviceFactories)) {
             throw new ServiceNotFoundError(key)
         }
 
-        delete this._services[key]
+        delete this._serviceFactories[key]
+
+        if (key in this._services) {
+            delete this._services[key]
+        }
 
         return this
     }

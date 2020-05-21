@@ -4,7 +4,7 @@ import {
     IServiceContainer,
     ReflectServiceContainer,
     ServiceAlreadyRegisteredError,
-    ServiceContainer, ServiceNotFoundError
+    ServiceNotFoundError
 } from '../src'
 import {Inject} from '../src'
 
