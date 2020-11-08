@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v1.4.1](../README.md) › [Globals](../globals.md) › ["errors/ServiceNotFoundError"](_errors_servicenotfounderror_.md)
+[@botflx/dependency-injection-container - v1.4.2](../README.md) › [Globals](../globals.md) › ["errors/ServiceNotFoundError"](_errors_servicenotfounderror_.md)
 
 # External module: "errors/ServiceNotFoundError"
 

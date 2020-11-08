@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v1.4.1](../README.md) › [Globals](../globals.md) › ["mappers/IOptionMapper"](_mappers_ioptionmapper_.md)
+[@botflx/dependency-injection-container - v1.4.2](../README.md) › [Globals](../globals.md) › ["mappers/IOptionMapper"](_mappers_ioptionmapper_.md)
 
 # External module: "mappers/IOptionMapper"
 

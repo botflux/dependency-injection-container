@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v1.4.1](../README.md) › [Globals](../globals.md) › ["IServiceFactoryFunction"](../modules/_iservicefactoryfunction_.md) › [IServiceFactoryFunction](_iservicefactoryfunction_.iservicefactoryfunction.md)
+[@botflx/dependency-injection-container - v1.4.2](../README.md) › [Globals](../globals.md) › ["IServiceFactoryFunction"](../modules/_iservicefactoryfunction_.md) › [IServiceFactoryFunction](_iservicefactoryfunction_.iservicefactoryfunction.md)
 
 # Interface: IServiceFactoryFunction
 
@@ -12,7 +12,7 @@ A function that create a service
 
 ▸ (`container`: [IServiceContainer](_iservicecontainer_.iservicecontainer.md)): *any*
 
-*Defined in [src/IServiceFactoryFunction.ts:6](https://github.com/botflux/dependency-injection-container/blob/0a0a030/src/IServiceFactoryFunction.ts#L6)*
+*Defined in [src/IServiceFactoryFunction.ts:6](https://github.com/botflux/dependency-injection-container/blob/4cf7f58/src/IServiceFactoryFunction.ts#L6)*
 
 A function that create a service
 
