@@ -5,133 +5,112 @@
 [![GitHub issues](https://img.shields.io/github/issues/botflux/dependency-injection-container.svg)](https://GitHub.com/botflux/dependency-injection-container/issues/)
 [![GitHub license](https://img.shields.io/github/license/botflux/dependency-injection-container.svg)](https://github.com/botflux/dependency-injection-container/blob/master/LICENSE)
 
-# dependency-injection-container
-
-A dependency injection container
+## Installation
 
 ```shell script
-npm install --save @botflx/dependency-injection-container
+npm i --save @botflx/dependency-injection-container
+# or using yarn
+yarn add @botflx/dependency-injection-container
 ```
 
-# Usage
+## API
 
-Looking for javascript examples ? You can find some [here](/JAVASCRIPT.md) or in [basic example js](/examples/basic-example-js).
+### Container creation
 
-Here's an example on how to create and populate a service container.
-You can create a service container by using `createServiceContainer`.
-If the service is a class you can pass it with `container.add()` and if you
-have a function-style service you can add it with `container.addFactory()`.
-You can get a service instance by calling `container.get()`.
+- [`createServiceContainer(options: IServiceContainerFactoryOptions): IServiceContainer`](#Container creation)
 
-Every service / factory receive the container as first parameter.  
+### Container usage
+
+- `IServiceContainer.get<TService>(serviceName: string): TService`
+- `IServiceContainer.add(serviceName: string, constructor: Function): IServiceContainer`
+- `IServiceContainer.addService(serviceName: string, factory: Function): IServiceContainer`
+- `IServiceContainer.resolve<TService>(constructor: Function): TService`
+- `IServiceContainer.resolveFacory<TService>(factory: Function): TService`
+- `IServiceContainer.delete(serviceName: string): IServiceContainer`
+
+### Decorators
+
+- `@Inject(string)`
+- `@Service(string)`
+
+## Usage
+
+### Container with decorators
 
 ```typescript
-import {createServiceContainer} from '@botflx/dependency-injection-container'
+import 'reflect-metadata'
+import {createServiceContainer, Inject, Service, createReflectServiceLoader} from '@botflx/dependency-injection-container'
 
-class OptionProvider {
-    constructor(container: IServiceContainer) {}
+// Add metadata to this class, the service loader will
+// be able to load those metadata and it will populate 
+// the service container.
+@Service('Logger')
+class Logger {}
+
+@Service('UserDao')
+class UserDao {
+    // You can inject services using the @Inject decorator.
+    constructor(@Inject('Logger') logger: Logger) {}
 }
 
-// Create a new service container
-const container = createServiceContainer()
+// The service loader role is to collect services that use @Service decorators
+const serviceLoader = createReflectServiceLoader([Logger, UserDao], [])
+const container = createServiceContainer({ useReflection: true, serviceLoader: serviceLoader })
 
-// Add a service constructor
-container.add('provider.options', OptionProvider)
-
-// Add a service factory function
-container.addFactory('logger', (container: IServiceContainer) => (message: string) => console.log(message))
-
-// Get a service
-const optionProvider = container.get<OptionProvider>('provider.options')
-const logger = container.get<(message: string) => void>('logger')
+const logger = container.get<Logger>('Logger')
+const userDao = container.get<UserDao>('UserDao')
 ```
 
-## Examples
+## More examples
 
-You can find examples for typescript and javascript [here](/examples).
-
-## Some more functions
-
-An `IServiceContainer` gives some more methods. You can instantiate a constructor or factory function be using 
-`container.resolve()` and `container.resolveFactory()`.
-You can also delete a service by calling `container.delete()` 
+### Plain container examples
 
 ```typescript
 import {createServiceContainer} from '@botflx/dependency-injection-container'
 
-const container = createServiceContainer()
+// It creates a plain container without decorators supports.
+// You can plain container when you don't want to import 'npm i reflect-metadata'
+const plainContainer = createServiceContainer({ useReflection: false })
 
-// Instantiate the following constructor without adding it to the container.
-const optionProvider = container.resolve<OptionResolver>(OptionProvider)
-const logger = container.resolveFactory<Function>((container: IServiceContainer) => (message) => console.log(message))
+import 'reflect-metadata'
+// It creates a container that supports decorators.
+// You must import the reflect-metadata package in order to use this container type.
+const container = createServiceContainer({ useReflection: true })
 
-container.add('provider.options', OptionProvider)
-container.delete('provider.options')
-
-// Throw a ServiceNotFoundError
-container.get('provider.options')
-
+// By default this factory creates plain container
+const anotherPlainContainer = createServiceContainer()
 ```
 
-## Fluent API
-
-`IServiceContainer` implementation gives fluent adders which means that adders will return the container instance.
+### Plain container usage example
 
 ```typescript
-import {createServiceContainer} from '@botflx/dependency-injection-container'
+import {createServiceContainer, IServiceContainer} from '@botflx/dependency-injection-container'
 
-const container = createServiceContainer()
-    .add('service1', ...)
-    .add('service2', ...)
-    .addFactory('service3' ...)
-    .add('service4', ...)
-```
+const plainContainer = createServiceContainer({ useReflection: false })
 
-### Factory options
-
-When using `createServiceContainer()` or `new ServiceContainerFactory().create()`,
-you can pass an option object.
-
-```typescript
-import {createServiceContainer} from '@botflx/dependency-injection-container'
-
-createServiceContainer({ useReflection: false, allowServiceOverride: false })
-```
-
-#### Default options
-```typescript
-{
-    /*
-        If true the ServiceContainerFactory will returns a service container
-        handling metadata and decorators; otherwise it will returns a plain
-        service container.
-        Go to USAGE.md to learn more.
-        It requires `npm i reflect-metadata`.
-    */
-    useReflection: boolean = false
-
-    /*
-        If true an IServiceContainer will allow you to call `container.add()` 
-        or `container.addFactory()` multiple times with the same service name. 
-    */
-    allowServiceOverride: boolean = false
+class Logger {}
+class UserDao {
+    // When you use plain containers services will
+    // receive the container as first parameter.
+    constructor(container: IServiceContainer) {
+        container.get<Logger>('Logger')
+    }
 }
+
+// Add services using the `IServiceContainer.add()`
+plainContainer
+    .add('Logger', Logger)
+    .add('UserDao', UserDao)
+
+// Get user dao using `IServiceContainer.get()`
+const userDao = plainContainer.get<UserDao>('UserDao')
+
+function createUserFactory (logger: Logger) {
+    return function (userName: string, password: string) { ... }
+}
+
+// Sometimes you can't use the class constructor, so you can use
+// `IServiceContainer.addFactory()` as a fallback.
+plainContainer
+    .addFactory('createUser', container => createUserFactory(container.get('Logger')))
 ```
-
-## Decorators
-
-You can learn more about decorators in [Usage page](USAGE.md).
-
-## Tests
-
-```shell script
-git clone https://github.com/botflux/dependency-injection-container.git
-cd dependency-injection-container
-npm install
-npm test # or
-npm run test:watch
-```
-
-## Issues
-
-If you have issues with the package or request, go [here](https://github.com/botflux/dependency-injection-container/issues).

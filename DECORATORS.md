@@ -1,6 +1,6 @@
 # Decorators / Reflection support
 
-As mentions in [README](README.new.md#Decorators) this package
+As mentions in [README](README.md#Decorators) this package
 supports decorators and reflection.
 
 This package use decorators in a passive way meaning
@@ -11,7 +11,7 @@ service loaders or container itself.
 ## Example
 
 To illustrate the usage of decorators, we will use
-the same example as in [README](README.new.md#Example)
+the same example as in [README](README.md#Example)
 
 ````typescript
 import { Inject, Service } from '@botflx/dependency-injection-container'
@@ -35,8 +35,8 @@ class DatabaseConnection {
 function getUsers (db: DatabaseConnection) {}
 ````
 
-`IServiceContainer` implementations provide an fluent API for adders. `IServiceContainer` provides an
-API to add class-style and function-style services.
+`IServiceContainer` implementations provide a fluent API for adders. it also provides an
+API to add class and function services.
 
 ````typescript
 import {createServiceContainer, createReflectServiceLoader} from '@botflx/dependency-injection-container'
@@ -51,7 +51,7 @@ const container: IServiceContainer = createServiceContainer({
     serviceLoader: createReflectServiceLoader([ Logger, DatabaseConnection ], [])
 })
 
-// Add function-style using factory functions
+// Add function using factory functions
 // Even with decorators supports factory functions still works the same as with
 // non-reflection container. This way you still will be able to add function or
 // classes you can't decorate.
