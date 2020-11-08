@@ -9,6 +9,7 @@
     "docs:generate": "typedoc --plugin typedoc-plugin-markdown",
     "prepublish": "npm run build",
     "preversion": "npm test && npm run docs:generate && git add docs/",
+    "postversion": "git push --tags",
     "build": "tsc",
     "test:coverage": "jest --coverage --coverageReporters=text-lcov | coveralls"
   },
