@@ -44,6 +44,10 @@ export class ServiceContainerFactory implements IServiceContainerFactory {
     create(): IServiceContainer {
         const containerOptions = this._optionMapper.toContainerOptions(this._options)
 
+        if (this._options.useReflection && (!Reflect || !('defineMetadata' in Reflect) || !('getOwnMetadata' in Reflect))) {
+            throw new Error(`You can't create a container supporting decorators without the reflect-metadata polyfill included.`)
+        }
+
         const container = this._options.useReflection
             ? new ReflectServiceContainer(containerOptions)
             : new ServiceContainer(containerOptions)

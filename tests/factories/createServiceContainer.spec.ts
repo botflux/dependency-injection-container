@@ -1,3 +1,4 @@
+import 'reflect-metadata'
 import {createServiceContainer, ServiceContainerFactory} from '../../src'
 
 describe('#createServiceContainer', () => {
