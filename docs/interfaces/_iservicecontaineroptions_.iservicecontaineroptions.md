@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v1.5.0](../README.md) › [Globals](../globals.md) › ["IServiceContainerOptions"](../modules/_iservicecontaineroptions_.md) › [IServiceContainerOptions](_iservicecontaineroptions_.iservicecontaineroptions.md)
+[@botflx/dependency-injection-container - v1.6.0](../README.md) › [Globals](../globals.md) › ["IServiceContainerOptions"](../modules/_iservicecontaineroptions_.md) › [IServiceContainerOptions](_iservicecontaineroptions_.iservicecontaineroptions.md)
 
 # Interface: IServiceContainerOptions
 
@@ -18,4 +18,4 @@
 
 • **allowServiceOverride**? : *undefined | false | true*
 
-*Defined in [src/IServiceContainerOptions.ts:2](https://github.com/botflux/dependency-injection-container/blob/f4a99c3/src/IServiceContainerOptions.ts#L2)*
+*Defined in [src/IServiceContainerOptions.ts:2](https://github.com/botflux/dependency-injection-container/blob/9e6a0ea/src/IServiceContainerOptions.ts#L2)*

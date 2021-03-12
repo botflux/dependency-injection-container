@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v1.5.0](../README.md) › [Globals](../globals.md) › ["decorators/Service"](_decorators_service_.md)
+[@botflx/dependency-injection-container - v1.6.0](../README.md) › [Globals](../globals.md) › ["decorators/Service"](_decorators_service_.md)
 
 # External module: "decorators/Service"
 
@@ -14,7 +14,7 @@
 
 ▸ **Service**(`serviceName`: string): *(Anonymous function)*
 
-*Defined in [src/decorators/Service.ts:3](https://github.com/botflux/dependency-injection-container/blob/f4a99c3/src/decorators/Service.ts#L3)*
+*Defined in [src/decorators/Service.ts:3](https://github.com/botflux/dependency-injection-container/blob/9e6a0ea/src/decorators/Service.ts#L3)*
 
 **Parameters:**
 

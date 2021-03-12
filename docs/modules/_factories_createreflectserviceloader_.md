@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v1.5.0](../README.md) › [Globals](../globals.md) › ["factories/createReflectServiceLoader"](_factories_createreflectserviceloader_.md)
+[@botflx/dependency-injection-container - v1.6.0](../README.md) › [Globals](../globals.md) › ["factories/createReflectServiceLoader"](_factories_createreflectserviceloader_.md)
 
 # External module: "factories/createReflectServiceLoader"
 
@@ -14,7 +14,7 @@
 
 ▸ **createReflectServiceLoader**(`serviceConstructors`: [Constructor](_types_.md#constructor)[], `serviceFactories`: [ImportService](_types_.md#importservice)‹[IServiceFactoryFunction](../interfaces/_iservicefactoryfunction_.iservicefactoryfunction.md)›[]): *[IServiceLoader](../interfaces/_loaders_iserviceloader_.iserviceloader.md)*
 
-*Defined in [src/factories/createReflectServiceLoader.ts:14](https://github.com/botflux/dependency-injection-container/blob/f4a99c3/src/factories/createReflectServiceLoader.ts#L14)*
+*Defined in [src/factories/createReflectServiceLoader.ts:14](https://github.com/botflux/dependency-injection-container/blob/9e6a0ea/src/factories/createReflectServiceLoader.ts#L14)*
 
 Create a reflect service loader.
 This loader allow shorter service declaration by passing collections of services.

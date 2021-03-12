@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v1.5.0](../README.md) › [Globals](../globals.md) › ["factories/ServiceContainerFactory"](../modules/_factories_servicecontainerfactory_.md) › [ServiceContainerFactory](_factories_servicecontainerfactory_.servicecontainerfactory.md)
+[@botflx/dependency-injection-container - v1.6.0](../README.md) › [Globals](../globals.md) › ["factories/ServiceContainerFactory"](../modules/_factories_servicecontainerfactory_.md) › [ServiceContainerFactory](_factories_servicecontainerfactory_.servicecontainerfactory.md)
 
 # Class: ServiceContainerFactory
 
@@ -40,7 +40,7 @@ new ServiceContainerFactory({
 
 \+ **new ServiceContainerFactory**(`options`: [IServiceContainerFactoryOptions](../interfaces/_factories_iservicecontainerfactoryoptions_.iservicecontainerfactoryoptions.md), `optionMapper`: [IOptionMapper](../interfaces/_mappers_ioptionmapper_.ioptionmapper.md)): *[ServiceContainerFactory](_factories_servicecontainerfactory_.servicecontainerfactory.md)*
 
-*Defined in [src/factories/ServiceContainerFactory.ts:30](https://github.com/botflux/dependency-injection-container/blob/f4a99c3/src/factories/ServiceContainerFactory.ts#L30)*
+*Defined in [src/factories/ServiceContainerFactory.ts:30](https://github.com/botflux/dependency-injection-container/blob/9e6a0ea/src/factories/ServiceContainerFactory.ts#L30)*
 
 **Parameters:**
 
@@ -57,7 +57,7 @@ Name | Type | Default |
 
 • **_optionMapper**: *[IOptionMapper](../interfaces/_mappers_ioptionmapper_.ioptionmapper.md)*
 
-*Defined in [src/factories/ServiceContainerFactory.ts:30](https://github.com/botflux/dependency-injection-container/blob/f4a99c3/src/factories/ServiceContainerFactory.ts#L30)*
+*Defined in [src/factories/ServiceContainerFactory.ts:30](https://github.com/botflux/dependency-injection-container/blob/9e6a0ea/src/factories/ServiceContainerFactory.ts#L30)*
 
 ___
 
@@ -65,7 +65,7 @@ ___
 
 • **_options**: *[IServiceContainerFactoryOptions](../interfaces/_factories_iservicecontainerfactoryoptions_.iservicecontainerfactoryoptions.md)*
 
-*Defined in [src/factories/ServiceContainerFactory.ts:29](https://github.com/botflux/dependency-injection-container/blob/f4a99c3/src/factories/ServiceContainerFactory.ts#L29)*
+*Defined in [src/factories/ServiceContainerFactory.ts:29](https://github.com/botflux/dependency-injection-container/blob/9e6a0ea/src/factories/ServiceContainerFactory.ts#L29)*
 
 ## Methods
 
@@ -75,7 +75,7 @@ ___
 
 *Implementation of [IServiceContainerFactory](../interfaces/_factories_iservicecontainerfactory_.iservicecontainerfactory.md)*
 
-*Defined in [src/factories/ServiceContainerFactory.ts:44](https://github.com/botflux/dependency-injection-container/blob/f4a99c3/src/factories/ServiceContainerFactory.ts#L44)*
+*Defined in [src/factories/ServiceContainerFactory.ts:44](https://github.com/botflux/dependency-injection-container/blob/9e6a0ea/src/factories/ServiceContainerFactory.ts#L44)*
 
 Creates a new instance of IServiceContainer
 
