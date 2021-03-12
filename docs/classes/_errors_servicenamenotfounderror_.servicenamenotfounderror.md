@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v1.4.2](../README.md) › [Globals](../globals.md) › ["errors/ServiceNameNotFoundError"](../modules/_errors_servicenamenotfounderror_.md) › [ServiceNameNotFoundError](_errors_servicenamenotfounderror_.servicenamenotfounderror.md)
+[@botflx/dependency-injection-container - v1.5.0](../README.md) › [Globals](../globals.md) › ["errors/ServiceNameNotFoundError"](../modules/_errors_servicenamenotfounderror_.md) › [ServiceNameNotFoundError](_errors_servicenamenotfounderror_.servicenamenotfounderror.md)
 
 # Class: ServiceNameNotFoundError
 
@@ -29,7 +29,7 @@ The service name is not found.
 
 \+ **new ServiceNameNotFoundError**(`className`: string, ...`args`: any[]): *[ServiceNameNotFoundError](_errors_servicenamenotfounderror_.servicenamenotfounderror.md)*
 
-*Defined in [src/errors/ServiceNameNotFoundError.ts:4](https://github.com/botflux/dependency-injection-container/blob/4cf7f58/src/errors/ServiceNameNotFoundError.ts#L4)*
+*Defined in [src/errors/ServiceNameNotFoundError.ts:4](https://github.com/botflux/dependency-injection-container/blob/be695a3/src/errors/ServiceNameNotFoundError.ts#L4)*
 
 **Parameters:**
 

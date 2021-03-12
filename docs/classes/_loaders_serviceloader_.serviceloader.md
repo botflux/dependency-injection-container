@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v1.4.2](../README.md) › [Globals](../globals.md) › ["loaders/ServiceLoader"](../modules/_loaders_serviceloader_.md) › [ServiceLoader](_loaders_serviceloader_.serviceloader.md)
+[@botflx/dependency-injection-container - v1.5.0](../README.md) › [Globals](../globals.md) › ["loaders/ServiceLoader"](../modules/_loaders_serviceloader_.md) › [ServiceLoader](_loaders_serviceloader_.serviceloader.md)
 
 # Class: ServiceLoader
 
@@ -50,7 +50,7 @@ plainServiceLoader.load(container)
 
 \+ **new ServiceLoader**(`serviceConstructors`: [ImportService](../modules/_types_.md#importservice)‹[Constructor](../modules/_types_.md#constructor)›[], `serviceFactories`: [ImportService](../modules/_types_.md#importservice)‹[IServiceFactoryFunction](../interfaces/_iservicefactoryfunction_.iservicefactoryfunction.md)›[]): *[ServiceLoader](_loaders_serviceloader_.serviceloader.md)*
 
-*Defined in [src/loaders/ServiceLoader.ts:28](https://github.com/botflux/dependency-injection-container/blob/4cf7f58/src/loaders/ServiceLoader.ts#L28)*
+*Defined in [src/loaders/ServiceLoader.ts:28](https://github.com/botflux/dependency-injection-container/blob/be695a3/src/loaders/ServiceLoader.ts#L28)*
 
 **Parameters:**
 
@@ -67,7 +67,7 @@ Name | Type |
 
 • **_serviceConstructors**: *[ImportService](../modules/_types_.md#importservice)‹[Constructor](../modules/_types_.md#constructor)›[]*
 
-*Defined in [src/loaders/ServiceLoader.ts:27](https://github.com/botflux/dependency-injection-container/blob/4cf7f58/src/loaders/ServiceLoader.ts#L27)*
+*Defined in [src/loaders/ServiceLoader.ts:27](https://github.com/botflux/dependency-injection-container/blob/be695a3/src/loaders/ServiceLoader.ts#L27)*
 
 ___
 
@@ -75,7 +75,7 @@ ___
 
 • **_serviceFactories**: *[ImportService](../modules/_types_.md#importservice)‹[IServiceFactoryFunction](../interfaces/_iservicefactoryfunction_.iservicefactoryfunction.md)›[]*
 
-*Defined in [src/loaders/ServiceLoader.ts:28](https://github.com/botflux/dependency-injection-container/blob/4cf7f58/src/loaders/ServiceLoader.ts#L28)*
+*Defined in [src/loaders/ServiceLoader.ts:28](https://github.com/botflux/dependency-injection-container/blob/be695a3/src/loaders/ServiceLoader.ts#L28)*
 
 ## Methods
 
@@ -85,7 +85,7 @@ ___
 
 *Implementation of [IServiceLoader](../interfaces/_loaders_iserviceloader_.iserviceloader.md)*
 
-*Defined in [src/loaders/ServiceLoader.ts:35](https://github.com/botflux/dependency-injection-container/blob/4cf7f58/src/loaders/ServiceLoader.ts#L35)*
+*Defined in [src/loaders/ServiceLoader.ts:35](https://github.com/botflux/dependency-injection-container/blob/be695a3/src/loaders/ServiceLoader.ts#L35)*
 
 **Parameters:**
 

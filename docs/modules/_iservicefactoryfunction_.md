@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v1.4.2](../README.md) › [Globals](../globals.md) › ["IServiceFactoryFunction"](_iservicefactoryfunction_.md)
+[@botflx/dependency-injection-container - v1.5.0](../README.md) › [Globals](../globals.md) › ["IServiceFactoryFunction"](_iservicefactoryfunction_.md)
 
 # External module: "IServiceFactoryFunction"
 

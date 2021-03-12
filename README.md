@@ -17,7 +17,7 @@ yarn add @botflx/dependency-injection-container
 
 ### Container creation
 
-- [`createServiceContainer(options: IServiceContainerFactoryOptions): IServiceContainer`](#Container creation)
+- `createServiceContainer(options: IServiceContainerFactoryOptions): IServiceContainer`
 
 ### Container usage
 

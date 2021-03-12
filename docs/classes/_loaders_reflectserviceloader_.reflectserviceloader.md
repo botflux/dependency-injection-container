@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v1.4.2](../README.md) › [Globals](../globals.md) › ["loaders/ReflectServiceLoader"](../modules/_loaders_reflectserviceloader_.md) › [ReflectServiceLoader](_loaders_reflectserviceloader_.reflectserviceloader.md)
+[@botflx/dependency-injection-container - v1.5.0](../README.md) › [Globals](../globals.md) › ["loaders/ReflectServiceLoader"](../modules/_loaders_reflectserviceloader_.md) › [ReflectServiceLoader](_loaders_reflectserviceloader_.reflectserviceloader.md)
 
 # Class: ReflectServiceLoader
 
@@ -51,7 +51,7 @@ reflectServiceLoader.load(container)
 
 \+ **new ReflectServiceLoader**(`serviceConstructor`: [Constructor](../modules/_types_.md#constructor)[], `serviceFactories`: [ImportService](../modules/_types_.md#importservice)‹[IServiceFactoryFunction](../interfaces/_iservicefactoryfunction_.iservicefactoryfunction.md)›[]): *[ReflectServiceLoader](_loaders_reflectserviceloader_.reflectserviceloader.md)*
 
-*Defined in [src/loaders/ReflectServiceLoader.ts:38](https://github.com/botflux/dependency-injection-container/blob/4cf7f58/src/loaders/ReflectServiceLoader.ts#L38)*
+*Defined in [src/loaders/ReflectServiceLoader.ts:38](https://github.com/botflux/dependency-injection-container/blob/be695a3/src/loaders/ReflectServiceLoader.ts#L38)*
 
 Creates a new instance of *ReflectServiceLoader* by passing a collection of constructor and a collection of factories.
 
@@ -70,7 +70,7 @@ Name | Type | Description |
 
 • **_serviceConstructors**: *[Constructor](../modules/_types_.md#constructor)[]*
 
-*Defined in [src/loaders/ReflectServiceLoader.ts:33](https://github.com/botflux/dependency-injection-container/blob/4cf7f58/src/loaders/ReflectServiceLoader.ts#L33)*
+*Defined in [src/loaders/ReflectServiceLoader.ts:33](https://github.com/botflux/dependency-injection-container/blob/be695a3/src/loaders/ReflectServiceLoader.ts#L33)*
 
 Service constructors to load.
 
@@ -80,7 +80,7 @@ ___
 
 • **_serviceFactories**: *[ImportService](../modules/_types_.md#importservice)‹[IServiceFactoryFunction](../interfaces/_iservicefactoryfunction_.iservicefactoryfunction.md)›[]*
 
-*Defined in [src/loaders/ReflectServiceLoader.ts:38](https://github.com/botflux/dependency-injection-container/blob/4cf7f58/src/loaders/ReflectServiceLoader.ts#L38)*
+*Defined in [src/loaders/ReflectServiceLoader.ts:38](https://github.com/botflux/dependency-injection-container/blob/be695a3/src/loaders/ReflectServiceLoader.ts#L38)*
 
 Service factories to load.
 
@@ -92,7 +92,7 @@ Service factories to load.
 
 *Implementation of [IServiceLoader](../interfaces/_loaders_iserviceloader_.iserviceloader.md)*
 
-*Defined in [src/loaders/ReflectServiceLoader.ts:51](https://github.com/botflux/dependency-injection-container/blob/4cf7f58/src/loaders/ReflectServiceLoader.ts#L51)*
+*Defined in [src/loaders/ReflectServiceLoader.ts:51](https://github.com/botflux/dependency-injection-container/blob/be695a3/src/loaders/ReflectServiceLoader.ts#L51)*
 
 **Parameters:**
 
@@ -108,7 +108,7 @@ ___
 
 ▸ **getServiceName**(`constructor`: [Constructor](../modules/_types_.md#constructor)): *string*
 
-*Defined in [src/loaders/ReflectServiceLoader.ts:67](https://github.com/botflux/dependency-injection-container/blob/4cf7f58/src/loaders/ReflectServiceLoader.ts#L67)*
+*Defined in [src/loaders/ReflectServiceLoader.ts:67](https://github.com/botflux/dependency-injection-container/blob/be695a3/src/loaders/ReflectServiceLoader.ts#L67)*
 
 Returns service name described by `@Service` decorator.
 
