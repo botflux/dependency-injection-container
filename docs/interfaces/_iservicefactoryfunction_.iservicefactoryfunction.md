@@ -12,7 +12,7 @@ A function that create a service
 
 ▸ (`container`: [IServiceContainer](_iservicecontainer_.iservicecontainer.md)): *any*
 
-*Defined in [src/IServiceFactoryFunction.ts:6](https://github.com/botflux/dependency-injection-container/blob/be695a3/src/IServiceFactoryFunction.ts#L6)*
+*Defined in [src/IServiceFactoryFunction.ts:6](https://github.com/botflux/dependency-injection-container/blob/f4a99c3/src/IServiceFactoryFunction.ts#L6)*
 
 A function that create a service
 

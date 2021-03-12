@@ -18,10 +18,10 @@
 
 ### ▪ **defaultReflectServiceContainerOptions**: *object*
 
-*Defined in [src/ReflectServiceContainer.ts:9](https://github.com/botflux/dependency-injection-container/blob/be695a3/src/ReflectServiceContainer.ts#L9)*
+*Defined in [src/ReflectServiceContainer.ts:9](https://github.com/botflux/dependency-injection-container/blob/f4a99c3/src/ReflectServiceContainer.ts#L9)*
 
 ###  allowServiceOverride
 
 • **allowServiceOverride**: *false* = false
 
-*Defined in [src/ReflectServiceContainer.ts:10](https://github.com/botflux/dependency-injection-container/blob/be695a3/src/ReflectServiceContainer.ts#L10)*
+*Defined in [src/ReflectServiceContainer.ts:10](https://github.com/botflux/dependency-injection-container/blob/f4a99c3/src/ReflectServiceContainer.ts#L10)*

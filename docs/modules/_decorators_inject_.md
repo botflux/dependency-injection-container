@@ -14,7 +14,7 @@
 
 ▸ **Inject**(`serviceName`: string): *(Anonymous function)*
 
-*Defined in [src/decorators/Inject.ts:22](https://github.com/botflux/dependency-injection-container/blob/be695a3/src/decorators/Inject.ts#L22)*
+*Defined in [src/decorators/Inject.ts:22](https://github.com/botflux/dependency-injection-container/blob/f4a99c3/src/decorators/Inject.ts#L22)*
 
 Adds metadata to the decorated parameter.
 A IServiceContainer handling reflection will be able to use those metadata.

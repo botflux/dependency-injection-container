@@ -25,7 +25,7 @@ Import a group of service in a service container.
 
 ▸ **load**(`container`: [IServiceContainer](_iservicecontainer_.iservicecontainer.md)): *void*
 
-*Defined in [src/loaders/IServiceLoader.ts:13](https://github.com/botflux/dependency-injection-container/blob/be695a3/src/loaders/IServiceLoader.ts#L13)*
+*Defined in [src/loaders/IServiceLoader.ts:13](https://github.com/botflux/dependency-injection-container/blob/f4a99c3/src/loaders/IServiceLoader.ts#L13)*
 
 Imports services in the given container.
 

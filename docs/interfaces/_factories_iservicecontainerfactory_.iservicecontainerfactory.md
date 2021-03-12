@@ -24,7 +24,7 @@ A factory that creates IServiceContainer
 
 ▸ **create**(): *[IServiceContainer](_iservicecontainer_.iservicecontainer.md)*
 
-*Defined in [src/factories/IServiceContainerFactory.ts:10](https://github.com/botflux/dependency-injection-container/blob/be695a3/src/factories/IServiceContainerFactory.ts#L10)*
+*Defined in [src/factories/IServiceContainerFactory.ts:10](https://github.com/botflux/dependency-injection-container/blob/f4a99c3/src/factories/IServiceContainerFactory.ts#L10)*
 
 Creates IServiceContainer instances.
 

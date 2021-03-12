@@ -22,7 +22,7 @@
 
 ▸ **toContainerOptions**(`options`: [IServiceContainerFactoryOptions](_factories_iservicecontainerfactoryoptions_.iservicecontainerfactoryoptions.md)): *[IServiceContainerOptions](_iservicecontaineroptions_.iservicecontaineroptions.md)*
 
-*Defined in [src/mappers/IOptionMapper.ts:5](https://github.com/botflux/dependency-injection-container/blob/be695a3/src/mappers/IOptionMapper.ts#L5)*
+*Defined in [src/mappers/IOptionMapper.ts:5](https://github.com/botflux/dependency-injection-container/blob/f4a99c3/src/mappers/IOptionMapper.ts#L5)*
 
 **Parameters:**
 

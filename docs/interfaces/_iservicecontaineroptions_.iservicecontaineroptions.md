@@ -18,4 +18,4 @@
 
 • **allowServiceOverride**? : *undefined | false | true*
 
-*Defined in [src/IServiceContainerOptions.ts:2](https://github.com/botflux/dependency-injection-container/blob/be695a3/src/IServiceContainerOptions.ts#L2)*
+*Defined in [src/IServiceContainerOptions.ts:2](https://github.com/botflux/dependency-injection-container/blob/f4a99c3/src/IServiceContainerOptions.ts#L2)*

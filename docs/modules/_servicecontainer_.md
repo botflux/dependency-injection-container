@@ -18,10 +18,10 @@
 
 ### ▪ **defaultServiceContainerOptions**: *object*
 
-*Defined in [src/ServiceContainer.ts:8](https://github.com/botflux/dependency-injection-container/blob/be695a3/src/ServiceContainer.ts#L8)*
+*Defined in [src/ServiceContainer.ts:8](https://github.com/botflux/dependency-injection-container/blob/f4a99c3/src/ServiceContainer.ts#L8)*
 
 ###  allowServiceOverride
 
 • **allowServiceOverride**: *false* = false
 
-*Defined in [src/ServiceContainer.ts:9](https://github.com/botflux/dependency-injection-container/blob/be695a3/src/ServiceContainer.ts#L9)*
+*Defined in [src/ServiceContainer.ts:9](https://github.com/botflux/dependency-injection-container/blob/f4a99c3/src/ServiceContainer.ts#L9)*

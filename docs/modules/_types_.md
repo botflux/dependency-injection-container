@@ -16,7 +16,7 @@
 
 Ƭ **Constructor**: *object*
 
-*Defined in [src/types.ts:9](https://github.com/botflux/dependency-injection-container/blob/be695a3/src/types.ts#L9)*
+*Defined in [src/types.ts:9](https://github.com/botflux/dependency-injection-container/blob/f4a99c3/src/types.ts#L9)*
 
 Describe a class constructor.
 
@@ -30,7 +30,7 @@ ___
 
 Ƭ **ImportService**: *object*
 
-*Defined in [src/types.ts:28](https://github.com/botflux/dependency-injection-container/blob/be695a3/src/types.ts#L28)*
+*Defined in [src/types.ts:28](https://github.com/botflux/dependency-injection-container/blob/f4a99c3/src/types.ts#L28)*
 
 Represents an item of ServiceLoader / ReflectServiceLoader
 *T* is always Constructor or IServiceFactoryFunction
@@ -60,7 +60,7 @@ ___
 
 Ƭ **ServiceContainerDictionary**: *object*
 
-*Defined in [src/types.ts:4](https://github.com/botflux/dependency-injection-container/blob/be695a3/src/types.ts#L4)*
+*Defined in [src/types.ts:4](https://github.com/botflux/dependency-injection-container/blob/f4a99c3/src/types.ts#L4)*
 
 An example of service container "container".
 

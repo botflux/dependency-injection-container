@@ -14,7 +14,7 @@
 
 ▸ **Service**(`serviceName`: string): *(Anonymous function)*
 
-*Defined in [src/decorators/Service.ts:3](https://github.com/botflux/dependency-injection-container/blob/be695a3/src/decorators/Service.ts#L3)*
+*Defined in [src/decorators/Service.ts:3](https://github.com/botflux/dependency-injection-container/blob/f4a99c3/src/decorators/Service.ts#L3)*
 
 **Parameters:**
 

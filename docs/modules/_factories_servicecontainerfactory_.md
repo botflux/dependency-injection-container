@@ -18,7 +18,7 @@
 
 ### ▪ **defaultOptions**: *object*
 
-*Defined in [src/factories/ServiceContainerFactory.ts:12](https://github.com/botflux/dependency-injection-container/blob/be695a3/src/factories/ServiceContainerFactory.ts#L12)*
+*Defined in [src/factories/ServiceContainerFactory.ts:12](https://github.com/botflux/dependency-injection-container/blob/f4a99c3/src/factories/ServiceContainerFactory.ts#L12)*
 
 Default option of ServiceContainerFactory
 
@@ -26,16 +26,16 @@ Default option of ServiceContainerFactory
 
 • **allowServiceOverride**: *false* = false
 
-*Defined in [src/factories/ServiceContainerFactory.ts:14](https://github.com/botflux/dependency-injection-container/blob/be695a3/src/factories/ServiceContainerFactory.ts#L14)*
+*Defined in [src/factories/ServiceContainerFactory.ts:14](https://github.com/botflux/dependency-injection-container/blob/f4a99c3/src/factories/ServiceContainerFactory.ts#L14)*
 
 ###  serviceLoader
 
 • **serviceLoader**: *undefined* =  undefined
 
-*Defined in [src/factories/ServiceContainerFactory.ts:15](https://github.com/botflux/dependency-injection-container/blob/be695a3/src/factories/ServiceContainerFactory.ts#L15)*
+*Defined in [src/factories/ServiceContainerFactory.ts:15](https://github.com/botflux/dependency-injection-container/blob/f4a99c3/src/factories/ServiceContainerFactory.ts#L15)*
 
 ###  useReflection
 
 • **useReflection**: *false* = false
 
-*Defined in [src/factories/ServiceContainerFactory.ts:13](https://github.com/botflux/dependency-injection-container/blob/be695a3/src/factories/ServiceContainerFactory.ts#L13)*
+*Defined in [src/factories/ServiceContainerFactory.ts:13](https://github.com/botflux/dependency-injection-container/blob/f4a99c3/src/factories/ServiceContainerFactory.ts#L13)*

@@ -29,7 +29,7 @@ The service container has no service matching a given key.
 
 \+ **new ServiceNotFoundError**(`key`: string, ...`args`: any[]): *[ServiceNotFoundError](_errors_servicenotfounderror_.servicenotfounderror.md)*
 
-*Defined in [src/errors/ServiceNotFoundError.ts:4](https://github.com/botflux/dependency-injection-container/blob/be695a3/src/errors/ServiceNotFoundError.ts#L4)*
+*Defined in [src/errors/ServiceNotFoundError.ts:4](https://github.com/botflux/dependency-injection-container/blob/f4a99c3/src/errors/ServiceNotFoundError.ts#L4)*
 
 **Parameters:**
 
