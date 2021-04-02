@@ -4,6 +4,7 @@
 [![Lightweight](https://img.shields.io/bundlephobia/minzip/@botflx/dependency-injection-container)](https://bundlephobia.com/result?p=@botflx/dependency-injection-container)
 [![GitHub issues](https://img.shields.io/github/issues/botflux/dependency-injection-container.svg)](https://GitHub.com/botflux/dependency-injection-container/issues/)
 [![GitHub license](https://img.shields.io/github/license/botflux/dependency-injection-container.svg)](https://github.com/botflux/dependency-injection-container/blob/master/LICENSE)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fbotflux%2Fdependency-injection-container.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fbotflux%2Fdependency-injection-container?ref=badge_shield)
 
 ## Installation
 
@@ -114,3 +115,7 @@ function createUserFactory (logger: Logger) {
 plainContainer
     .addFactory('createUser', container => createUserFactory(container.get('Logger')))
 ```
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fbotflux%2Fdependency-injection-container.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fbotflux%2Fdependency-injection-container?ref=badge_large)
