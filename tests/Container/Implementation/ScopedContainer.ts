@@ -3,7 +3,7 @@ import {
     ContainerInterface,
     LifeCycle,
     ServiceConstructor,
-    ServiceFactory,
+    SyncServiceFactory,
     ServiceKey
 } from '../Interfaces'
 import {createContainerBuilder} from './Container'
@@ -51,12 +51,12 @@ class ScopedContainerBuilder implements ContainerBuilderInterface {
         return this
     }
 
-    addFactory<TService>(key: ServiceKey, factory: ServiceFactory<TService>, lifeCycle: LifeCycle): this {
+    addFactory<TService>(key: ServiceKey, factory: SyncServiceFactory<TService>, lifeCycle: LifeCycle): this {
         this.builder.addFactory(key, factory, lifeCycle)
         return this
     }
 
-    addFactoryAsync<TService>(key: ServiceKey, factory: ServiceFactory<Promise<TService>>, lifeCycle: LifeCycle): this {
+    addFactoryAsync<TService>(key: ServiceKey, factory: SyncServiceFactory<Promise<TService>>, lifeCycle: LifeCycle): this {
         this.builder.addFactoryAsync(key, factory, lifeCycle)
         return this
     }

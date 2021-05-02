@@ -3,8 +3,8 @@ import {
     ContainerInterface,
     LifeCycle,
     ServiceConstructor,
-    ServiceFactory,
-    ServiceKey,
+    SyncServiceFactory,
+    ServiceKey, AsyncServiceFactory, ServiceFactory,
 } from '../Interfaces'
 import {
     createSingletonFactoryRegistry,
@@ -22,10 +22,10 @@ class Container implements ContainerInterface {
         new Map<LifeCycle, FactoryRegistry>()
 
     constructor(
-        syncSingletonFactories: Map<ServiceKey, ServiceFactory<unknown>>,
-        syncTransientFactories: Map<ServiceKey, ServiceFactory<unknown>>,
-        asyncSingletonFactories: Map<ServiceKey, ServiceFactory<Promise<unknown>>>,
-        asyncTransientFactories: Map<ServiceKey, ServiceFactory<Promise<unknown>>>
+        syncSingletonFactories: Map<ServiceKey, SyncServiceFactory<unknown>>,
+        syncTransientFactories: Map<ServiceKey, SyncServiceFactory<unknown>>,
+        asyncSingletonFactories: Map<ServiceKey, SyncServiceFactory<Promise<unknown>>>,
+        asyncTransientFactories: Map<ServiceKey, SyncServiceFactory<Promise<unknown>>>
     ) {
         this.syncFactoriesRegistry.set(LifeCycle.Singleton, createSingletonFactoryRegistry(syncSingletonFactories))
         this.syncFactoriesRegistry.set(LifeCycle.Transient, createTransientFactoryRegistry(syncTransientFactories))
@@ -70,16 +70,16 @@ class Container implements ContainerInterface {
 
 class ContainerBuilder implements ContainerBuilderInterface {
     private readonly syncFactories =
-        new Map<LifeCycle, Map<ServiceKey, ServiceFactory<unknown>>>()
+        new Map<LifeCycle, Map<ServiceKey, SyncServiceFactory<unknown>>>()
             .set(LifeCycle.Singleton, new Map())
             .set(LifeCycle.Transient, new Map())
 
     private readonly asyncFactories =
-        new Map<LifeCycle, Map<ServiceKey, ServiceFactory<Promise<unknown>>>>()
+        new Map<LifeCycle, Map<ServiceKey, AsyncServiceFactory<Promise<unknown>>>>()
             .set(LifeCycle.Singleton, new Map())
             .set(LifeCycle.Transient, new Map())
 
-    addFactory<TService>(key: ServiceKey, factory: ServiceFactory<TService>, lifeCycle: LifeCycle): this {
+    addFactory<TService>(key: ServiceKey, factory: SyncServiceFactory<TService>, lifeCycle: LifeCycle): this {
         if (this.isAlreadyRegistered(key))
             throw new Error(`The service named "${key}" was already added.`)
 
@@ -103,7 +103,7 @@ class ContainerBuilder implements ContainerBuilderInterface {
         return this
     }
 
-    addFactoryAsync<TService>(key: ServiceKey, factory: ServiceFactory<Promise<TService>>, lifeCycle: LifeCycle): this {
+    addFactoryAsync<TService>(key: ServiceKey, factory: AsyncServiceFactory<Promise<TService>>, lifeCycle: LifeCycle): this {
         if (this.isAlreadyRegistered(key))
             throw new Error(`The service named "${key}" was already added.`)
 
