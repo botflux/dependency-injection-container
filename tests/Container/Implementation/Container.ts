@@ -103,7 +103,7 @@ class ContainerBuilder implements ContainerBuilderInterface {
         return this
     }
 
-    addFactoryAsync<TService>(key: ServiceKey, factory: AsyncServiceFactory<Promise<TService>>, lifeCycle: LifeCycle): this {
+    addAsyncFactory<TService>(key: ServiceKey, factory: AsyncServiceFactory<Promise<TService>>, lifeCycle: LifeCycle): this {
         if (this.isAlreadyRegistered(key))
             throw new Error(`The service named "${key}" was already added.`)
 

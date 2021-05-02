@@ -15,7 +15,7 @@ export type ServiceConstructor<TService> = { new(...args: any[]): TService }
 export interface ContainerBuilderInterface {
     addFactory<TService>(key: ServiceKey, factory: SyncServiceFactory<TService>, lifeCycle: LifeCycle): this
     addConstructor<TConstructor>(key: ServiceKey, constructor: ServiceConstructor<TConstructor>, lifeCycle: LifeCycle): this
-    addFactoryAsync<TService>(key: ServiceKey, factory: AsyncServiceFactory<Promise<TService>>, lifeCycle: LifeCycle): this
+    addAsyncFactory<TService>(key: ServiceKey, factory: AsyncServiceFactory<Promise<TService>>, lifeCycle: LifeCycle): this
 
     build(): ContainerInterface
 }

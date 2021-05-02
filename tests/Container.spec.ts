@@ -49,7 +49,7 @@ it('should add async factories', async function () {
     // Arrange
     const key = 'my service'
     const container = createContainerBuilder()
-        .addFactoryAsync(key, () => Promise.resolve(new MyService()), LifeCycle.Singleton)
+        .addAsyncFactory(key, () => Promise.resolve(new MyService()), LifeCycle.Singleton)
         .build()
 
     // Act
@@ -93,7 +93,7 @@ it('should pass sync factories to async factories', async function () {
     // Arrange
     const container = createContainerBuilder()
         .addFactory('Hello', () => "world", LifeCycle.Singleton)
-        .addFactoryAsync('Hello world', container => Promise.resolve(`Hello ${container.get("Hello")}`), LifeCycle.Singleton)
+        .addAsyncFactory('Hello world', container => Promise.resolve(`Hello ${container.get("Hello")}`), LifeCycle.Singleton)
         .build()
 
     // Act
@@ -114,15 +114,15 @@ it('should throw when overriding service', function () {
 
     const shouldThrow2 = () => builder
         .addFactory('MyService', () => {}, LifeCycle.Singleton)
-        .addFactoryAsync('MyService', () => Promise.resolve(), LifeCycle.Singleton)
+        .addAsyncFactory('MyService', () => Promise.resolve(), LifeCycle.Singleton)
 
     const shouldThrow3 = () => builder
-        .addFactoryAsync('MyService', () => Promise.resolve(), LifeCycle.Singleton)
+        .addAsyncFactory('MyService', () => Promise.resolve(), LifeCycle.Singleton)
         .addFactory('MyService', () => {}, LifeCycle.Singleton)
 
     const shouldThrow4 = () => builder
-        .addFactoryAsync('MyService', () => Promise.resolve(), LifeCycle.Singleton)
-        .addFactoryAsync('MyService', () => Promise.resolve(), LifeCycle.Singleton)
+        .addAsyncFactory('MyService', () => Promise.resolve(), LifeCycle.Singleton)
+        .addAsyncFactory('MyService', () => Promise.resolve(), LifeCycle.Singleton)
 
     // Assert
     expect(shouldThrow1).toThrow(`The service named "MyService" was already added.`)
@@ -135,7 +135,7 @@ it('should create singleton services', function () {
     // Arrange
     const container = createContainerBuilder()
         .addFactory("A", () => new RandomNumberService(), LifeCycle.Singleton)
-        .addFactoryAsync("B", () => Promise.resolve(new RandomNumberService()), LifeCycle.Singleton)
+        .addAsyncFactory("B", () => Promise.resolve(new RandomNumberService()), LifeCycle.Singleton)
         .addConstructor("C", RandomNumberService, LifeCycle.Singleton)
         .build()
 
@@ -159,7 +159,7 @@ it('should create transient service', async function () {
     // Arrange
     const container = createContainerBuilder()
         .addFactory("A", () => new RandomNumberService(), LifeCycle.Transient)
-        .addFactoryAsync("B", () => Promise.resolve(new RandomNumberService()), LifeCycle.Transient)
+        .addAsyncFactory("B", () => Promise.resolve(new RandomNumberService()), LifeCycle.Transient)
         .addConstructor("C", RandomNumberService, LifeCycle.Transient)
         .build()
 
@@ -183,14 +183,14 @@ it('should create a scoped service', async function () {
     // Arrange
     const container = createContainerBuilder()
         .addFactory("D", () => new RandomNumberService(), LifeCycle.Singleton)
-        .addFactoryAsync("E", () => Promise.resolve(new RandomNumberService()), LifeCycle.Singleton)
+        .addAsyncFactory("E", () => Promise.resolve(new RandomNumberService()), LifeCycle.Singleton)
         .addConstructor("F", RandomNumberService, LifeCycle.Singleton)
         .build()
 
 
     const scopedContainerBuilder = createScopedContainerBuilder(container)
         .addFactory("A", () => new RandomNumberService(), LifeCycle.Singleton)
-        .addFactoryAsync("B", () => Promise.resolve(new RandomNumberService()), LifeCycle.Singleton)
+        .addAsyncFactory("B", () => Promise.resolve(new RandomNumberService()), LifeCycle.Singleton)
         .addConstructor("C", RandomNumberService, LifeCycle.Singleton)
 
     const scopedContainer1 = scopedContainerBuilder.build()

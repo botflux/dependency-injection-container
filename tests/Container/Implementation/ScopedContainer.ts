@@ -56,8 +56,8 @@ class ScopedContainerBuilder implements ContainerBuilderInterface {
         return this
     }
 
-    addFactoryAsync<TService>(key: ServiceKey, factory: SyncServiceFactory<Promise<TService>>, lifeCycle: LifeCycle): this {
-        this.builder.addFactoryAsync(key, factory, lifeCycle)
+    addAsyncFactory<TService>(key: ServiceKey, factory: SyncServiceFactory<Promise<TService>>, lifeCycle: LifeCycle): this {
+        this.builder.addAsyncFactory(key, factory, lifeCycle)
         return this
     }
 
