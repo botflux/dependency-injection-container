@@ -1,8 +1,8 @@
 import 'reflect-metadata'
-import {createServiceContainer, Inject} from '../src'
-import {createPlainServiceLoader} from '../src/factories/createPlainServiceLoader'
-import {createReflectServiceLoader} from '../src/factories/createReflectServiceLoader'
-import {Service} from '../src/decorators/Service'
+import {createServiceContainer, Inject} from '../../src/V1'
+import {createPlainServiceLoader} from '../../src/V1/factories/createPlainServiceLoader'
+import {createReflectServiceLoader} from '../../src/V1/factories/createReflectServiceLoader'
+import {Service} from '../../src/V1/decorators/Service'
 
 it('should work', function () {
     const container = createServiceContainer({

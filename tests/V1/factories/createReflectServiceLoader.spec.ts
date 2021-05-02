@@ -1,5 +1,5 @@
-import {createReflectServiceLoader} from '../../src/factories/createReflectServiceLoader'
-import {ReflectServiceLoader} from '../../src/loaders/ReflectServiceLoader'
+import {createReflectServiceLoader} from '../../../src/V1/factories/createReflectServiceLoader'
+import {ReflectServiceLoader} from '../../../src/V1/loaders/ReflectServiceLoader'
 
 describe('#createReflectServiceLoader', function () {
     it('returns a reflect service loader', function () {

@@ -1,4 +1,4 @@
-import {IServiceContainer, ServiceAlreadyRegisteredError, ServiceContainer, ServiceNotFoundError} from '../src'
+import {IServiceContainer, ServiceAlreadyRegisteredError, ServiceContainer, ServiceNotFoundError} from '../../src/V1'
 
 describe('#ServiceContainer', () => {
 

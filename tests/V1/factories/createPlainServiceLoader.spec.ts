@@ -1,5 +1,5 @@
-import {createPlainServiceLoader} from '../../src/factories/createPlainServiceLoader'
-import {ServiceLoader} from '../../src/loaders/ServiceLoader'
+import {createPlainServiceLoader} from '../../../src/V1/factories/createPlainServiceLoader'
+import {ServiceLoader} from '../../../src/V1/loaders/ServiceLoader'
 
 describe('#createPlainServiceLoader', function () {
     it('returns a plain service container', () => {

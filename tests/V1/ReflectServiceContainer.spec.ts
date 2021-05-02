@@ -5,8 +5,8 @@ import {
     ReflectServiceContainer,
     ServiceAlreadyRegisteredError,
     ServiceNotFoundError
-} from '../src'
-import {Inject} from '../src'
+} from '../../src/V1'
+import {Inject} from '../../src/V1'
 
 describe('#ReflectServiceContainer', () => {
 

@@ -1,9 +1,9 @@
 import 'reflect-metadata'
-import {ReflectServiceContainer, ServiceContainer} from '../../src'
-import {ServiceLoader} from '../../src/loaders/ServiceLoader'
-import {Service} from '../../src/decorators/Service'
-import {ReflectServiceLoader} from '../../src/loaders/ReflectServiceLoader'
-import {ServiceNameNotFoundError} from '../../src/errors/ServiceNameNotFoundError'
+import {ReflectServiceContainer, ServiceContainer} from '../../../src/V1'
+import {ServiceLoader} from '../../../src/V1/loaders/ServiceLoader'
+import {Service} from '../../../src/V1/decorators/Service'
+import {ReflectServiceLoader} from '../../../src/V1/loaders/ReflectServiceLoader'
+import {ServiceNameNotFoundError} from '../../../src/V1/errors/ServiceNameNotFoundError'
 
 describe('#ReflectServiceLoader', function () {
     it('loads service', function () {

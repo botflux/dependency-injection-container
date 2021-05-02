@@ -1,5 +1,5 @@
-import {IServiceContainerFactoryOptions} from '../../src'
-import {OptionMapper} from '../../src/mappers/OptionMapper'
+import {IServiceContainerFactoryOptions} from '../../../src/V1'
+import {OptionMapper} from '../../../src/V1/mappers/OptionMapper'
 
 describe('#OptionMapper', () => {
     describe('#toContainerOptions', () => {

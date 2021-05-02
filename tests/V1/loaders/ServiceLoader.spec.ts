@@ -1,5 +1,5 @@
-import {ServiceContainer} from '../../src'
-import {ServiceLoader} from '../../src/loaders/ServiceLoader'
+import {ServiceContainer} from '../../../src/V1'
+import {ServiceLoader} from '../../../src/V1/loaders/ServiceLoader'
 
 describe('#ServiceLoader', function () {
     it('loads service', () => {

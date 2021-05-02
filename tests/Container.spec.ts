@@ -1,6 +1,6 @@
-import {ContainerInterface, LifeCycle, ServiceNotFoundError} from './Container/Interfaces'
-import {createScopedContainerBuilder} from './Container/Implementation/ScopedContainer'
-import {createContainerBuilder} from './Container/Implementation/Container'
+import {ContainerInterface, LifeCycle, ServiceNotFoundError} from '../src/V2/Interfaces'
+import {createScopedContainerBuilder} from '../src/V2/Implementation/ScopedContainer'
+import {createContainerBuilder} from '../src/V2/Implementation/Container'
 
 class MyService {}
 class AnotherService {

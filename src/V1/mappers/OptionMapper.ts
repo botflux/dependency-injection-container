@@ -1,4 +1,4 @@
-import {IServiceContainerFactoryOptions} from '..'
+import {IServiceContainerFactoryOptions} from '../index'
 import {IServiceContainerOptions} from '../IServiceContainerOptions'
 import {IOptionMapper} from './IOptionMapper'
 

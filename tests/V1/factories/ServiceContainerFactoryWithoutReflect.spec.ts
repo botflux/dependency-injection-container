@@ -1,4 +1,4 @@
-import {createServiceContainer, IServiceContainerFactoryOptions} from '../../src'
+import {createServiceContainer, IServiceContainerFactoryOptions} from '../../../src/V1'
 
 describe('#ServiceContainerFactory', function () {
     it('should throw when creating a container supporting reflection without importing reflect polyfill', function () {

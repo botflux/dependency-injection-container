@@ -1,6 +1,6 @@
 import 'reflect-metadata'
-import {Service} from '../../src/decorators/Service'
-import {SERVICE_TOKEN_METADATA} from '../../src'
+import {Service} from '../../../src/V1/decorators/Service'
+import {SERVICE_TOKEN_METADATA} from '../../../src/V1'
 
 describe('#Service', () => {
     it('defines constructor metadata', () => {
