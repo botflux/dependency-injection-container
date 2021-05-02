@@ -9,7 +9,7 @@ export interface ContainerInterface {
 }
 
 export type ServiceKey = string | Symbol | number
-export type ServiceFactory<TService> = (container: ServiceProviderInterface) => TService
+export type ServiceFactory<TService> = (container: SyncServiceProviderInterface) => TService
 export type ServiceConstructor<TService> = { new(...args: any[]): TService }
 
 export interface ContainerBuilderInterface {
@@ -22,13 +22,13 @@ export interface ContainerBuilderInterface {
     build(): ContainerInterface
 }
 
-export interface ServiceProviderInterface {
-    get<T>(key: ServiceKey): T
-
-    getAsync<T>(key: ServiceKey): Promise<T>
-
+export interface SyncServiceProviderInterface {
+    get<TService>(key: ServiceKey): TService
     has(key: ServiceKey): boolean
+}
 
+export interface AsyncServiceProviderInterface extends SyncServiceProviderInterface {
+    getAsync<TService>(key: ServiceKey): Promise<TService>
     hasAsync(key: ServiceKey): boolean
 }
 

@@ -1,5 +1,6 @@
 import {ContainerInterface, LifeCycle} from './Container/Interfaces'
-import {createContainerBuilder, createScopedContainerBuilder} from './Container/Implementations'
+import {createScopedContainerBuilder} from './Container/Implementation/ScopedContainer'
+import {createContainerBuilder} from './Container/Implementation/Container'
 
 class MyService {}
 class AnotherService {
@@ -100,20 +101,6 @@ it('should pass sync factories to async factories', async function () {
 
     // Assert
     expect(helloWorld).toBe("Hello world")
-})
-
-it('should throw when passing async factories to sync factories', function () {
-    // Arrange
-    const container = createContainerBuilder()
-        .addFactoryAsync('Hello', () => Promise.resolve("world"), LifeCycle.Singleton)
-        .addFactory("Hello world", container => container.getAsync("Hello"), LifeCycle.Singleton)
-        .build()
-
-    // Act
-    const shouldThrow = () => container.get("Hello world")
-
-    // Assert
-    expect(shouldThrow).toThrow("Can't get async factories from sync factories.")
 })
 
 it('should throw when overriding service', function () {
