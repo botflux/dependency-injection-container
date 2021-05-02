@@ -34,3 +34,15 @@ export enum LifeCycle {
     Transient,
     Singleton,
 }
+
+export class ServiceAlreadyRegisteredError extends Error {
+    constructor(serviceKey: ServiceKey) {
+        super(`Service with key "${serviceKey}" was already registered.`);
+    }
+}
+
+export class ServiceNotFoundError extends Error {
+    constructor(serviceKey: ServiceKey) {
+        super(`No service matching key "${serviceKey}" found.`);
+    }
+}

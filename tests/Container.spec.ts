@@ -1,4 +1,4 @@
-import {ContainerInterface, LifeCycle} from './Container/Interfaces'
+import {ContainerInterface, LifeCycle, ServiceNotFoundError} from './Container/Interfaces'
 import {createScopedContainerBuilder} from './Container/Implementation/ScopedContainer'
 import {createContainerBuilder} from './Container/Implementation/Container'
 
@@ -125,10 +125,10 @@ it('should throw when overriding service', function () {
         .addAsyncFactory('MyService', () => Promise.resolve(), LifeCycle.Singleton)
 
     // Assert
-    expect(shouldThrow1).toThrow(`The service named "MyService" was already added.`)
-    expect(shouldThrow2).toThrow(`The service named "MyService" was already added.`)
-    expect(shouldThrow3).toThrow(`The service named "MyService" was already added.`)
-    expect(shouldThrow4).toThrow(`The service named "MyService" was already added.`)
+    expect(shouldThrow1).toThrow(`Service with key "MyService" was already registered.`)
+    expect(shouldThrow2).toThrow(`Service with key "MyService" was already registered.`)
+    expect(shouldThrow3).toThrow(`Service with key "MyService" was already registered.`)
+    expect(shouldThrow4).toThrow(`Service with key "MyService" was already registered.`)
 })
 
 it('should create singleton services', function () {
@@ -219,4 +219,18 @@ it('should create a scoped service', async function () {
     expect(d1.n).toBe(d2.n)
     expect(e1.n).toBe(e2.n)
     expect(f1.n).toBe(f2.n)
+})
+
+it('should throw when service is not found', async function () {
+    // Arrange
+    const container = createContainerBuilder().build()
+
+    // Act
+    const shouldThrow1 = () => container.get("hello")
+    const rejection = container.getAsync("Hello")
+
+
+    // Assert
+    expect(shouldThrow1).toThrow('No service matching key "hello" found.')
+    await expect(rejection).rejects.toThrow('No service matching key "Hello" found.')
 })

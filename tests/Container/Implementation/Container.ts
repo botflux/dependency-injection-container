@@ -4,7 +4,7 @@ import {
     LifeCycle,
     ServiceConstructor,
     SyncServiceFactory,
-    ServiceKey, AsyncServiceFactory, ServiceFactory,
+    ServiceKey, AsyncServiceFactory, ServiceFactory, ServiceAlreadyRegisteredError, ServiceNotFoundError,
 } from '../Interfaces'
 import {
     createSingletonFactoryRegistry,
@@ -38,7 +38,7 @@ class Container implements ContainerInterface {
             || this.syncFactoriesRegistry.get(LifeCycle.Transient)?.getFactory(key)
 
         if (!serviceFactory)
-            throw new Error('No service found')
+            throw new ServiceNotFoundError(key)
 
         // @ts-ignore
         return serviceFactory(createSyncServiceProvider(this))
@@ -49,7 +49,7 @@ class Container implements ContainerInterface {
             || this.asyncFactoriesRegistry.get(LifeCycle.Transient)?.getFactory(key)
 
         if (!serviceFactory)
-            throw new Error('No service found')
+            throw new ServiceNotFoundError(key)
 
         // @ts-ignore
         return serviceFactory(createAsyncServiceProvider(this))
@@ -81,7 +81,7 @@ class ContainerBuilder implements ContainerBuilderInterface {
 
     addFactory<TService>(key: ServiceKey, factory: SyncServiceFactory<TService>, lifeCycle: LifeCycle): this {
         if (this.isAlreadyRegistered(key))
-            throw new Error(`The service named "${key}" was already added.`)
+            throw new ServiceAlreadyRegisteredError(key)
 
 
         this.syncFactories.get(lifeCycle)?.set(key, factory)
@@ -105,7 +105,7 @@ class ContainerBuilder implements ContainerBuilderInterface {
 
     addAsyncFactory<TService>(key: ServiceKey, factory: AsyncServiceFactory<Promise<TService>>, lifeCycle: LifeCycle): this {
         if (this.isAlreadyRegistered(key))
-            throw new Error(`The service named "${key}" was already added.`)
+            throw new ServiceAlreadyRegisteredError(key)
 
         this.asyncFactories.get(lifeCycle)?.set(key, factory)
         return this
