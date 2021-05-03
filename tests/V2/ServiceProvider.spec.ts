@@ -3,6 +3,21 @@ import {LifeCycle} from '../../src/V2/Interfaces'
 import {createAsyncServiceProvider} from '../../src/V2/Implementation/ServiceProvider'
 
 describe('#AsyncServiceProvider', function () {
+    it('should proxy inner container getAsync method', async function () {
+        // Arrange
+        const container = createContainerBuilder()
+            .addAsyncFactory('foo', () => Promise.resolve("foo"), LifeCycle.Singleton)
+            .build()
+
+        const provider = createAsyncServiceProvider(container)
+
+        // Act
+        const foo = await provider.getAsync("foo")
+
+        // Assert
+        expect(foo).toBe("foo")
+    })
+
     it('should proxy inner container has method', function () {
         // Arrange
         const container = createContainerBuilder()
