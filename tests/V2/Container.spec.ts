@@ -1,4 +1,4 @@
-import {ContainerInterface, LifeCycle, ServiceNotFoundError} from '../../src/V2/Interfaces'
+import {ContainerInterface, LifeCycle} from '../../src/V2/Interfaces'
 import {createScopedContainerBuilder} from '../../src/V2/Implementation/ScopedContainer'
 import {createContainerBuilder} from '../../src/V2/Implementation/Container'
 
@@ -233,4 +233,20 @@ it('should throw when service is not found', async function () {
     // Assert
     expect(shouldThrow1).toThrow('No service matching key "hello" found.')
     await expect(rejection).rejects.toThrow('No service matching key "Hello" found.')
+})
+
+it('should get sync service', function () {
+    // Arrange
+    const container = createContainerBuilder()
+        .addFactory('bar', () => 'bar', LifeCycle.Singleton)
+        .addFactory('foo', () => 'foo', LifeCycle.Transient)
+        .build()
+
+    // Act
+    const bar = container.get('bar')
+    const foo = container.get('foo')
+
+    // Assert
+    expect(bar).toBe('bar')
+    expect(foo).toBe('foo')
 })
