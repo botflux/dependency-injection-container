@@ -25,3 +25,22 @@ describe('#AsyncServiceProvider', function () {
         expect(hasBar).toBe(false)
     })
 })
+
+describe('#SyncServiceProvider', function () {
+    it('should proxy inner container has method', function () {
+        // Arrange
+        const container = createContainerBuilder()
+            .addFactory("service", () => "service", LifeCycle.Transient)
+            .build()
+
+        const provider = createAsyncServiceProvider(container)
+
+        // Act
+        const hasService = provider.has("service")
+        const hasBar = provider.has("bar")
+
+        // Assert
+        expect(hasService).toBe(true)
+        expect(hasBar).toBe(false)
+    })
+})
