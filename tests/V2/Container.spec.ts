@@ -269,9 +269,13 @@ describe('situation that should not append', function () {
         // Act
         const shouldThrow1 = () => container.get("Hello")
         const shouldThrow2 = container.getAsync("Hello")
+        const has1 = container.has("Hello")
+        const has2 = container.hasAsync("hello")
 
         // Assert
         expect(shouldThrow1).toThrow(`No service matching key "Hello" found.`)
         await expect(shouldThrow2).rejects.toThrow(`No service matching key "Hello" found.`)
+        expect(has1).toBe(false)
+        expect(has2).toBe(false)
     })
 })
