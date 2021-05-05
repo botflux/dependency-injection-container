@@ -12,7 +12,8 @@
     "postversion": "git push --tags",
     "build": "tsc",
     "test:coverage": "jest --coverage --coverageReporters=text-lcov | coveralls",
-    "test:coverage:text": "jest --coverage --coverageReporters=text-summary"
+    "test:coverage:text": "jest --coverage --coverageReporters=text-summary",
+    "ci": "lerna bootstrap"
   },
   "repository": {
     "type": "git",
