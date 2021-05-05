@@ -11,7 +11,8 @@
     "preversion": "npm test && npm run docs:generate && git add docs/",
     "postversion": "git push --tags",
     "build": "tsc",
-    "test:coverage": "jest --coverage --coverageReporters=text-lcov | coveralls"
+    "test:coverage": "jest --coverage --coverageReporters=text-lcov | coveralls",
+    "test:coverage:text": "jest --coverage --coverageReporters=text-summary"
   },
   "repository": {
     "type": "git",
