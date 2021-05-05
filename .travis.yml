@@ -7,5 +7,6 @@ branches:
     - v1.5_service_annotation
     - v2
 script:
+  - lerna bootstrap
   - npm test
   - lerna run test:coverage
