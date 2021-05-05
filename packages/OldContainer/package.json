@@ -1,8 +1,8 @@
 {
-  "name": "@botflx/dependency-injection-container",
+  "name": "@botflx/dependency-injection-container-old",
   "version": "1.6.1",
   "description": "Dependency injection container written in typescript",
-  "main": "dist/V1/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
@@ -10,9 +10,7 @@
     "prepublish": "npm run build",
     "preversion": "npm test && npm run docs:generate && git add docs/",
     "postversion": "git push --tags",
-    "build": "tsc",
-    "test:coverage": "jest --coverage --coverageReporters=text-lcov | coveralls",
-    "test:coverage:text": "jest --coverage --coverageReporters=text-summary"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",

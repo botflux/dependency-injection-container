@@ -8,4 +8,4 @@ branches:
     - v2
 script:
   - npm test
-  - npm run test:coverage
+  - lerna run test:coverage

@@ -11,12 +11,5 @@
     "sourceMap": true,
     "declaration": true,
     "declarationMap": true
-  },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "tests/**/*.spec.ts"
-  ]
+  }
 }
