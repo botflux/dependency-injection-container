@@ -281,28 +281,30 @@ describe('situation that should not append', function () {
 
     it('should not append', function () {
         // Arrange
-        const container = createContainerBuilder()
+        const builder = createContainerBuilder()
 
         // Act
         // @ts-ignore
-        container.syncFactories.delete(LifeCycle.Transient)
+        builder.syncFactories.delete(LifeCycle.Transient)
         // @ts-ignore
-        container.syncFactories.delete(LifeCycle.Singleton)
+        builder.syncFactories.delete(LifeCycle.Singleton)
         // @ts-ignore
-        container.asyncFactories.delete(LifeCycle.Transient)
+        builder.asyncFactories.delete(LifeCycle.Transient)
         // @ts-ignore
-        container.asyncFactories.delete(LifeCycle.Singleton)
+        builder.asyncFactories.delete(LifeCycle.Singleton)
 
-        const shouldNotThrow1 = () => container.addAsyncFactory("Hello", () => Promise.resolve(), LifeCycle.Singleton)
-        const shouldNotThrow2 = () => container.addAsyncFactory("Hello", () => Promise.resolve(), LifeCycle.Transient)
+        const shouldNotThrow1 = () => builder.addAsyncFactory("Hello", () => Promise.resolve(), LifeCycle.Singleton)
+        const shouldNotThrow2 = () => builder.addAsyncFactory("Hello", () => Promise.resolve(), LifeCycle.Transient)
 
-        const shouldNotThrow3 = () => container.addFactory("Hello", () => 1, LifeCycle.Singleton)
-        const shouldNotThrow4 = () => container.addFactory("Hello", () => 1, LifeCycle.Transient)
+        const shouldNotThrow3 = () => builder.addFactory("Hello", () => 1, LifeCycle.Singleton)
+        const shouldNotThrow4 = () => builder.addFactory("Hello", () => 1, LifeCycle.Transient)
 
-        const shouldNotThrow5 = () => container.addConstructor("Hello", AnotherService, LifeCycle.Singleton)
-        const shouldNotThrow6 = () => container.addConstructor("Hello", AnotherService, LifeCycle.Transient)
+        const shouldNotThrow5 = () => builder.addConstructor("Hello", AnotherService, LifeCycle.Singleton)
+        const shouldNotThrow6 = () => builder.addConstructor("Hello", AnotherService, LifeCycle.Transient)
 
-        const isAlreadyRegistered = container.isAlreadyRegistered("Hello")
+        const isAlreadyRegistered = builder.isAlreadyRegistered("Hello")
+
+        const container = builder.build()
 
         // Assert
         expect(shouldNotThrow1).not.toThrow(Error)
@@ -312,5 +314,6 @@ describe('situation that should not append', function () {
         expect(shouldNotThrow5).not.toThrow(Error)
         expect(shouldNotThrow6).not.toThrow(Error)
         expect(isAlreadyRegistered).toBe(false)
+        expect(container).not.toBeNull()
     })
 })
