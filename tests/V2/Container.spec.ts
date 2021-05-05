@@ -250,3 +250,28 @@ it('should get sync service', function () {
     expect(bar).toBe('bar')
     expect(foo).toBe('foo')
 })
+
+describe('situation that should not append', function () {
+    it('should throw service not found', async function () {
+        // Arrange
+        const container = createContainerBuilder()
+            .build()
+
+        // @ts-ignore
+        container.syncFactoriesRegistry.delete(LifeCycle.Singleton);
+        // @ts-ignore
+        container.syncFactoriesRegistry.delete(LifeCycle.Transient);
+        // @ts-ignore
+        container.asyncFactoriesRegistry.delete(LifeCycle.Singleton);
+        // @ts-ignore
+        container.asyncFactoriesRegistry.delete(LifeCycle.Transient);
+
+        // Act
+        const shouldThrow1 = () => container.get("Hello")
+        const shouldThrow2 = container.getAsync("Hello")
+
+        // Assert
+        expect(shouldThrow1).toThrow(`No service matching key "Hello" found.`)
+        await expect(shouldThrow2).rejects.toThrow(`No service matching key "Hello" found.`)
+    })
+})
