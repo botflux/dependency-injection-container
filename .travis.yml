@@ -6,7 +6,9 @@ branches:
     - master
     - v1.5_service_annotation
     - v2
+install:
+  - npm install -g lerna
+  - npx lerna bootstrap
 script:
-  - lerna bootstrap
   - npm test
   - lerna run test:coverage
