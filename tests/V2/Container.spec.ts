@@ -278,4 +278,31 @@ describe('situation that should not append', function () {
         expect(has1).toBe(false)
         expect(has2).toBe(false)
     })
+
+    it('should not append', function () {
+        // Arrange
+        const container = createContainerBuilder()
+
+        // Act
+        // @ts-ignore
+        container.syncFactories.delete(LifeCycle.Transient)
+        // @ts-ignore
+        container.syncFactories.delete(LifeCycle.Singleton)
+        // @ts-ignore
+        container.asyncFactories.delete(LifeCycle.Transient)
+        // @ts-ignore
+        container.asyncFactories.delete(LifeCycle.Singleton)
+
+        const shouldNotThrow1 = () => container.addAsyncFactory("Hello", () => Promise.resolve(), LifeCycle.Singleton)
+        const shouldNotThrow2 = () => container.addAsyncFactory("Hello", () => Promise.resolve(), LifeCycle.Transient)
+
+        const shouldNotThrow3 = () => container.addFactory("Hello", () => 1, LifeCycle.Singleton)
+        const shouldNotThrow4 = () => container.addFactory("Hello", () => 1, LifeCycle.Transient)
+
+        // Assert
+        expect(shouldNotThrow1).not.toThrow(Error)
+        expect(shouldNotThrow2).not.toThrow(Error)
+        expect(shouldNotThrow3).not.toThrow(Error)
+        expect(shouldNotThrow4).not.toThrow(Error)
+    })
 })
