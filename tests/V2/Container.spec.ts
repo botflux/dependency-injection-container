@@ -299,6 +299,9 @@ describe('situation that should not append', function () {
         const shouldNotThrow3 = () => container.addFactory("Hello", () => 1, LifeCycle.Singleton)
         const shouldNotThrow4 = () => container.addFactory("Hello", () => 1, LifeCycle.Transient)
 
+        const shouldNotThrow5 = () => container.addConstructor("Hello", AnotherService, LifeCycle.Singleton)
+        const shouldNotThrow6 = () => container.addConstructor("Hello", AnotherService, LifeCycle.Transient)
+
         const isAlreadyRegistered = container.isAlreadyRegistered("Hello")
 
         // Assert
@@ -306,6 +309,8 @@ describe('situation that should not append', function () {
         expect(shouldNotThrow2).not.toThrow(Error)
         expect(shouldNotThrow3).not.toThrow(Error)
         expect(shouldNotThrow4).not.toThrow(Error)
+        expect(shouldNotThrow5).not.toThrow(Error)
+        expect(shouldNotThrow6).not.toThrow(Error)
         expect(isAlreadyRegistered).toBe(false)
     })
 })
