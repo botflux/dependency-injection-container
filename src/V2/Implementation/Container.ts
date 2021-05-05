@@ -4,7 +4,12 @@ import {
     LifeCycle,
     ServiceConstructor,
     SyncServiceFactory,
-    ServiceKey, AsyncServiceFactory, ServiceFactory, ServiceAlreadyRegisteredError, ServiceNotFoundError,
+    ServiceKey,
+    AsyncServiceFactory,
+    ServiceFactory,
+    ServiceAlreadyRegisteredError,
+    ServiceNotFoundError,
+    ServiceLoaderInterface,
 } from '../Interfaces'
 import {
     createSingletonFactoryRegistry,
@@ -79,6 +84,10 @@ class ContainerBuilder implements ContainerBuilderInterface {
             .set(LifeCycle.Singleton, new Map())
             .set(LifeCycle.Transient, new Map())
 
+    constructor(options: CreateContainerBuilderOptions) {
+        options.loaders.forEach(loader => loader(this))
+    }
+
     addFactory<TService>(key: ServiceKey, factory: SyncServiceFactory<TService>, lifeCycle: LifeCycle): this {
         if (this.isAlreadyRegistered(key))
             throw new ServiceAlreadyRegisteredError(key)
@@ -120,4 +129,7 @@ class ContainerBuilder implements ContainerBuilderInterface {
     }
 }
 
-export const createContainerBuilder = () => new ContainerBuilder()
+export type CreateContainerBuilderOptions = { loaders: ServiceLoaderInterface[] }
+const defaultOptions = { loaders: [] }
+
+export const createContainerBuilder = (options: CreateContainerBuilderOptions = defaultOptions) => new ContainerBuilder(options)

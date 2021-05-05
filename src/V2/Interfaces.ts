@@ -46,3 +46,5 @@ export class ServiceNotFoundError extends Error {
         super(`No service matching key "${serviceKey}" found.`);
     }
 }
+
+export type ServiceLoaderInterface = (containerBuilder: ContainerBuilderInterface) => void
