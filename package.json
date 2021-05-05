@@ -2,17 +2,8 @@
   "name": "@botflx/dependency-injection-container",
   "version": "1.6.1",
   "description": "Dependency injection container written in typescript",
-  "main": "dist/V1/index.js",
+  "private": true,
   "scripts": {
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "docs:generate": "typedoc --plugin typedoc-plugin-markdown",
-    "prepublish": "npm run build",
-    "preversion": "npm test && npm run docs:generate && git add docs/",
-    "postversion": "git push --tags",
-    "build": "tsc",
-    "test:coverage": "jest --coverage --coverageReporters=text-lcov | coveralls",
-    "test:coverage:text": "jest --coverage --coverageReporters=text-summary",
     "ci": "lerna bootstrap"
   },
   "repository": {
@@ -30,18 +21,6 @@
   "author": "Victor Mendele <victor.mendele68@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@types/jest": "^24.0.25",
-    "@types/reflect-metadata": "^0.1.0",
-    "@typescript-eslint/eslint-plugin": "^2.16.0",
-    "@typescript-eslint/parser": "^2.16.0",
-    "coveralls": "^3.0.9",
-    "eslint": "^6.8.0",
-    "jest": "^24.9.0",
-    "lerna": "^4.0.0",
-    "reflect-metadata": "^0.1.13",
-    "ts-jest": "^24.2.0",
-    "typedoc": "^0.15.6",
-    "typedoc-plugin-markdown": "^2.2.16",
-    "typescript": "^3.7.4"
+    "lerna": "^4.0.0"
   }
 }
