@@ -10,5 +10,5 @@ install:
   - npm install -g lerna
   - npx lerna bootstrap
 script:
-  - npm test
+  - lerna run test
   - lerna run test:coverage
