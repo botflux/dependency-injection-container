@@ -1,8 +1,8 @@
 import {ContainerBuilderInterface, LifeCycle, ServiceKey, SyncServiceProviderInterface} from '../Interfaces'
 
-export const Service = (serviceKey: ServiceKey): ClassDecorator => target => {
+export const Service = (serviceKey: ServiceKey, lifeCycle: LifeCycle): ClassDecorator => target => {
     // @ts-ignore
-    Reflect.defineMetadata('Service@ServiceKey', serviceKey, target)
+    Reflect.defineMetadata('Service@ServiceKey', {serviceKey, lifeCycle}, target)
 }
 export const Inject = (serviceKey: ServiceKey): ParameterDecorator => (target, propertyKey, parameterIndex) => {
     // @ts-ignore
@@ -11,11 +11,13 @@ export const Inject = (serviceKey: ServiceKey): ParameterDecorator => (target, p
     // @ts-ignore
     Reflect.defineMetadata('Inject@ServiceKey', injectionTokens, target)
 }
+
 type Constructor<T> = { new(...args: any[]): T }
+
 export const reflectServiceLoader = (services: Constructor<unknown>[]) => (containerBuilder: ContainerBuilderInterface) => {
     const servicesFactories = services.map(constructor => {
         // @ts-ignore
-        const serviceKey = Reflect.getOwnMetadata('Service@ServiceKey', constructor)
+        const { serviceKey, lifeCycle } = Reflect.getOwnMetadata('Service@ServiceKey', constructor)
 
         // @ts-ignore
         const injectionTokens: { [key: string]: string } = Reflect.getOwnMetadata('Inject@ServiceKey', constructor) || {}
@@ -27,8 +29,8 @@ export const reflectServiceLoader = (services: Constructor<unknown>[]) => (conta
             })
 
             return new constructor(...factoryParameters)
-        }]
+        }, lifeCycle]
     })
 
-    servicesFactories.forEach(([serviceKey, factory]) => containerBuilder.addFactory(serviceKey, factory, LifeCycle.Singleton))
+    servicesFactories.forEach(([serviceKey, factory, lifeCycle]) => containerBuilder.addFactory(serviceKey, factory, lifeCycle))
 }
