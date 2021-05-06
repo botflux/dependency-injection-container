@@ -43,7 +43,7 @@ export class ServiceAlreadyRegisteredError extends Error {
 
 export class ServiceNotFoundError extends Error {
     constructor(serviceKey: ServiceKey) {
-        super(`No service matching key "${serviceKey}" found.`);
+        super(`No service matching key "${typeof serviceKey === 'symbol' ? serviceKey.toString() : serviceKey}" found.`);
     }
 }
 

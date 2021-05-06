@@ -1,6 +1,7 @@
 import {ContainerInterface, LifeCycle} from '../src/Interfaces'
 import {createContainerBuilder} from '../src/Implementation/Container'
 import {createScopedContainerBuilder} from '../src/Implementation/ScopedContainer'
+import {ServiceNotFoundError} from '../src/Interfaces'
 
 class MyService {}
 class AnotherService {
@@ -316,4 +317,15 @@ describe('situation that should not append', function () {
         expect(isAlreadyRegistered).toBe(false)
         expect(container).not.toBeNull()
     })
+})
+
+it('should throws with symbol', function () {
+    // Arrange
+
+
+    // Act
+    const error = new ServiceNotFoundError(Symbol("hello"))
+
+    // Assert
+    expect(error.message).toBe(`No service matching key "Symbol(hello)" found.`)
 })
