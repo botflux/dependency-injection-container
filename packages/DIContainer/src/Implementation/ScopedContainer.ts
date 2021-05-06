@@ -4,9 +4,14 @@ import {
     LifeCycle,
     ServiceConstructor,
     SyncServiceFactory,
-    ServiceKey, AsyncServiceFactory
+    ServiceKey, AsyncServiceFactory, ServiceNotFoundError
 } from '../Interfaces'
 import {createContainerBuilder} from './Container'
+import {
+    createAsyncServiceProvider, createCombinedAsyncServiceProvider,
+    createCombinedSyncServiceProvider,
+    createSyncServiceProvider
+} from './ServiceProvider'
 
 class ScopedContainer implements ContainerInterface {
     constructor(
@@ -16,19 +21,27 @@ class ScopedContainer implements ContainerInterface {
     }
 
     get<T>(key: ServiceKey): T {
-        if (this.parentContainer.has(key)) {
-            return this.parentContainer.get(key)
+        if (!this.parentContainer.has(key) && !this.innerContainer.has(key)) {
+            throw new ServiceNotFoundError(key)
         }
 
-        return this.innerContainer.get(key)
+        const parentProvider = createSyncServiceProvider(this.parentContainer)
+        const innerProvider  = createSyncServiceProvider(this.innerContainer)
+        const combinedProvider = createCombinedSyncServiceProvider([ parentProvider, innerProvider ])
+
+        return combinedProvider.get(key)
     }
 
     getAsync<T>(key: ServiceKey): Promise<T> {
-        if (this.parentContainer.hasAsync(key)) {
-            return this.parentContainer.getAsync(key)
+        if (!this.parentContainer.hasAsync(key) && !this.innerContainer.hasAsync(key)) {
+            throw new ServiceNotFoundError(key)
         }
 
-        return this.innerContainer.getAsync(key)
+        const parentProvider = createAsyncServiceProvider(this.parentContainer)
+        const innerProvider = createAsyncServiceProvider(this.innerContainer)
+        const combinedProvider = createCombinedAsyncServiceProvider([ parentProvider, innerProvider ])
+
+        return combinedProvider.getAsync(key)
     }
 
     has(key: ServiceKey): boolean {
