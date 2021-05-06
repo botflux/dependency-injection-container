@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v1.6.1](../README.md) › [Globals](../globals.md) › ["Implementation/ScopedContainer"](_implementation_scopedcontainer_.md)
+[@botflx/dependency-injection-container - v2.0.0](../README.md) › [Globals](../globals.md) › ["Implementation/ScopedContainer"](_implementation_scopedcontainer_.md)
 
 # External module: "Implementation/ScopedContainer"
 
@@ -19,7 +19,7 @@
 
 ▸ **createScopedContainerBuilder**(`container`: [ContainerInterface](../interfaces/_interfaces_.containerinterface.md)): *[ScopedContainerBuilder](../classes/_implementation_scopedcontainer_.scopedcontainerbuilder.md)‹›*
 
-*Defined in [src/Implementation/ScopedContainer.ts:70](https://github.com/botflux/dependency-injection-container/blob/a5ee3f9/packages/DIContainer/src/Implementation/ScopedContainer.ts#L70)*
+*Defined in [src/Implementation/ScopedContainer.ts:70](https://github.com/botflux/dependency-injection-container/blob/bd86576/packages/DIContainer/src/Implementation/ScopedContainer.ts#L70)*
 
 **Parameters:**
 

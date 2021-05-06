@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v1.6.1](../README.md) › [Globals](../globals.md) › ["Implementation/ServiceProvider"](_implementation_serviceprovider_.md)
+[@botflx/dependency-injection-container - v2.0.0](../README.md) › [Globals](../globals.md) › ["Implementation/ServiceProvider"](_implementation_serviceprovider_.md)
 
 # External module: "Implementation/ServiceProvider"
 
@@ -20,7 +20,7 @@
 
 ▸ **createAsyncServiceProvider**(`container`: [ContainerInterface](../interfaces/_interfaces_.containerinterface.md)): *[AsyncServiceProvider](../classes/_implementation_serviceprovider_.asyncserviceprovider.md)‹›*
 
-*Defined in [src/Implementation/ServiceProvider.ts:47](https://github.com/botflux/dependency-injection-container/blob/a5ee3f9/packages/DIContainer/src/Implementation/ServiceProvider.ts#L47)*
+*Defined in [src/Implementation/ServiceProvider.ts:47](https://github.com/botflux/dependency-injection-container/blob/bd86576/packages/DIContainer/src/Implementation/ServiceProvider.ts#L47)*
 
 **Parameters:**
 
@@ -36,7 +36,7 @@ ___
 
 ▸ **createSyncServiceProvider**(`container`: [ContainerInterface](../interfaces/_interfaces_.containerinterface.md)): *[SyncServiceProvider](../classes/_implementation_serviceprovider_.syncserviceprovider.md)‹›*
 
-*Defined in [src/Implementation/ServiceProvider.ts:44](https://github.com/botflux/dependency-injection-container/blob/a5ee3f9/packages/DIContainer/src/Implementation/ServiceProvider.ts#L44)*
+*Defined in [src/Implementation/ServiceProvider.ts:44](https://github.com/botflux/dependency-injection-container/blob/bd86576/packages/DIContainer/src/Implementation/ServiceProvider.ts#L44)*
 
 **Parameters:**
 

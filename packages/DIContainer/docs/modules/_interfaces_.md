@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v1.6.1](../README.md) › [Globals](../globals.md) › ["Interfaces"](_interfaces_.md)
+[@botflx/dependency-injection-container - v2.0.0](../README.md) › [Globals](../globals.md) › ["Interfaces"](_interfaces_.md)
 
 # External module: "Interfaces"
 
@@ -35,7 +35,7 @@
 
 Ƭ **AsyncServiceFactory**: *function*
 
-*Defined in [src/Interfaces.ts:11](https://github.com/botflux/dependency-injection-container/blob/a5ee3f9/packages/DIContainer/src/Interfaces.ts#L11)*
+*Defined in [src/Interfaces.ts:11](https://github.com/botflux/dependency-injection-container/blob/bd86576/packages/DIContainer/src/Interfaces.ts#L11)*
 
 #### Type declaration:
 
@@ -53,7 +53,7 @@ ___
 
 Ƭ **ServiceConstructor**: *object*
 
-*Defined in [src/Interfaces.ts:13](https://github.com/botflux/dependency-injection-container/blob/a5ee3f9/packages/DIContainer/src/Interfaces.ts#L13)*
+*Defined in [src/Interfaces.ts:13](https://github.com/botflux/dependency-injection-container/blob/bd86576/packages/DIContainer/src/Interfaces.ts#L13)*
 
 #### Type declaration:
 
@@ -65,7 +65,7 @@ ___
 
 Ƭ **ServiceFactory**: *[AsyncServiceFactory](_interfaces_.md#asyncservicefactory)‹TService› | [SyncServiceFactory](_interfaces_.md#syncservicefactory)‹TService›*
 
-*Defined in [src/Interfaces.ts:12](https://github.com/botflux/dependency-injection-container/blob/a5ee3f9/packages/DIContainer/src/Interfaces.ts#L12)*
+*Defined in [src/Interfaces.ts:12](https://github.com/botflux/dependency-injection-container/blob/bd86576/packages/DIContainer/src/Interfaces.ts#L12)*
 
 ___
 
@@ -73,7 +73,7 @@ ___
 
 Ƭ **ServiceKey**: *string | Symbol | number*
 
-*Defined in [src/Interfaces.ts:9](https://github.com/botflux/dependency-injection-container/blob/a5ee3f9/packages/DIContainer/src/Interfaces.ts#L9)*
+*Defined in [src/Interfaces.ts:9](https://github.com/botflux/dependency-injection-container/blob/bd86576/packages/DIContainer/src/Interfaces.ts#L9)*
 
 ___
 
@@ -81,7 +81,7 @@ ___
 
 Ƭ **ServiceLoaderInterface**: *function*
 
-*Defined in [src/Interfaces.ts:50](https://github.com/botflux/dependency-injection-container/blob/a5ee3f9/packages/DIContainer/src/Interfaces.ts#L50)*
+*Defined in [src/Interfaces.ts:50](https://github.com/botflux/dependency-injection-container/blob/bd86576/packages/DIContainer/src/Interfaces.ts#L50)*
 
 #### Type declaration:
 
@@ -99,7 +99,7 @@ ___
 
 Ƭ **SyncServiceFactory**: *function*
 
-*Defined in [src/Interfaces.ts:10](https://github.com/botflux/dependency-injection-container/blob/a5ee3f9/packages/DIContainer/src/Interfaces.ts#L10)*
+*Defined in [src/Interfaces.ts:10](https://github.com/botflux/dependency-injection-container/blob/bd86576/packages/DIContainer/src/Interfaces.ts#L10)*
 
 #### Type declaration:
 

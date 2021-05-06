@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v1.6.1](../README.md) › [Globals](../globals.md) › ["Implementation/Container"](../modules/_implementation_container_.md) › [ContainerBuilder](_implementation_container_.containerbuilder.md)
+[@botflx/dependency-injection-container - v2.0.0](../README.md) › [Globals](../globals.md) › ["Implementation/Container"](../modules/_implementation_container_.md) › [ContainerBuilder](_implementation_container_.containerbuilder.md)
 
 # Class: ContainerBuilder
 
@@ -35,7 +35,7 @@
 
 \+ **new ContainerBuilder**(`options`: [CreateContainerBuilderOptions](../modules/_implementation_container_.md#createcontainerbuilderoptions)): *[ContainerBuilder](_implementation_container_.containerbuilder.md)*
 
-*Defined in [src/Implementation/Container.ts:85](https://github.com/botflux/dependency-injection-container/blob/a5ee3f9/packages/DIContainer/src/Implementation/Container.ts#L85)*
+*Defined in [src/Implementation/Container.ts:85](https://github.com/botflux/dependency-injection-container/blob/bd86576/packages/DIContainer/src/Implementation/Container.ts#L85)*
 
 **Parameters:**
 
@@ -54,7 +54,7 @@ Name | Type |
             .set(LifeCycle.Singleton, new Map())
             .set(LifeCycle.Transient, new Map())
 
-*Defined in [src/Implementation/Container.ts:82](https://github.com/botflux/dependency-injection-container/blob/a5ee3f9/packages/DIContainer/src/Implementation/Container.ts#L82)*
+*Defined in [src/Implementation/Container.ts:82](https://github.com/botflux/dependency-injection-container/blob/bd86576/packages/DIContainer/src/Implementation/Container.ts#L82)*
 
 ___
 
@@ -65,7 +65,7 @@ ___
             .set(LifeCycle.Singleton, new Map())
             .set(LifeCycle.Transient, new Map())
 
-*Defined in [src/Implementation/Container.ts:77](https://github.com/botflux/dependency-injection-container/blob/a5ee3f9/packages/DIContainer/src/Implementation/Container.ts#L77)*
+*Defined in [src/Implementation/Container.ts:77](https://github.com/botflux/dependency-injection-container/blob/bd86576/packages/DIContainer/src/Implementation/Container.ts#L77)*
 
 ## Methods
 
@@ -75,7 +75,7 @@ ___
 
 *Implementation of [ContainerBuilderInterface](../interfaces/_interfaces_.containerbuilderinterface.md)*
 
-*Defined in [src/Implementation/Container.ts:115](https://github.com/botflux/dependency-injection-container/blob/a5ee3f9/packages/DIContainer/src/Implementation/Container.ts#L115)*
+*Defined in [src/Implementation/Container.ts:115](https://github.com/botflux/dependency-injection-container/blob/bd86576/packages/DIContainer/src/Implementation/Container.ts#L115)*
 
 **Type parameters:**
 
@@ -99,7 +99,7 @@ ___
 
 *Implementation of [ContainerBuilderInterface](../interfaces/_interfaces_.containerbuilderinterface.md)*
 
-*Defined in [src/Implementation/Container.ts:110](https://github.com/botflux/dependency-injection-container/blob/a5ee3f9/packages/DIContainer/src/Implementation/Container.ts#L110)*
+*Defined in [src/Implementation/Container.ts:110](https://github.com/botflux/dependency-injection-container/blob/bd86576/packages/DIContainer/src/Implementation/Container.ts#L110)*
 
 **Type parameters:**
 
@@ -123,7 +123,7 @@ ___
 
 *Implementation of [ContainerBuilderInterface](../interfaces/_interfaces_.containerbuilderinterface.md)*
 
-*Defined in [src/Implementation/Container.ts:91](https://github.com/botflux/dependency-injection-container/blob/a5ee3f9/packages/DIContainer/src/Implementation/Container.ts#L91)*
+*Defined in [src/Implementation/Container.ts:91](https://github.com/botflux/dependency-injection-container/blob/bd86576/packages/DIContainer/src/Implementation/Container.ts#L91)*
 
 **Type parameters:**
 
@@ -147,7 +147,7 @@ ___
 
 *Implementation of [ContainerBuilderInterface](../interfaces/_interfaces_.containerbuilderinterface.md)*
 
-*Defined in [src/Implementation/Container.ts:101](https://github.com/botflux/dependency-injection-container/blob/a5ee3f9/packages/DIContainer/src/Implementation/Container.ts#L101)*
+*Defined in [src/Implementation/Container.ts:101](https://github.com/botflux/dependency-injection-container/blob/bd86576/packages/DIContainer/src/Implementation/Container.ts#L101)*
 
 **Returns:** *[ContainerInterface](../interfaces/_interfaces_.containerinterface.md)*
 
@@ -157,7 +157,7 @@ ___
 
 ▸ **isAlreadyRegistered**(`key`: [ServiceKey](../modules/_interfaces_.md#servicekey)): *boolean*
 
-*Defined in [src/Implementation/Container.ts:123](https://github.com/botflux/dependency-injection-container/blob/a5ee3f9/packages/DIContainer/src/Implementation/Container.ts#L123)*
+*Defined in [src/Implementation/Container.ts:123](https://github.com/botflux/dependency-injection-container/blob/bd86576/packages/DIContainer/src/Implementation/Container.ts#L123)*
 
 **Parameters:**
 

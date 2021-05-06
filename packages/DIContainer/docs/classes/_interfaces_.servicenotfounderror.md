@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v1.6.1](../README.md) › [Globals](../globals.md) › ["Interfaces"](../modules/_interfaces_.md) › [ServiceNotFoundError](_interfaces_.servicenotfounderror.md)
+[@botflx/dependency-injection-container - v2.0.0](../README.md) › [Globals](../globals.md) › ["Interfaces"](../modules/_interfaces_.md) › [ServiceNotFoundError](_interfaces_.servicenotfounderror.md)
 
 # Class: ServiceNotFoundError
 
@@ -27,7 +27,7 @@
 
 \+ **new ServiceNotFoundError**(`serviceKey`: [ServiceKey](../modules/_interfaces_.md#servicekey)): *[ServiceNotFoundError](_interfaces_.servicenotfounderror.md)*
 
-*Defined in [src/Interfaces.ts:44](https://github.com/botflux/dependency-injection-container/blob/a5ee3f9/packages/DIContainer/src/Interfaces.ts#L44)*
+*Defined in [src/Interfaces.ts:44](https://github.com/botflux/dependency-injection-container/blob/bd86576/packages/DIContainer/src/Interfaces.ts#L44)*
 
 **Parameters:**
 
