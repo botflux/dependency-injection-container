@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v2.0.0](../README.md) › [Globals](../globals.md) › ["Interfaces"](../modules/_interfaces_.md) › [ContainerInterface](_interfaces_.containerinterface.md)
+[@botflx/dependency-injection-container - v2.0.1](../README.md) › [Globals](../globals.md) › ["Interfaces"](../modules/_interfaces_.md) › [ContainerInterface](_interfaces_.containerinterface.md)
 
 # Interface: ContainerInterface
 
@@ -26,7 +26,7 @@
 
 ▸ **get**<**T**>(`key`: [ServiceKey](../modules/_interfaces_.md#servicekey)): *T*
 
-*Defined in [src/Interfaces.ts:2](https://github.com/botflux/dependency-injection-container/blob/bd86576/packages/DIContainer/src/Interfaces.ts#L2)*
+*Defined in [src/Interfaces.ts:2](https://github.com/botflux/dependency-injection-container/blob/49e0ae1/packages/DIContainer/src/Interfaces.ts#L2)*
 
 **Type parameters:**
 
@@ -46,7 +46,7 @@ ___
 
 ▸ **getAsync**<**T**>(`key`: [ServiceKey](../modules/_interfaces_.md#servicekey)): *Promise‹T›*
 
-*Defined in [src/Interfaces.ts:3](https://github.com/botflux/dependency-injection-container/blob/bd86576/packages/DIContainer/src/Interfaces.ts#L3)*
+*Defined in [src/Interfaces.ts:3](https://github.com/botflux/dependency-injection-container/blob/49e0ae1/packages/DIContainer/src/Interfaces.ts#L3)*
 
 **Type parameters:**
 
@@ -66,7 +66,7 @@ ___
 
 ▸ **has**(`key`: [ServiceKey](../modules/_interfaces_.md#servicekey)): *boolean*
 
-*Defined in [src/Interfaces.ts:5](https://github.com/botflux/dependency-injection-container/blob/bd86576/packages/DIContainer/src/Interfaces.ts#L5)*
+*Defined in [src/Interfaces.ts:5](https://github.com/botflux/dependency-injection-container/blob/49e0ae1/packages/DIContainer/src/Interfaces.ts#L5)*
 
 **Parameters:**
 
@@ -82,7 +82,7 @@ ___
 
 ▸ **hasAsync**(`key`: [ServiceKey](../modules/_interfaces_.md#servicekey)): *boolean*
 
-*Defined in [src/Interfaces.ts:6](https://github.com/botflux/dependency-injection-container/blob/bd86576/packages/DIContainer/src/Interfaces.ts#L6)*
+*Defined in [src/Interfaces.ts:6](https://github.com/botflux/dependency-injection-container/blob/49e0ae1/packages/DIContainer/src/Interfaces.ts#L6)*
 
 **Parameters:**
 

@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v2.0.0](../README.md) › [Globals](../globals.md) › ["Implementation/FactoryRegistry"](../modules/_implementation_factoryregistry_.md) › [SingletonFactoryRegistry](_implementation_factoryregistry_.singletonfactoryregistry.md)
+[@botflx/dependency-injection-container - v2.0.1](../README.md) › [Globals](../globals.md) › ["Implementation/FactoryRegistry"](../modules/_implementation_factoryregistry_.md) › [SingletonFactoryRegistry](_implementation_factoryregistry_.singletonfactoryregistry.md)
 
 # Class: SingletonFactoryRegistry
 
@@ -33,7 +33,7 @@
 
 *Inherited from [FactoryRegistry](_implementation_factoryregistry_.factoryregistry.md).[constructor](_implementation_factoryregistry_.factoryregistry.md#constructor)*
 
-*Defined in [src/Implementation/FactoryRegistry.ts:3](https://github.com/botflux/dependency-injection-container/blob/bd86576/packages/DIContainer/src/Implementation/FactoryRegistry.ts#L3)*
+*Defined in [src/Implementation/FactoryRegistry.ts:3](https://github.com/botflux/dependency-injection-container/blob/49e0ae1/packages/DIContainer/src/Implementation/FactoryRegistry.ts#L3)*
 
 **Parameters:**
 
@@ -51,7 +51,7 @@ Name | Type |
 
 *Inherited from [FactoryRegistry](_implementation_factoryregistry_.factoryregistry.md).[factoriesMap](_implementation_factoryregistry_.factoryregistry.md#protected-factoriesmap)*
 
-*Defined in [src/Implementation/FactoryRegistry.ts:4](https://github.com/botflux/dependency-injection-container/blob/bd86576/packages/DIContainer/src/Implementation/FactoryRegistry.ts#L4)*
+*Defined in [src/Implementation/FactoryRegistry.ts:4](https://github.com/botflux/dependency-injection-container/blob/49e0ae1/packages/DIContainer/src/Implementation/FactoryRegistry.ts#L4)*
 
 ___
 
@@ -60,7 +60,7 @@ ___
 • **resolvedSingletons**: *[ResolvedServicesMap](../modules/_implementation_factoryregistry_.md#resolvedservicesmap)* = 
         new Map<ServiceKey, unknown>()
 
-*Defined in [src/Implementation/FactoryRegistry.ts:26](https://github.com/botflux/dependency-injection-container/blob/bd86576/packages/DIContainer/src/Implementation/FactoryRegistry.ts#L26)*
+*Defined in [src/Implementation/FactoryRegistry.ts:26](https://github.com/botflux/dependency-injection-container/blob/49e0ae1/packages/DIContainer/src/Implementation/FactoryRegistry.ts#L26)*
 
 ## Methods
 
@@ -70,7 +70,7 @@ ___
 
 *Overrides [FactoryRegistry](_implementation_factoryregistry_.factoryregistry.md).[getFactory](_implementation_factoryregistry_.factoryregistry.md#abstract-getfactory)*
 
-*Defined in [src/Implementation/FactoryRegistry.ts:39](https://github.com/botflux/dependency-injection-container/blob/bd86576/packages/DIContainer/src/Implementation/FactoryRegistry.ts#L39)*
+*Defined in [src/Implementation/FactoryRegistry.ts:39](https://github.com/botflux/dependency-injection-container/blob/49e0ae1/packages/DIContainer/src/Implementation/FactoryRegistry.ts#L39)*
 
 **Type parameters:**
 
@@ -92,7 +92,7 @@ ___
 
 *Inherited from [FactoryRegistry](_implementation_factoryregistry_.factoryregistry.md)*
 
-*Defined in [src/Implementation/FactoryRegistry.ts:9](https://github.com/botflux/dependency-injection-container/blob/bd86576/packages/DIContainer/src/Implementation/FactoryRegistry.ts#L9)*
+*Defined in [src/Implementation/FactoryRegistry.ts:9](https://github.com/botflux/dependency-injection-container/blob/49e0ae1/packages/DIContainer/src/Implementation/FactoryRegistry.ts#L9)*
 
 **Parameters:**
 
@@ -108,7 +108,7 @@ ___
 
 ▸ **wrapFactory**(`key`: [ServiceKey](../modules/_interfaces_.md#servicekey), `factory`: [SyncServiceFactory](../modules/_interfaces_.md#syncservicefactory)‹unknown›): *[SyncServiceFactory](../modules/_interfaces_.md#syncservicefactory)‹unknown›*
 
-*Defined in [src/Implementation/FactoryRegistry.ts:29](https://github.com/botflux/dependency-injection-container/blob/bd86576/packages/DIContainer/src/Implementation/FactoryRegistry.ts#L29)*
+*Defined in [src/Implementation/FactoryRegistry.ts:29](https://github.com/botflux/dependency-injection-container/blob/49e0ae1/packages/DIContainer/src/Implementation/FactoryRegistry.ts#L29)*
 
 **Parameters:**
 

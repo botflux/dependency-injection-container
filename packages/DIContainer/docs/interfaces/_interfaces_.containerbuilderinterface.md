@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v2.0.0](../README.md) › [Globals](../globals.md) › ["Interfaces"](../modules/_interfaces_.md) › [ContainerBuilderInterface](_interfaces_.containerbuilderinterface.md)
+[@botflx/dependency-injection-container - v2.0.1](../README.md) › [Globals](../globals.md) › ["Interfaces"](../modules/_interfaces_.md) › [ContainerBuilderInterface](_interfaces_.containerbuilderinterface.md)
 
 # Interface: ContainerBuilderInterface
 
@@ -26,7 +26,7 @@
 
 ▸ **addAsyncFactory**<**TService**>(`key`: [ServiceKey](../modules/_interfaces_.md#servicekey), `factory`: [AsyncServiceFactory](../modules/_interfaces_.md#asyncservicefactory)‹Promise‹TService››, `lifeCycle`: [LifeCycle](../enums/_interfaces_.lifecycle.md)): *this*
 
-*Defined in [src/Interfaces.ts:18](https://github.com/botflux/dependency-injection-container/blob/bd86576/packages/DIContainer/src/Interfaces.ts#L18)*
+*Defined in [src/Interfaces.ts:18](https://github.com/botflux/dependency-injection-container/blob/49e0ae1/packages/DIContainer/src/Interfaces.ts#L18)*
 
 **Type parameters:**
 
@@ -48,7 +48,7 @@ ___
 
 ▸ **addConstructor**<**TConstructor**>(`key`: [ServiceKey](../modules/_interfaces_.md#servicekey), `constructor`: [ServiceConstructor](../modules/_interfaces_.md#serviceconstructor)‹TConstructor›, `lifeCycle`: [LifeCycle](../enums/_interfaces_.lifecycle.md)): *this*
 
-*Defined in [src/Interfaces.ts:17](https://github.com/botflux/dependency-injection-container/blob/bd86576/packages/DIContainer/src/Interfaces.ts#L17)*
+*Defined in [src/Interfaces.ts:17](https://github.com/botflux/dependency-injection-container/blob/49e0ae1/packages/DIContainer/src/Interfaces.ts#L17)*
 
 **Type parameters:**
 
@@ -70,7 +70,7 @@ ___
 
 ▸ **addFactory**<**TService**>(`key`: [ServiceKey](../modules/_interfaces_.md#servicekey), `factory`: [SyncServiceFactory](../modules/_interfaces_.md#syncservicefactory)‹TService›, `lifeCycle`: [LifeCycle](../enums/_interfaces_.lifecycle.md)): *this*
 
-*Defined in [src/Interfaces.ts:16](https://github.com/botflux/dependency-injection-container/blob/bd86576/packages/DIContainer/src/Interfaces.ts#L16)*
+*Defined in [src/Interfaces.ts:16](https://github.com/botflux/dependency-injection-container/blob/49e0ae1/packages/DIContainer/src/Interfaces.ts#L16)*
 
 **Type parameters:**
 
@@ -92,6 +92,6 @@ ___
 
 ▸ **build**(): *[ContainerInterface](_interfaces_.containerinterface.md)*
 
-*Defined in [src/Interfaces.ts:20](https://github.com/botflux/dependency-injection-container/blob/bd86576/packages/DIContainer/src/Interfaces.ts#L20)*
+*Defined in [src/Interfaces.ts:20](https://github.com/botflux/dependency-injection-container/blob/49e0ae1/packages/DIContainer/src/Interfaces.ts#L20)*
 
 **Returns:** *[ContainerInterface](_interfaces_.containerinterface.md)*

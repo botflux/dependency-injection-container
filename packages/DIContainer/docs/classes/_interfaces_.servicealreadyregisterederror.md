@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v2.0.0](../README.md) › [Globals](../globals.md) › ["Interfaces"](../modules/_interfaces_.md) › [ServiceAlreadyRegisteredError](_interfaces_.servicealreadyregisterederror.md)
+[@botflx/dependency-injection-container - v2.0.1](../README.md) › [Globals](../globals.md) › ["Interfaces"](../modules/_interfaces_.md) › [ServiceAlreadyRegisteredError](_interfaces_.servicealreadyregisterederror.md)
 
 # Class: ServiceAlreadyRegisteredError
 
@@ -27,7 +27,7 @@
 
 \+ **new ServiceAlreadyRegisteredError**(`serviceKey`: [ServiceKey](../modules/_interfaces_.md#servicekey)): *[ServiceAlreadyRegisteredError](_interfaces_.servicealreadyregisterederror.md)*
 
-*Defined in [src/Interfaces.ts:38](https://github.com/botflux/dependency-injection-container/blob/bd86576/packages/DIContainer/src/Interfaces.ts#L38)*
+*Defined in [src/Interfaces.ts:38](https://github.com/botflux/dependency-injection-container/blob/49e0ae1/packages/DIContainer/src/Interfaces.ts#L38)*
 
 **Parameters:**
 
