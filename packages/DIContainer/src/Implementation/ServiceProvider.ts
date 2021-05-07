@@ -75,7 +75,7 @@ class CombinedAsyncServiceProvider implements AsyncServiceProviderInterface {
         const provider = this.providers.find(p => p.hasAsync(key))
 
         if (!provider) {
-            throw new ServiceNotFoundError(key)
+            return Promise.reject(new ServiceNotFoundError(key))
         }
 
         return provider.getAsync<TService>(key)

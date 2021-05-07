@@ -4,9 +4,9 @@ import {
     LifeCycle,
     ServiceConstructor,
     SyncServiceFactory,
-    ServiceKey, AsyncServiceFactory, ServiceNotFoundError
+    ServiceKey, AsyncServiceFactory, ServiceNotFoundError, AsyncServiceProviderInterface, SyncServiceProviderInterface
 } from '../Interfaces'
-import {createContainerBuilder} from './Container'
+import {createContainerBuilder, CreateContainerBuilderOptions} from './Container'
 import {
     createAsyncServiceProvider, createCombinedAsyncServiceProvider,
     createCombinedSyncServiceProvider,
@@ -16,7 +16,7 @@ import {
 class ScopedContainer implements ContainerInterface {
     constructor(
         private readonly parentContainer: ContainerInterface,
-        private readonly innerContainer: ContainerInterface
+        private readonly innerContainer: ContainerInterface,
     ) {
     }
 
@@ -26,7 +26,7 @@ class ScopedContainer implements ContainerInterface {
         }
 
         const parentProvider = createSyncServiceProvider(this.parentContainer)
-        const innerProvider  = createSyncServiceProvider(this.innerContainer)
+        const innerProvider = createSyncServiceProvider(this.innerContainer)
         const combinedProvider = createCombinedSyncServiceProvider([ parentProvider, innerProvider ])
 
         return combinedProvider.get(key)
@@ -54,9 +54,13 @@ class ScopedContainer implements ContainerInterface {
 }
 
 class ScopedContainerBuilder implements ContainerBuilderInterface {
-    private readonly builder: ContainerBuilderInterface = createContainerBuilder()
+    private readonly builder: ContainerBuilderInterface
 
-    constructor(private readonly innerContainer: ContainerInterface) {
+    constructor(private readonly innerContainer: ContainerInterface, options: CreateContainerBuilderOptions) {
+        this.builder = createContainerBuilder(options,
+            container => createCombinedSyncServiceProvider([ this.innerContainer, container ]),
+            container => createCombinedAsyncServiceProvider([ this.innerContainer, container ])
+        )
     }
 
     addConstructor<TConstructor>(key: ServiceKey, constructor: ServiceConstructor<TConstructor>, lifeCycle: LifeCycle): this {
@@ -80,4 +84,5 @@ class ScopedContainerBuilder implements ContainerBuilderInterface {
 
 }
 
-export const createScopedContainerBuilder = (container: ContainerInterface) => new ScopedContainerBuilder(container)
+export const createScopedContainerBuilder = (container: ContainerInterface, options: CreateContainerBuilderOptions = { loaders: [] }) =>
+    new ScopedContainerBuilder(container, options)

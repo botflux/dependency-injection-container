@@ -9,7 +9,7 @@ import {
     ServiceFactory,
     ServiceAlreadyRegisteredError,
     ServiceNotFoundError,
-    ServiceLoaderInterface,
+    ServiceLoaderInterface, AsyncServiceProviderInterface, SyncServiceProviderInterface,
 } from '../Interfaces'
 import {
     createSingletonFactoryRegistry,
@@ -30,7 +30,9 @@ class Container implements ContainerInterface {
         syncSingletonFactories: Map<ServiceKey, SyncServiceFactory<unknown>>,
         syncTransientFactories: Map<ServiceKey, SyncServiceFactory<unknown>>,
         asyncSingletonFactories: Map<ServiceKey, SyncServiceFactory<Promise<unknown>>>,
-        asyncTransientFactories: Map<ServiceKey, SyncServiceFactory<Promise<unknown>>>
+        asyncTransientFactories: Map<ServiceKey, SyncServiceFactory<Promise<unknown>>>,
+        protected readonly createSyncServiceProvider: (containerInterface: ContainerInterface) => SyncServiceProviderInterface,
+        protected readonly createAsyncServiceProvider: (containerInterface: ContainerInterface) => AsyncServiceProviderInterface
     ) {
         this.syncFactoriesRegistry.set(LifeCycle.Singleton, createSingletonFactoryRegistry(syncSingletonFactories))
         this.syncFactoriesRegistry.set(LifeCycle.Transient, createTransientFactoryRegistry(syncTransientFactories))
@@ -46,7 +48,7 @@ class Container implements ContainerInterface {
             throw new ServiceNotFoundError(key)
 
         // @ts-ignore
-        return serviceFactory(createSyncServiceProvider(this))
+        return serviceFactory(this.createSyncServiceProvider(this))
     }
 
     async getAsync<T>(key: ServiceKey): Promise<T> {
@@ -57,7 +59,7 @@ class Container implements ContainerInterface {
             throw new ServiceNotFoundError(key)
 
         // @ts-ignore
-        return serviceFactory(createAsyncServiceProvider(this))
+        return serviceFactory(this.createAsyncServiceProvider(this))
     }
 
     has(key: ServiceKey): boolean {
@@ -84,7 +86,10 @@ class ContainerBuilder implements ContainerBuilderInterface {
             .set(LifeCycle.Singleton, new Map())
             .set(LifeCycle.Transient, new Map())
 
-    constructor(options: CreateContainerBuilderOptions) {
+    constructor(options: CreateContainerBuilderOptions,
+                private readonly createProvider: (containerInterface: ContainerInterface) => SyncServiceProviderInterface = createSyncServiceProvider,
+                private readonly createAsyncProvider: (containerInterface: ContainerInterface) => AsyncServiceProviderInterface = createAsyncServiceProvider
+    ) {
         options.loaders.forEach(loader => loader(this))
     }
 
@@ -103,7 +108,9 @@ class ContainerBuilder implements ContainerBuilderInterface {
             this.syncFactories.get(LifeCycle.Singleton) || new Map(),
             this.syncFactories.get(LifeCycle.Transient) || new Map(),
             this.asyncFactories.get(LifeCycle.Singleton) || new Map(),
-            this.asyncFactories.get(LifeCycle.Transient) || new Map()
+            this.asyncFactories.get(LifeCycle.Transient) || new Map(),
+            this.createProvider,
+            this.createAsyncProvider
         )
     }
 
@@ -132,4 +139,7 @@ class ContainerBuilder implements ContainerBuilderInterface {
 export type CreateContainerBuilderOptions = { loaders: ServiceLoaderInterface[] }
 const defaultOptions = { loaders: [] }
 
-export const createContainerBuilder = (options: CreateContainerBuilderOptions = defaultOptions) => new ContainerBuilder(options)
+export const createContainerBuilder = (options: CreateContainerBuilderOptions = defaultOptions,
+                                       createProvider: (containerInterface: ContainerInterface) => SyncServiceProviderInterface = createSyncServiceProvider,
+                                       createAsyncProvider: (containerInterface: ContainerInterface) => AsyncServiceProviderInterface = createAsyncServiceProvider) =>
+    new ContainerBuilder(options, createProvider, createAsyncProvider)
