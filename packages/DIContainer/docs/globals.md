@@ -1,6 +1,6 @@
-[@botflx/dependency-injection-container - v2.0.4](README.md) › [Globals](globals.md)
+[@botflx/dependency-injection-container - v2.1.0](README.md) › [Globals](globals.md)
 
-# @botflx/dependency-injection-container - v2.0.4
+# @botflx/dependency-injection-container - v2.1.0
 
 ## Index
 

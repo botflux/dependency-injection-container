@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v2.0.4](../README.md) › [Globals](../globals.md) › ["Interfaces"](../modules/_interfaces_.md) › [AsyncServiceProviderInterface](_interfaces_.asyncserviceproviderinterface.md)
+[@botflx/dependency-injection-container - v2.1.0](../README.md) › [Globals](../globals.md) › ["Interfaces"](../modules/_interfaces_.md) › [AsyncServiceProviderInterface](_interfaces_.asyncserviceproviderinterface.md)
 
 # Interface: AsyncServiceProviderInterface
 
@@ -30,7 +30,7 @@
 
 *Inherited from [SyncServiceProviderInterface](_interfaces_.syncserviceproviderinterface.md).[get](_interfaces_.syncserviceproviderinterface.md#get)*
 
-*Defined in [src/Interfaces.ts:24](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Interfaces.ts#L24)*
+*Defined in [src/Interfaces.ts:24](https://github.com/botflux/dependency-injection-container/blob/e8a6c87/packages/DIContainer/src/Interfaces.ts#L24)*
 
 **Type parameters:**
 
@@ -50,7 +50,7 @@ ___
 
 ▸ **getAsync**<**TService**>(`key`: [ServiceKey](../modules/_interfaces_.md#servicekey)): *Promise‹TService›*
 
-*Defined in [src/Interfaces.ts:29](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Interfaces.ts#L29)*
+*Defined in [src/Interfaces.ts:29](https://github.com/botflux/dependency-injection-container/blob/e8a6c87/packages/DIContainer/src/Interfaces.ts#L29)*
 
 **Type parameters:**
 
@@ -72,7 +72,7 @@ ___
 
 *Inherited from [SyncServiceProviderInterface](_interfaces_.syncserviceproviderinterface.md).[has](_interfaces_.syncserviceproviderinterface.md#has)*
 
-*Defined in [src/Interfaces.ts:25](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Interfaces.ts#L25)*
+*Defined in [src/Interfaces.ts:25](https://github.com/botflux/dependency-injection-container/blob/e8a6c87/packages/DIContainer/src/Interfaces.ts#L25)*
 
 **Parameters:**
 
@@ -88,7 +88,7 @@ ___
 
 ▸ **hasAsync**(`key`: [ServiceKey](../modules/_interfaces_.md#servicekey)): *boolean*
 
-*Defined in [src/Interfaces.ts:30](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Interfaces.ts#L30)*
+*Defined in [src/Interfaces.ts:30](https://github.com/botflux/dependency-injection-container/blob/e8a6c87/packages/DIContainer/src/Interfaces.ts#L30)*
 
 **Parameters:**
 

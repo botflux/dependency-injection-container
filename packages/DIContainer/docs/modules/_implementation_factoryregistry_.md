@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v2.0.4](../README.md) › [Globals](../globals.md) › ["Implementation/FactoryRegistry"](_implementation_factoryregistry_.md)
+[@botflx/dependency-injection-container - v2.1.0](../README.md) › [Globals](../globals.md) › ["Implementation/FactoryRegistry"](_implementation_factoryregistry_.md)
 
 # External module: "Implementation/FactoryRegistry"
 
@@ -25,7 +25,7 @@
 
 Ƭ **ResolvedServicesMap**: *Map‹[ServiceKey](_interfaces_.md#servicekey), unknown›*
 
-*Defined in [src/Implementation/FactoryRegistry.ts:23](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/FactoryRegistry.ts#L23)*
+*Defined in [src/Implementation/FactoryRegistry.ts:23](https://github.com/botflux/dependency-injection-container/blob/e8a6c87/packages/DIContainer/src/Implementation/FactoryRegistry.ts#L23)*
 
 ## Functions
 
@@ -33,7 +33,7 @@
 
 ▸ **createSingletonFactoryRegistry**(`factoriesMap`: Map‹[ServiceKey](_interfaces_.md#servicekey), [SyncServiceFactory](_interfaces_.md#syncservicefactory)‹unknown››): *[SingletonFactoryRegistry](../classes/_implementation_factoryregistry_.singletonfactoryregistry.md)‹›*
 
-*Defined in [src/Implementation/FactoryRegistry.ts:49](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/FactoryRegistry.ts#L49)*
+*Defined in [src/Implementation/FactoryRegistry.ts:49](https://github.com/botflux/dependency-injection-container/blob/e8a6c87/packages/DIContainer/src/Implementation/FactoryRegistry.ts#L49)*
 
 **Parameters:**
 
@@ -49,7 +49,7 @@ ___
 
 ▸ **createTransientFactoryRegistry**(`factoriesMap`: Map‹[ServiceKey](_interfaces_.md#servicekey), [SyncServiceFactory](_interfaces_.md#syncservicefactory)‹unknown››): *[TransientFactoryRegistry](../classes/_implementation_factoryregistry_.transientfactoryregistry.md)‹›*
 
-*Defined in [src/Implementation/FactoryRegistry.ts:52](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/FactoryRegistry.ts#L52)*
+*Defined in [src/Implementation/FactoryRegistry.ts:52](https://github.com/botflux/dependency-injection-container/blob/e8a6c87/packages/DIContainer/src/Implementation/FactoryRegistry.ts#L52)*
 
 **Parameters:**
 

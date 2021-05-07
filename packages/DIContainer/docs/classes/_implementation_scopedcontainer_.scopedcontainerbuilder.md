@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v2.0.4](../README.md) › [Globals](../globals.md) › ["Implementation/ScopedContainer"](../modules/_implementation_scopedcontainer_.md) › [ScopedContainerBuilder](_implementation_scopedcontainer_.scopedcontainerbuilder.md)
+[@botflx/dependency-injection-container - v2.1.0](../README.md) › [Globals](../globals.md) › ["Implementation/ScopedContainer"](../modules/_implementation_scopedcontainer_.md) › [ScopedContainerBuilder](_implementation_scopedcontainer_.scopedcontainerbuilder.md)
 
 # Class: ScopedContainerBuilder
 
@@ -34,7 +34,7 @@
 
 \+ **new ScopedContainerBuilder**(`innerContainer`: [ContainerInterface](../interfaces/_interfaces_.containerinterface.md), `options`: [CreateContainerBuilderOptions](../modules/_implementation_container_.md#createcontainerbuilderoptions)): *[ScopedContainerBuilder](_implementation_scopedcontainer_.scopedcontainerbuilder.md)*
 
-*Defined in [src/Implementation/ScopedContainer.ts:57](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/ScopedContainer.ts#L57)*
+*Defined in [src/Implementation/ScopedContainer.ts:57](https://github.com/botflux/dependency-injection-container/blob/e8a6c87/packages/DIContainer/src/Implementation/ScopedContainer.ts#L57)*
 
 **Parameters:**
 
@@ -51,7 +51,7 @@ Name | Type |
 
 • **builder**: *[ContainerBuilderInterface](../interfaces/_interfaces_.containerbuilderinterface.md)*
 
-*Defined in [src/Implementation/ScopedContainer.ts:57](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/ScopedContainer.ts#L57)*
+*Defined in [src/Implementation/ScopedContainer.ts:57](https://github.com/botflux/dependency-injection-container/blob/e8a6c87/packages/DIContainer/src/Implementation/ScopedContainer.ts#L57)*
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 • **innerContainer**: *[ContainerInterface](../interfaces/_interfaces_.containerinterface.md)*
 
-*Defined in [src/Implementation/ScopedContainer.ts:59](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/ScopedContainer.ts#L59)*
+*Defined in [src/Implementation/ScopedContainer.ts:59](https://github.com/botflux/dependency-injection-container/blob/e8a6c87/packages/DIContainer/src/Implementation/ScopedContainer.ts#L59)*
 
 ## Methods
 
@@ -69,7 +69,7 @@ ___
 
 *Implementation of [ContainerBuilderInterface](../interfaces/_interfaces_.containerbuilderinterface.md)*
 
-*Defined in [src/Implementation/ScopedContainer.ts:76](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/ScopedContainer.ts#L76)*
+*Defined in [src/Implementation/ScopedContainer.ts:76](https://github.com/botflux/dependency-injection-container/blob/e8a6c87/packages/DIContainer/src/Implementation/ScopedContainer.ts#L76)*
 
 **Type parameters:**
 
@@ -93,7 +93,7 @@ ___
 
 *Implementation of [ContainerBuilderInterface](../interfaces/_interfaces_.containerbuilderinterface.md)*
 
-*Defined in [src/Implementation/ScopedContainer.ts:66](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/ScopedContainer.ts#L66)*
+*Defined in [src/Implementation/ScopedContainer.ts:66](https://github.com/botflux/dependency-injection-container/blob/e8a6c87/packages/DIContainer/src/Implementation/ScopedContainer.ts#L66)*
 
 **Type parameters:**
 
@@ -117,7 +117,7 @@ ___
 
 *Implementation of [ContainerBuilderInterface](../interfaces/_interfaces_.containerbuilderinterface.md)*
 
-*Defined in [src/Implementation/ScopedContainer.ts:71](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/ScopedContainer.ts#L71)*
+*Defined in [src/Implementation/ScopedContainer.ts:71](https://github.com/botflux/dependency-injection-container/blob/e8a6c87/packages/DIContainer/src/Implementation/ScopedContainer.ts#L71)*
 
 **Type parameters:**
 
@@ -141,6 +141,6 @@ ___
 
 *Implementation of [ContainerBuilderInterface](../interfaces/_interfaces_.containerbuilderinterface.md)*
 
-*Defined in [src/Implementation/ScopedContainer.ts:81](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/ScopedContainer.ts#L81)*
+*Defined in [src/Implementation/ScopedContainer.ts:81](https://github.com/botflux/dependency-injection-container/blob/e8a6c87/packages/DIContainer/src/Implementation/ScopedContainer.ts#L81)*
 
 **Returns:** *[ContainerInterface](../interfaces/_interfaces_.containerinterface.md)*

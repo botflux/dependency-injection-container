@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v2.0.4](../README.md) › [Globals](../globals.md) › ["Implementation/Container"](_implementation_container_.md)
+[@botflx/dependency-injection-container - v2.1.0](../README.md) › [Globals](../globals.md) › ["Implementation/Container"](_implementation_container_.md)
 
 # External module: "Implementation/Container"
 
@@ -27,7 +27,7 @@
 
 Ƭ **CreateContainerBuilderOptions**: *object*
 
-*Defined in [src/Implementation/Container.ts:139](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/Container.ts#L139)*
+*Defined in [src/Implementation/Container.ts:139](https://github.com/botflux/dependency-injection-container/blob/e8a6c87/packages/DIContainer/src/Implementation/Container.ts#L139)*
 
 #### Type declaration:
 
@@ -39,7 +39,7 @@
 
 ▸ **createContainerBuilder**(`options`: [CreateContainerBuilderOptions](_implementation_container_.md#createcontainerbuilderoptions), `createProvider`: function, `createAsyncProvider`: function): *[ContainerBuilder](../classes/_implementation_container_.containerbuilder.md)‹›*
 
-*Defined in [src/Implementation/Container.ts:142](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/Container.ts#L142)*
+*Defined in [src/Implementation/Container.ts:142](https://github.com/botflux/dependency-injection-container/blob/e8a6c87/packages/DIContainer/src/Implementation/Container.ts#L142)*
 
 **Parameters:**
 
@@ -73,10 +73,10 @@ Name | Type |
 
 ### ▪ **defaultOptions**: *object*
 
-*Defined in [src/Implementation/Container.ts:140](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/Container.ts#L140)*
+*Defined in [src/Implementation/Container.ts:140](https://github.com/botflux/dependency-injection-container/blob/e8a6c87/packages/DIContainer/src/Implementation/Container.ts#L140)*
 
 ###  loaders
 
 • **loaders**: *never[]* =  []
 
-*Defined in [src/Implementation/Container.ts:140](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/Container.ts#L140)*
+*Defined in [src/Implementation/Container.ts:140](https://github.com/botflux/dependency-injection-container/blob/e8a6c87/packages/DIContainer/src/Implementation/Container.ts#L140)*

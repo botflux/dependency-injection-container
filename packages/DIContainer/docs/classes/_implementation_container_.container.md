@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v2.0.4](../README.md) › [Globals](../globals.md) › ["Implementation/Container"](../modules/_implementation_container_.md) › [Container](_implementation_container_.container.md)
+[@botflx/dependency-injection-container - v2.1.0](../README.md) › [Globals](../globals.md) › ["Implementation/Container"](../modules/_implementation_container_.md) › [Container](_implementation_container_.container.md)
 
 # Class: Container
 
@@ -36,7 +36,7 @@
 
 \+ **new Container**(`syncSingletonFactories`: Map‹[ServiceKey](../modules/_interfaces_.md#servicekey), [SyncServiceFactory](../modules/_interfaces_.md#syncservicefactory)‹unknown››, `syncTransientFactories`: Map‹[ServiceKey](../modules/_interfaces_.md#servicekey), [SyncServiceFactory](../modules/_interfaces_.md#syncservicefactory)‹unknown››, `asyncSingletonFactories`: Map‹[ServiceKey](../modules/_interfaces_.md#servicekey), [SyncServiceFactory](../modules/_interfaces_.md#syncservicefactory)‹Promise‹unknown›››, `asyncTransientFactories`: Map‹[ServiceKey](../modules/_interfaces_.md#servicekey), [SyncServiceFactory](../modules/_interfaces_.md#syncservicefactory)‹Promise‹unknown›››, `createSyncServiceProvider`: function, `createAsyncServiceProvider`: function): *[Container](_implementation_container_.container.md)*
 
-*Defined in [src/Implementation/Container.ts:27](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/Container.ts#L27)*
+*Defined in [src/Implementation/Container.ts:27](https://github.com/botflux/dependency-injection-container/blob/e8a6c87/packages/DIContainer/src/Implementation/Container.ts#L27)*
 
 **Parameters:**
 
@@ -77,7 +77,7 @@ Name | Type |
 • **asyncFactoriesRegistry**: *Map‹[LifeCycle](../enums/_interfaces_.lifecycle.md), [FactoryRegistry](_implementation_factoryregistry_.factoryregistry.md)‹››* = 
         new Map<LifeCycle, FactoryRegistry>()
 
-*Defined in [src/Implementation/Container.ts:26](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/Container.ts#L26)*
+*Defined in [src/Implementation/Container.ts:26](https://github.com/botflux/dependency-injection-container/blob/e8a6c87/packages/DIContainer/src/Implementation/Container.ts#L26)*
 
 ___
 
@@ -85,7 +85,7 @@ ___
 
 • **createAsyncServiceProvider**: *function*
 
-*Defined in [src/Implementation/Container.ts:35](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/Container.ts#L35)*
+*Defined in [src/Implementation/Container.ts:35](https://github.com/botflux/dependency-injection-container/blob/e8a6c87/packages/DIContainer/src/Implementation/Container.ts#L35)*
 
 #### Type declaration:
 
@@ -103,7 +103,7 @@ ___
 
 • **createSyncServiceProvider**: *function*
 
-*Defined in [src/Implementation/Container.ts:34](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/Container.ts#L34)*
+*Defined in [src/Implementation/Container.ts:34](https://github.com/botflux/dependency-injection-container/blob/e8a6c87/packages/DIContainer/src/Implementation/Container.ts#L34)*
 
 #### Type declaration:
 
@@ -122,7 +122,7 @@ ___
 • **syncFactoriesRegistry**: *Map‹[LifeCycle](../enums/_interfaces_.lifecycle.md), [FactoryRegistry](_implementation_factoryregistry_.factoryregistry.md)‹››* = 
         new Map<LifeCycle, FactoryRegistry>()
 
-*Defined in [src/Implementation/Container.ts:23](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/Container.ts#L23)*
+*Defined in [src/Implementation/Container.ts:23](https://github.com/botflux/dependency-injection-container/blob/e8a6c87/packages/DIContainer/src/Implementation/Container.ts#L23)*
 
 ## Methods
 
@@ -132,7 +132,7 @@ ___
 
 *Implementation of [ContainerInterface](../interfaces/_interfaces_.containerinterface.md)*
 
-*Defined in [src/Implementation/Container.ts:43](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/Container.ts#L43)*
+*Defined in [src/Implementation/Container.ts:43](https://github.com/botflux/dependency-injection-container/blob/e8a6c87/packages/DIContainer/src/Implementation/Container.ts#L43)*
 
 **Type parameters:**
 
@@ -154,7 +154,7 @@ ___
 
 *Implementation of [ContainerInterface](../interfaces/_interfaces_.containerinterface.md)*
 
-*Defined in [src/Implementation/Container.ts:54](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/Container.ts#L54)*
+*Defined in [src/Implementation/Container.ts:54](https://github.com/botflux/dependency-injection-container/blob/e8a6c87/packages/DIContainer/src/Implementation/Container.ts#L54)*
 
 **Type parameters:**
 
@@ -176,7 +176,7 @@ ___
 
 *Implementation of [ContainerInterface](../interfaces/_interfaces_.containerinterface.md)*
 
-*Defined in [src/Implementation/Container.ts:65](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/Container.ts#L65)*
+*Defined in [src/Implementation/Container.ts:65](https://github.com/botflux/dependency-injection-container/blob/e8a6c87/packages/DIContainer/src/Implementation/Container.ts#L65)*
 
 **Parameters:**
 
@@ -194,7 +194,7 @@ ___
 
 *Implementation of [ContainerInterface](../interfaces/_interfaces_.containerinterface.md)*
 
-*Defined in [src/Implementation/Container.ts:71](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/Container.ts#L71)*
+*Defined in [src/Implementation/Container.ts:71](https://github.com/botflux/dependency-injection-container/blob/e8a6c87/packages/DIContainer/src/Implementation/Container.ts#L71)*
 
 **Parameters:**
 
