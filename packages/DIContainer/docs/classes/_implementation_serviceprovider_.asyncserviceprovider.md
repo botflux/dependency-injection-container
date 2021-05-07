@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v2.0.3](../README.md) › [Globals](../globals.md) › ["Implementation/ServiceProvider"](../modules/_implementation_serviceprovider_.md) › [AsyncServiceProvider](_implementation_serviceprovider_.asyncserviceprovider.md)
+[@botflx/dependency-injection-container - v2.0.4](../README.md) › [Globals](../globals.md) › ["Implementation/ServiceProvider"](../modules/_implementation_serviceprovider_.md) › [AsyncServiceProvider](_implementation_serviceprovider_.asyncserviceprovider.md)
 
 # Class: AsyncServiceProvider
 
@@ -34,7 +34,7 @@
 
 \+ **new AsyncServiceProvider**(`innerContainer`: [ContainerInterface](../interfaces/_interfaces_.containerinterface.md)): *[AsyncServiceProvider](_implementation_serviceprovider_.asyncserviceprovider.md)*
 
-*Defined in [src/Implementation/ServiceProvider.ts:20](https://github.com/botflux/dependency-injection-container/blob/f2bcefe/packages/DIContainer/src/Implementation/ServiceProvider.ts#L20)*
+*Defined in [src/Implementation/ServiceProvider.ts:38](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/ServiceProvider.ts#L38)*
 
 **Parameters:**
 
@@ -50,7 +50,7 @@ Name | Type |
 
 • **innerContainer**: *[ContainerInterface](../interfaces/_interfaces_.containerinterface.md)*
 
-*Defined in [src/Implementation/ServiceProvider.ts:22](https://github.com/botflux/dependency-injection-container/blob/f2bcefe/packages/DIContainer/src/Implementation/ServiceProvider.ts#L22)*
+*Defined in [src/Implementation/ServiceProvider.ts:40](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/ServiceProvider.ts#L40)*
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 • **syncProvider**: *[SyncServiceProviderInterface](../interfaces/_interfaces_.syncserviceproviderinterface.md)*
 
-*Defined in [src/Implementation/ServiceProvider.ts:20](https://github.com/botflux/dependency-injection-container/blob/f2bcefe/packages/DIContainer/src/Implementation/ServiceProvider.ts#L20)*
+*Defined in [src/Implementation/ServiceProvider.ts:38](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/ServiceProvider.ts#L38)*
 
 ## Methods
 
@@ -68,7 +68,7 @@ ___
 
 *Implementation of [AsyncServiceProviderInterface](../interfaces/_interfaces_.asyncserviceproviderinterface.md)*
 
-*Defined in [src/Implementation/ServiceProvider.ts:27](https://github.com/botflux/dependency-injection-container/blob/f2bcefe/packages/DIContainer/src/Implementation/ServiceProvider.ts#L27)*
+*Defined in [src/Implementation/ServiceProvider.ts:44](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/ServiceProvider.ts#L44)*
 
 **Type parameters:**
 
@@ -90,7 +90,7 @@ ___
 
 *Implementation of [AsyncServiceProviderInterface](../interfaces/_interfaces_.asyncserviceproviderinterface.md)*
 
-*Defined in [src/Implementation/ServiceProvider.ts:31](https://github.com/botflux/dependency-injection-container/blob/f2bcefe/packages/DIContainer/src/Implementation/ServiceProvider.ts#L31)*
+*Defined in [src/Implementation/ServiceProvider.ts:48](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/ServiceProvider.ts#L48)*
 
 **Type parameters:**
 
@@ -112,7 +112,7 @@ ___
 
 *Implementation of [AsyncServiceProviderInterface](../interfaces/_interfaces_.asyncserviceproviderinterface.md)*
 
-*Defined in [src/Implementation/ServiceProvider.ts:35](https://github.com/botflux/dependency-injection-container/blob/f2bcefe/packages/DIContainer/src/Implementation/ServiceProvider.ts#L35)*
+*Defined in [src/Implementation/ServiceProvider.ts:52](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/ServiceProvider.ts#L52)*
 
 **Parameters:**
 
@@ -130,7 +130,7 @@ ___
 
 *Implementation of [AsyncServiceProviderInterface](../interfaces/_interfaces_.asyncserviceproviderinterface.md)*
 
-*Defined in [src/Implementation/ServiceProvider.ts:39](https://github.com/botflux/dependency-injection-container/blob/f2bcefe/packages/DIContainer/src/Implementation/ServiceProvider.ts#L39)*
+*Defined in [src/Implementation/ServiceProvider.ts:56](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/ServiceProvider.ts#L56)*
 
 **Parameters:**
 

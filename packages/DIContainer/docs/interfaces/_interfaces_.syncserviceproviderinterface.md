@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v2.0.3](../README.md) › [Globals](../globals.md) › ["Interfaces"](../modules/_interfaces_.md) › [SyncServiceProviderInterface](_interfaces_.syncserviceproviderinterface.md)
+[@botflx/dependency-injection-container - v2.0.4](../README.md) › [Globals](../globals.md) › ["Interfaces"](../modules/_interfaces_.md) › [SyncServiceProviderInterface](_interfaces_.syncserviceproviderinterface.md)
 
 # Interface: SyncServiceProviderInterface
 
@@ -10,6 +10,7 @@
 
 ## Implemented by
 
+* [CombinedSyncServiceProvider](../classes/_implementation_serviceprovider_.combinedsyncserviceprovider.md)
 * [SyncServiceProvider](../classes/_implementation_serviceprovider_.syncserviceprovider.md)
 
 ## Index
@@ -25,7 +26,7 @@
 
 ▸ **get**<**TService**>(`key`: [ServiceKey](../modules/_interfaces_.md#servicekey)): *TService*
 
-*Defined in [src/Interfaces.ts:24](https://github.com/botflux/dependency-injection-container/blob/f2bcefe/packages/DIContainer/src/Interfaces.ts#L24)*
+*Defined in [src/Interfaces.ts:24](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Interfaces.ts#L24)*
 
 **Type parameters:**
 
@@ -45,7 +46,7 @@ ___
 
 ▸ **has**(`key`: [ServiceKey](../modules/_interfaces_.md#servicekey)): *boolean*
 
-*Defined in [src/Interfaces.ts:25](https://github.com/botflux/dependency-injection-container/blob/f2bcefe/packages/DIContainer/src/Interfaces.ts#L25)*
+*Defined in [src/Interfaces.ts:25](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Interfaces.ts#L25)*
 
 **Parameters:**
 

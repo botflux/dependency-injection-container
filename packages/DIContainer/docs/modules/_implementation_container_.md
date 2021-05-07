@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v2.0.3](../README.md) › [Globals](../globals.md) › ["Implementation/Container"](_implementation_container_.md)
+[@botflx/dependency-injection-container - v2.0.4](../README.md) › [Globals](../globals.md) › ["Implementation/Container"](_implementation_container_.md)
 
 # External module: "Implementation/Container"
 
@@ -27,7 +27,7 @@
 
 Ƭ **CreateContainerBuilderOptions**: *object*
 
-*Defined in [src/Implementation/Container.ts:132](https://github.com/botflux/dependency-injection-container/blob/f2bcefe/packages/DIContainer/src/Implementation/Container.ts#L132)*
+*Defined in [src/Implementation/Container.ts:139](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/Container.ts#L139)*
 
 #### Type declaration:
 
@@ -37,15 +37,33 @@
 
 ### `Const` createContainerBuilder
 
-▸ **createContainerBuilder**(`options`: [CreateContainerBuilderOptions](_implementation_container_.md#createcontainerbuilderoptions)): *[ContainerBuilder](../classes/_implementation_container_.containerbuilder.md)‹›*
+▸ **createContainerBuilder**(`options`: [CreateContainerBuilderOptions](_implementation_container_.md#createcontainerbuilderoptions), `createProvider`: function, `createAsyncProvider`: function): *[ContainerBuilder](../classes/_implementation_container_.containerbuilder.md)‹›*
 
-*Defined in [src/Implementation/Container.ts:135](https://github.com/botflux/dependency-injection-container/blob/f2bcefe/packages/DIContainer/src/Implementation/Container.ts#L135)*
+*Defined in [src/Implementation/Container.ts:142](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/Container.ts#L142)*
 
 **Parameters:**
 
-Name | Type | Default |
------- | ------ | ------ |
-`options` | [CreateContainerBuilderOptions](_implementation_container_.md#createcontainerbuilderoptions) |  defaultOptions |
+▪`Default value`  **options**: *[CreateContainerBuilderOptions](_implementation_container_.md#createcontainerbuilderoptions)*=  defaultOptions
+
+▪`Default value`  **createProvider**: *function*=  createSyncServiceProvider
+
+▸ (`containerInterface`: [ContainerInterface](../interfaces/_interfaces_.containerinterface.md)): *[SyncServiceProviderInterface](../interfaces/_interfaces_.syncserviceproviderinterface.md)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`containerInterface` | [ContainerInterface](../interfaces/_interfaces_.containerinterface.md) |
+
+▪`Default value`  **createAsyncProvider**: *function*=  createAsyncServiceProvider
+
+▸ (`containerInterface`: [ContainerInterface](../interfaces/_interfaces_.containerinterface.md)): *[AsyncServiceProviderInterface](../interfaces/_interfaces_.asyncserviceproviderinterface.md)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`containerInterface` | [ContainerInterface](../interfaces/_interfaces_.containerinterface.md) |
 
 **Returns:** *[ContainerBuilder](../classes/_implementation_container_.containerbuilder.md)‹›*
 
@@ -55,10 +73,10 @@ Name | Type | Default |
 
 ### ▪ **defaultOptions**: *object*
 
-*Defined in [src/Implementation/Container.ts:133](https://github.com/botflux/dependency-injection-container/blob/f2bcefe/packages/DIContainer/src/Implementation/Container.ts#L133)*
+*Defined in [src/Implementation/Container.ts:140](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/Container.ts#L140)*
 
 ###  loaders
 
 • **loaders**: *never[]* =  []
 
-*Defined in [src/Implementation/Container.ts:133](https://github.com/botflux/dependency-injection-container/blob/f2bcefe/packages/DIContainer/src/Implementation/Container.ts#L133)*
+*Defined in [src/Implementation/Container.ts:140](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/Container.ts#L140)*

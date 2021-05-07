@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v2.0.3](../README.md) › [Globals](../globals.md) › ["Implementation/Container"](../modules/_implementation_container_.md) › [ContainerBuilder](_implementation_container_.containerbuilder.md)
+[@botflx/dependency-injection-container - v2.0.4](../README.md) › [Globals](../globals.md) › ["Implementation/Container"](../modules/_implementation_container_.md) › [ContainerBuilder](_implementation_container_.containerbuilder.md)
 
 # Class: ContainerBuilder
 
@@ -19,6 +19,8 @@
 ### Properties
 
 * [asyncFactories](_implementation_container_.containerbuilder.md#private-asyncfactories)
+* [createAsyncProvider](_implementation_container_.containerbuilder.md#private-createasyncprovider)
+* [createProvider](_implementation_container_.containerbuilder.md#private-createprovider)
 * [syncFactories](_implementation_container_.containerbuilder.md#private-syncfactories)
 
 ### Methods
@@ -33,15 +35,33 @@
 
 ###  constructor
 
-\+ **new ContainerBuilder**(`options`: [CreateContainerBuilderOptions](../modules/_implementation_container_.md#createcontainerbuilderoptions)): *[ContainerBuilder](_implementation_container_.containerbuilder.md)*
+\+ **new ContainerBuilder**(`options`: [CreateContainerBuilderOptions](../modules/_implementation_container_.md#createcontainerbuilderoptions), `createProvider`: function, `createAsyncProvider`: function): *[ContainerBuilder](_implementation_container_.containerbuilder.md)*
 
-*Defined in [src/Implementation/Container.ts:85](https://github.com/botflux/dependency-injection-container/blob/f2bcefe/packages/DIContainer/src/Implementation/Container.ts#L85)*
+*Defined in [src/Implementation/Container.ts:87](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/Container.ts#L87)*
+
+**Parameters:**
+
+▪ **options**: *[CreateContainerBuilderOptions](../modules/_implementation_container_.md#createcontainerbuilderoptions)*
+
+▪`Default value`  **createProvider**: *function*=  createSyncServiceProvider
+
+▸ (`containerInterface`: [ContainerInterface](../interfaces/_interfaces_.containerinterface.md)): *[SyncServiceProviderInterface](../interfaces/_interfaces_.syncserviceproviderinterface.md)*
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`options` | [CreateContainerBuilderOptions](../modules/_implementation_container_.md#createcontainerbuilderoptions) |
+`containerInterface` | [ContainerInterface](../interfaces/_interfaces_.containerinterface.md) |
+
+▪`Default value`  **createAsyncProvider**: *function*=  createAsyncServiceProvider
+
+▸ (`containerInterface`: [ContainerInterface](../interfaces/_interfaces_.containerinterface.md)): *[AsyncServiceProviderInterface](../interfaces/_interfaces_.asyncserviceproviderinterface.md)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`containerInterface` | [ContainerInterface](../interfaces/_interfaces_.containerinterface.md) |
 
 **Returns:** *[ContainerBuilder](_implementation_container_.containerbuilder.md)*
 
@@ -54,7 +74,43 @@ Name | Type |
             .set(LifeCycle.Singleton, new Map())
             .set(LifeCycle.Transient, new Map())
 
-*Defined in [src/Implementation/Container.ts:82](https://github.com/botflux/dependency-injection-container/blob/f2bcefe/packages/DIContainer/src/Implementation/Container.ts#L82)*
+*Defined in [src/Implementation/Container.ts:84](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/Container.ts#L84)*
+
+___
+
+### `Private` createAsyncProvider
+
+• **createAsyncProvider**: *function*
+
+*Defined in [src/Implementation/Container.ts:91](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/Container.ts#L91)*
+
+#### Type declaration:
+
+▸ (`containerInterface`: [ContainerInterface](../interfaces/_interfaces_.containerinterface.md)): *[AsyncServiceProviderInterface](../interfaces/_interfaces_.asyncserviceproviderinterface.md)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`containerInterface` | [ContainerInterface](../interfaces/_interfaces_.containerinterface.md) |
+
+___
+
+### `Private` createProvider
+
+• **createProvider**: *function*
+
+*Defined in [src/Implementation/Container.ts:90](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/Container.ts#L90)*
+
+#### Type declaration:
+
+▸ (`containerInterface`: [ContainerInterface](../interfaces/_interfaces_.containerinterface.md)): *[SyncServiceProviderInterface](../interfaces/_interfaces_.syncserviceproviderinterface.md)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`containerInterface` | [ContainerInterface](../interfaces/_interfaces_.containerinterface.md) |
 
 ___
 
@@ -65,7 +121,7 @@ ___
             .set(LifeCycle.Singleton, new Map())
             .set(LifeCycle.Transient, new Map())
 
-*Defined in [src/Implementation/Container.ts:77](https://github.com/botflux/dependency-injection-container/blob/f2bcefe/packages/DIContainer/src/Implementation/Container.ts#L77)*
+*Defined in [src/Implementation/Container.ts:79](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/Container.ts#L79)*
 
 ## Methods
 
@@ -75,7 +131,7 @@ ___
 
 *Implementation of [ContainerBuilderInterface](../interfaces/_interfaces_.containerbuilderinterface.md)*
 
-*Defined in [src/Implementation/Container.ts:115](https://github.com/botflux/dependency-injection-container/blob/f2bcefe/packages/DIContainer/src/Implementation/Container.ts#L115)*
+*Defined in [src/Implementation/Container.ts:122](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/Container.ts#L122)*
 
 **Type parameters:**
 
@@ -99,7 +155,7 @@ ___
 
 *Implementation of [ContainerBuilderInterface](../interfaces/_interfaces_.containerbuilderinterface.md)*
 
-*Defined in [src/Implementation/Container.ts:110](https://github.com/botflux/dependency-injection-container/blob/f2bcefe/packages/DIContainer/src/Implementation/Container.ts#L110)*
+*Defined in [src/Implementation/Container.ts:117](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/Container.ts#L117)*
 
 **Type parameters:**
 
@@ -123,7 +179,7 @@ ___
 
 *Implementation of [ContainerBuilderInterface](../interfaces/_interfaces_.containerbuilderinterface.md)*
 
-*Defined in [src/Implementation/Container.ts:91](https://github.com/botflux/dependency-injection-container/blob/f2bcefe/packages/DIContainer/src/Implementation/Container.ts#L91)*
+*Defined in [src/Implementation/Container.ts:96](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/Container.ts#L96)*
 
 **Type parameters:**
 
@@ -147,7 +203,7 @@ ___
 
 *Implementation of [ContainerBuilderInterface](../interfaces/_interfaces_.containerbuilderinterface.md)*
 
-*Defined in [src/Implementation/Container.ts:101](https://github.com/botflux/dependency-injection-container/blob/f2bcefe/packages/DIContainer/src/Implementation/Container.ts#L101)*
+*Defined in [src/Implementation/Container.ts:106](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/Container.ts#L106)*
 
 **Returns:** *[ContainerInterface](../interfaces/_interfaces_.containerinterface.md)*
 
@@ -157,7 +213,7 @@ ___
 
 ▸ **isAlreadyRegistered**(`key`: [ServiceKey](../modules/_interfaces_.md#servicekey)): *boolean*
 
-*Defined in [src/Implementation/Container.ts:123](https://github.com/botflux/dependency-injection-container/blob/f2bcefe/packages/DIContainer/src/Implementation/Container.ts#L123)*
+*Defined in [src/Implementation/Container.ts:130](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/Container.ts#L130)*
 
 **Parameters:**
 

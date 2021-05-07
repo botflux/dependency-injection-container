@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v2.0.3](../README.md) › [Globals](../globals.md) › ["Implementation/ServiceLoader"](_implementation_serviceloader_.md)
+[@botflx/dependency-injection-container - v2.0.4](../README.md) › [Globals](../globals.md) › ["Implementation/ServiceLoader"](_implementation_serviceloader_.md)
 
 # External module: "Implementation/ServiceLoader"
 
@@ -20,7 +20,7 @@
 
 Ƭ **Constructor**: *object*
 
-*Defined in [src/Implementation/ServiceLoader.ts:15](https://github.com/botflux/dependency-injection-container/blob/f2bcefe/packages/DIContainer/src/Implementation/ServiceLoader.ts#L15)*
+*Defined in [src/Implementation/ServiceLoader.ts:15](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/ServiceLoader.ts#L15)*
 
 #### Type declaration:
 
@@ -32,7 +32,7 @@
 
 ▸ **Inject**(`serviceKey`: [ServiceKey](_interfaces_.md#servicekey)): *ParameterDecorator*
 
-*Defined in [src/Implementation/ServiceLoader.ts:7](https://github.com/botflux/dependency-injection-container/blob/f2bcefe/packages/DIContainer/src/Implementation/ServiceLoader.ts#L7)*
+*Defined in [src/Implementation/ServiceLoader.ts:7](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/ServiceLoader.ts#L7)*
 
 **Parameters:**
 
@@ -48,7 +48,7 @@ ___
 
 ▸ **Service**(`serviceKey`: [ServiceKey](_interfaces_.md#servicekey), `lifeCycle`: [LifeCycle](../enums/_interfaces_.lifecycle.md)): *ClassDecorator*
 
-*Defined in [src/Implementation/ServiceLoader.ts:3](https://github.com/botflux/dependency-injection-container/blob/f2bcefe/packages/DIContainer/src/Implementation/ServiceLoader.ts#L3)*
+*Defined in [src/Implementation/ServiceLoader.ts:3](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/ServiceLoader.ts#L3)*
 
 **Parameters:**
 
@@ -65,7 +65,7 @@ ___
 
 ▸ **reflectServiceLoader**(`services`: [Constructor](_implementation_serviceloader_.md#constructor)‹unknown›[]): *(Anonymous function)*
 
-*Defined in [src/Implementation/ServiceLoader.ts:17](https://github.com/botflux/dependency-injection-container/blob/f2bcefe/packages/DIContainer/src/Implementation/ServiceLoader.ts#L17)*
+*Defined in [src/Implementation/ServiceLoader.ts:17](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/ServiceLoader.ts#L17)*
 
 **Parameters:**
 

@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v2.0.3](../README.md) › [Globals](../globals.md) › ["Implementation/FactoryRegistry"](../modules/_implementation_factoryregistry_.md) › [TransientFactoryRegistry](_implementation_factoryregistry_.transientfactoryregistry.md)
+[@botflx/dependency-injection-container - v2.0.4](../README.md) › [Globals](../globals.md) › ["Implementation/FactoryRegistry"](../modules/_implementation_factoryregistry_.md) › [TransientFactoryRegistry](_implementation_factoryregistry_.transientfactoryregistry.md)
 
 # Class: TransientFactoryRegistry
 
@@ -31,7 +31,7 @@
 
 *Inherited from [FactoryRegistry](_implementation_factoryregistry_.factoryregistry.md).[constructor](_implementation_factoryregistry_.factoryregistry.md#constructor)*
 
-*Defined in [src/Implementation/FactoryRegistry.ts:3](https://github.com/botflux/dependency-injection-container/blob/f2bcefe/packages/DIContainer/src/Implementation/FactoryRegistry.ts#L3)*
+*Defined in [src/Implementation/FactoryRegistry.ts:3](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/FactoryRegistry.ts#L3)*
 
 **Parameters:**
 
@@ -49,7 +49,7 @@ Name | Type |
 
 *Inherited from [FactoryRegistry](_implementation_factoryregistry_.factoryregistry.md).[factoriesMap](_implementation_factoryregistry_.factoryregistry.md#protected-factoriesmap)*
 
-*Defined in [src/Implementation/FactoryRegistry.ts:4](https://github.com/botflux/dependency-injection-container/blob/f2bcefe/packages/DIContainer/src/Implementation/FactoryRegistry.ts#L4)*
+*Defined in [src/Implementation/FactoryRegistry.ts:4](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/FactoryRegistry.ts#L4)*
 
 ## Methods
 
@@ -59,7 +59,7 @@ Name | Type |
 
 *Overrides [FactoryRegistry](_implementation_factoryregistry_.factoryregistry.md).[getFactory](_implementation_factoryregistry_.factoryregistry.md#abstract-getfactory)*
 
-*Defined in [src/Implementation/FactoryRegistry.ts:13](https://github.com/botflux/dependency-injection-container/blob/f2bcefe/packages/DIContainer/src/Implementation/FactoryRegistry.ts#L13)*
+*Defined in [src/Implementation/FactoryRegistry.ts:13](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/FactoryRegistry.ts#L13)*
 
 **Type parameters:**
 
@@ -81,7 +81,7 @@ ___
 
 *Inherited from [FactoryRegistry](_implementation_factoryregistry_.factoryregistry.md)*
 
-*Defined in [src/Implementation/FactoryRegistry.ts:9](https://github.com/botflux/dependency-injection-container/blob/f2bcefe/packages/DIContainer/src/Implementation/FactoryRegistry.ts#L9)*
+*Defined in [src/Implementation/FactoryRegistry.ts:9](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/FactoryRegistry.ts#L9)*
 
 **Parameters:**
 

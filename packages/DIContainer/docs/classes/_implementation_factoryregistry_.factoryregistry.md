@@ -1,4 +1,4 @@
-[@botflx/dependency-injection-container - v2.0.3](../README.md) › [Globals](../globals.md) › ["Implementation/FactoryRegistry"](../modules/_implementation_factoryregistry_.md) › [FactoryRegistry](_implementation_factoryregistry_.factoryregistry.md)
+[@botflx/dependency-injection-container - v2.0.4](../README.md) › [Globals](../globals.md) › ["Implementation/FactoryRegistry"](../modules/_implementation_factoryregistry_.md) › [FactoryRegistry](_implementation_factoryregistry_.factoryregistry.md)
 
 # Class: FactoryRegistry
 
@@ -31,7 +31,7 @@
 
 \+ **new FactoryRegistry**(`factoriesMap`: Map‹[ServiceKey](../modules/_interfaces_.md#servicekey), [SyncServiceFactory](../modules/_interfaces_.md#syncservicefactory)‹unknown››): *[FactoryRegistry](_implementation_factoryregistry_.factoryregistry.md)*
 
-*Defined in [src/Implementation/FactoryRegistry.ts:3](https://github.com/botflux/dependency-injection-container/blob/f2bcefe/packages/DIContainer/src/Implementation/FactoryRegistry.ts#L3)*
+*Defined in [src/Implementation/FactoryRegistry.ts:3](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/FactoryRegistry.ts#L3)*
 
 **Parameters:**
 
@@ -47,7 +47,7 @@ Name | Type |
 
 • **factoriesMap**: *Map‹[ServiceKey](../modules/_interfaces_.md#servicekey), [SyncServiceFactory](../modules/_interfaces_.md#syncservicefactory)‹unknown››*
 
-*Defined in [src/Implementation/FactoryRegistry.ts:4](https://github.com/botflux/dependency-injection-container/blob/f2bcefe/packages/DIContainer/src/Implementation/FactoryRegistry.ts#L4)*
+*Defined in [src/Implementation/FactoryRegistry.ts:4](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/FactoryRegistry.ts#L4)*
 
 ## Methods
 
@@ -55,7 +55,7 @@ Name | Type |
 
 ▸ **getFactory**<**TService**>(`serviceKey`: [ServiceKey](../modules/_interfaces_.md#servicekey)): *[SyncServiceFactory](../modules/_interfaces_.md#syncservicefactory)‹TService› | undefined*
 
-*Defined in [src/Implementation/FactoryRegistry.ts:7](https://github.com/botflux/dependency-injection-container/blob/f2bcefe/packages/DIContainer/src/Implementation/FactoryRegistry.ts#L7)*
+*Defined in [src/Implementation/FactoryRegistry.ts:7](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/FactoryRegistry.ts#L7)*
 
 **Type parameters:**
 
@@ -75,7 +75,7 @@ ___
 
 ▸ **has**(`serviceKey`: [ServiceKey](../modules/_interfaces_.md#servicekey)): *boolean*
 
-*Defined in [src/Implementation/FactoryRegistry.ts:9](https://github.com/botflux/dependency-injection-container/blob/f2bcefe/packages/DIContainer/src/Implementation/FactoryRegistry.ts#L9)*
+*Defined in [src/Implementation/FactoryRegistry.ts:9](https://github.com/botflux/dependency-injection-container/blob/aff9924/packages/DIContainer/src/Implementation/FactoryRegistry.ts#L9)*
 
 **Parameters:**
 
