@@ -8,7 +8,7 @@ branches:
     - v2
 install:
   - npm install -g lerna
-  - npx lerna bootstrap
+  - lerna bootstrap
 script:
   - lerna run test
   - lerna run test:coverage
