@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "ci": "lerna bootstrap",
-    "docs:dev": "vuepress dev docs"
+    "docs:dev": "vuepress dev docs",
+    "docs:prod": "vuepress build docs"
   },
   "repository": {
     "type": "git",
