@@ -1,7 +1,7 @@
 # Getting started
 
 > This documentation only cover the `v2` of this package which is
-> in beta. `v2` has a lot of breaking chance.
+> in beta. `v2` has a lot of breaking changes.
 
 [![Build Status](https://travis-ci.org/botflux/dependency-injection-container.svg?branch=master)](https://travis-ci.org/botflux/dependency-injection-container)
 [![npm version](https://img.shields.io/npm/v/@botflx%2Fdependency-injection-container.svg)](https://npmjs.org/package/@botflx/dependency-injection-container)
@@ -10,14 +10,14 @@
 [![GitHub issues](https://img.shields.io/github/issues/botflux/dependency-injection-container.svg)](https://GitHub.com/botflux/dependency-injection-container/issues/)
 [![GitHub license](https://img.shields.io/github/license/botflux/dependency-injection-container.svg)](https://github.com/botflux/dependency-injection-container/blob/master/LICENSE)
 
-> In software engineering, dependency injection is a technique in which an object receives other objects that it depends on. These other objects are called dependencies. In the typical "using" relationship the receiving object is called a client and the passed (that is, "injected") object is called a service. The code that passes the service to the client can be many kinds of things and is called the injector. Instead of the client specifying which service it will use, the injector tells the client what service to use. The "injection" refers to the passing of a dependency (a service) into the object (a client) that would use it. [Source Wikipedia](https://en.wikipedia.org/wiki/Dependency_injection)
+> In software engineering, dependency injection is a technique in which an object receives other objects that it depends on. These other objects are called dependencies. [Source Wikipedia](https://en.wikipedia.org/wiki/Dependency_injection)
 
 This package exposes a dependency injection container that manage your
 application dependencies.
 
 ## Simple example of dependency injection
 
-The following code is an example of code without dependency injection.
+The following example show some code without dependency injection.
 We have two classes: `Engine` and `Car`. `Car` uses `Engine` in his `start` method.
 In this example we can see that `Car` creates an `Engine` instance.
 
@@ -72,10 +72,14 @@ At his core dependency injection is just this: separating object creation and ob
 > Keep in mind that you don't need this package to do dependency injection in fact
 > you can use plain javascript / typescript.
 
-## Why use a package to do dependency injection
+## Why use a package to do dependency injection ?
 
 This package gives a lightweight container that will helps you manage your dependencies, and their
-life cycles. We can write the previous example with this package container.
+life cycles. It will give you tools to simplify the creation of all your application dependencies. 
+This package tries to be simpler that other DI containers. If you are looking for a DI Container using a lot
+of reflection and/or decorators you are not at the right place.
+
+We can write the previous example with this package container.
 
 ```typescript
 // classes.ts

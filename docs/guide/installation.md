@@ -13,5 +13,5 @@ npm install --save @botflx/dependency-injection-container@beta
 ## Moving to monorepo
 
 This package is currently moving to a monorepo structure.
-In the future, extensions of this package will be published in the repo
+In the future, extensions of this package will be published in the same repo
 as the main package.
