@@ -266,3 +266,26 @@ const container = builder.build()
 const myService = container.get<MyService>("my service")
 ```
 
+## Scoped container
+
+Sometimes you want your container so be used only for a given http request.
+You can create those kinds of container as following:
+
+```typescript
+import {createContainerBuilder, createScopedContainerBuilder, LifeCycle} from '@botflx/dependency-injection-container'
+
+// Create a global container
+const globalContainer = createContainerBuilder()
+    .addFactory('foo', () => 'foo', LifeCycle.Singleton)
+    .addFactory('bar', () => 'bar', LifeCycle.Singleton)
+    .build()
+
+// Create a container builder from the global container
+const perRequestBuilder = createScopedContainerBuilder(globalContainer)
+    .addFactory('foobar', provider => `${provider.get('foo')}${provider.get('bar')}`, LifeCycle.Singleton)
+
+// Create a container per request.
+const perRequestContainer1 = perRequestBuilder.build()
+const perRequestContainer2 = perRequestBuilder.build()
+const perRequestContainer3 = perRequestBuilder.build()
+```
