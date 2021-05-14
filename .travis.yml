@@ -22,3 +22,4 @@ deploy:
   keep_history: true
   on:
     branch: v2
+
